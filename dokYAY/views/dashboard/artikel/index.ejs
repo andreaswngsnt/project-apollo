@@ -1,0 +1,126 @@
+<% include ../../partials/headerDashboard %>
+
+<div class="main-panel">
+    <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <a class="navbar-brand" href="#pablo">Artikel</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="header text-center ml-auto mr-auto">
+                <h3 class="title">Semua Artikel</h3>
+                <p class="category">Edit atau hapus artikel-artikel di website dokYAY disini.</p>
+            </div>
+            <div class="row d-flex align-items-center">
+				<div class="col-md-8">
+					<ul class="nav nav-pills nav-pills-primary">
+						<li class="nav-item">
+							<a class="nav-link active" href="/artikel/index">Semua</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Gejala</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Pencegahan</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Fitness</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Pengobatan</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4 ml-auto">
+					<div class="card card-plain card-form-horizontal">
+						<div class="card-body">
+							<form method="" action="">
+								<div class="row">
+									<div class="col-md-10">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="Cari Artikel">
+										</div>
+									</div>
+									<div class="col-md-2 text-center">
+										<button type="submit" class="btn btn-primary btn-raised btn-fab btn-round">
+											<i class="material-icons">search</i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a href="#pablo">
+                                <img class="img" src="/assets/img/blogs/img1.jpg">
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="card-category text-info">Gejala</h6>
+                            <h3 class="card-title"><a href="/artikel/id">Sakit Perut? Kenali 10 Gejala Kanker!</a></h3>
+                            <p class="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                            </p>
+                            <p class="author">
+                                by
+                                <a href="/artikel/id">
+                                    <strong>Mike Butcher</strong>
+                                </a>
+                                , 2 days ago
+                            </p>
+                            <a href="/artikel/id" class="btn btn-primary btn-round">
+                                Baca
+                            </a>
+                            <a href="/artikel/id" class="btn btn-warning btn-round">
+                                Edit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ml-auto mr-auto text-center">
+                    <ul class="pagination pagination-primary">
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">Sebelum</a>
+                        </li>
+                        <li class="page-item active">
+                            <a href="javascript:void(0);" class="page-link">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">Sesudah</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../../partials/footerDashboard %>
