@@ -13,4 +13,12 @@ router.get("/home", function(req, res) {
     res.render("home");
 });
 
+router.get("/daftarpraktik", function(req, res) {
+    res.render("daftar");
+});
+
+router.get("/tentang", function(req, res) {
+    res.render("tentang");
+});
+
 module.exports = router;
