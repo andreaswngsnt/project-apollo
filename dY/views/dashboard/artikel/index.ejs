@@ -62,35 +62,48 @@
 				</div>
 			</div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card card-blog">
-                        <div class="card-header card-header-image">
-                            <a href="#pablo">
-                                <img class="img" src="/assets/img/blogs/img1.jpg">
-                            </a>
-                        </div>
-                        <div class="card-body text-center">
-                            <h6 class="card-category text-info">Gejala</h6>
-                            <h3 class="card-title"><a href="/artikel/id">Sakit Perut? Kenali 10 Gejala Kanker!</a></h3>
-                            <p class="card-description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                            </p>
-                            <p class="author">
-                                by
-                                <a href="/artikel/id">
-                                    <strong>Mike Butcher</strong>
-                                </a>
-                                , 2 days ago
-                            </p>
-                            <a href="/artikel/id" class="btn btn-primary btn-round">
-                                Baca
-                            </a>
-                            <a href="/artikel/id" class="btn btn-warning btn-round">
-                                Edit
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <% if (articles.length < 1) { %>
+					<p>Belum ada artikel disini :(</p>
+				<% } else { %>
+					<% articles.forEach(function(article) { %>
+						<div class="col-md-4">
+							<div class="card card-blog">
+								<div class="card-header card-header-image">
+									<a href="#pablo">
+										<img class="img" src="/assets/img/blogs/img1.jpg">
+									</a>
+								</div>
+								<div class="card-body text-center">
+									<h6 class="card-category text-info">Gejala</h6>
+									<h3 class="card-title"><a href="/artikel/<%= article.id %>"><%= article.title %></a></h3>
+									<p class="card-description">
+										<%= article.body %>
+									</p>
+									<p class="author">
+										oleh
+										<a href="/artikel/id">
+											<strong><%= article.author %></strong>
+										</a>
+										, <%= article.created %>
+									</p>
+									<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round">
+										Baca
+									</a>
+									<a href="#" class="btn btn-warning btn-round">
+										Edit
+									</a>
+									<span class="d-inline">
+										<form class="form-inline" action="/article/<%= article.id %>?_method=DELETE" method="POST">
+											<button class="btn btn-danger btn-round">
+												Hapus
+											</button>
+										</form>
+									</span>
+								</div>
+							</div>
+						</div>
+					<% }); %>
+				<% }; %>
             </div>
             <div class="row">
                 <div class="ml-auto mr-auto text-center">

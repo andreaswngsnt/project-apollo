@@ -62,230 +62,40 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img1.jpg">
+					<% if (articles.length < 1) { %>
+						<p>Belum ada artikel disini :(</p>
+					<% } else { %>
+						<% articles.forEach(function(article) { %>
+							<div class="col-md-12 ml-auto mr-auto">
+								<div class="card card-plain card-blog">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="card-header card-header-image">
+												<img class="img img-raised" src="/assets/img/blogs/img1.jpg">
+											</div>
+										</div>
+										<div class="col-md-8">
+											<h6 class="card-category text-info">Gejala</h6>
+											<h3 class="card-title">
+												<a href="/artikel/id"><%= article.title %></a>
+											</h3>
+											<p class="card-description">
+												<%= article.body %>
+												<a href="/artikel/<%= article.id %>">Baca lebih</a>
+											</p>
+											<p class="author">
+												oleh
+												<a href="/artikel/id">
+													<strong><%= article.author %></strong>
+												</a>
+												, <%= article.created %>
+											</p>
+										</div>
 									</div>
 								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Gejala</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Sakit Perut? Kenali 10 Gejala Kanker!</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img2.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pencegahan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cara Mencegah Sakit Kepala</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img3.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pengobatan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img3.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pengobatan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img3.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pengobatan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img3.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pengobatan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img3.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pengobatan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 ml-auto mr-auto">
-						<div class="card card-plain card-blog">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card-header card-header-image">
-										<img class="img img-raised" src="/assets/img/blogs/img3.jpg">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="card-category text-info">Pengobatan</h6>
-									<h3 class="card-title">
-										<a href="/artikel/id">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</a>
-									</h3>
-									<p class="card-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-										<a href="/artikel/id">Read More</a>
-									</p>
-									<p class="author">
-										by
-										<a href="/artikel/id">
-											<strong>Mike Butcher</strong>
-										</a>
-										, 2 days ago
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+						<% }); %>
+					<% }; %>
 					<div class="ml-auto mr-auto text-center">
 						<ul class="pagination pagination-primary">
 							<li class="page-item">
