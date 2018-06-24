@@ -22,20 +22,24 @@
                         <div class="card-header">
                             <h4 class="card-title">Tulis Artikel</h4>
                         </div>
-                        <form method="#" action="#">
+                        <form method="POST" action="/artikel">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="judulArtikel">Judul Artikel</label>
-                                    <input type="text" class="form-control" id="judulArtikel" required>
+                                    <input name="title" type="text" class="form-control" id="judulArtikel" required>
+                                </div>
+								<div class="form-group">
+                                    <label for="penulisArtikel">Penulis Artikel</label>
+                                    <input name="author" type="text" class="form-control" id="penulisArtikel" value="Walter White" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="kategoriArtikel">Kategori Artikel</label>
                                     <input type="text" class="tagsinput form-control" id="kategoriArtikel" data-color="primary" value="Pencegahan, Pengobatan" required>
-                                    <small id="emailHelp" class="form-text text-muted">Tambah kategori dengan menekan <em>enter</em> sekali.</small>
+                                    <small class="form-text text-muted">Tambah kategori dengan menekan <em>enter</em> sekali.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="kontenArtikel">Konten Artikel</label>
-                                    <input name="kontenArtikel" type="hidden" id="kontenArtikel" required>
+                                    <input name="body" type="hidden" id="kontenArtikel" required>
                                     <div id="editor-container">
 										Ketik artikelmu <strong>disini</strong>
                                     </div>
@@ -43,14 +47,14 @@
 								<p class="text-muted">Background Artikel</p>
 								<div class="fileinput fileinput-new" data-provides="fileinput">
 									<div class="fileinput-new thumbnail img-raised">
-										<img src="/assets/img/blogs/img1.jpg" alt="...">
+										<img src="/assets/img/blogs/image_placeholder.jpg" alt="...">
 									</div>
 									<div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
 									<div>
 										<span class="btn btn-raised btn-primary btn-file">
 											<span class="fileinput-new">Pilih foto</span>
 											<span class="fileinput-exists">Change</span>
-											<input type="file" name="..." />
+											<input type="file" name="...">
 										</span>
 										<a href="#pablo" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">
 										<i class="fa fa-times"></i> Remove</a>
@@ -81,11 +85,8 @@
 	
 	var form = document.querySelector('form');
 	form.onsubmit = function() {
-		var content = document.querySelector('input[name=kontenArtikel]');
+		var content = document.querySelector('input[id=kontenArtikel]');
 		content.value = JSON.stringify(quill.getContents());
-		console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-		alert('Open the console to see the submit data!');
-		return false;
 	}
 </script>
 

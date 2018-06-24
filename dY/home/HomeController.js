@@ -49,5 +49,6 @@ router.get("/admin/artikel/new", function(req, res) {
 router.get("/contoh", function(req, res) {
 	res.render("artikel/show");
 });
+// EDIT ENDS HERE
 
 module.exports = router;
