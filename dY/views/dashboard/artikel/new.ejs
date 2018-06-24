@@ -37,8 +37,25 @@
                                     <label for="kontenArtikel">Konten Artikel</label>
                                     <input name="kontenArtikel" type="hidden" id="kontenArtikel" required>
                                     <div id="editor-container">
+										Ketik artikelmu <strong>disini</strong>
                                     </div>
                                 </div>
+								<p class="text-muted">Background Artikel</p>
+								<div class="fileinput fileinput-new" data-provides="fileinput">
+									<div class="fileinput-new thumbnail img-raised">
+										<img src="/assets/img/blogs/img1.jpg" alt="...">
+									</div>
+									<div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+									<div>
+										<span class="btn btn-raised btn-primary btn-file">
+											<span class="fileinput-new">Pilih foto</span>
+											<span class="fileinput-exists">Change</span>
+											<input type="file" name="..." />
+										</span>
+										<a href="#pablo" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">
+										<i class="fa fa-times"></i> Remove</a>
+									</div>
+								</div>
                             </div>
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-fill btn-primary">Pasang Artikel</button>
@@ -55,12 +72,12 @@
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
 	var quill = new Quill('#editor-container', {
-	    toolbar: toolbarOptions,
-		placeholder: 'Ketik teksmu...',
+		modules: {
+			toolbar: [[{ header: [1, false] }],['bold', 'italic', 'underline'],[{ 'list': 'ordered'}, { 'list': 'bullet' }],['blockquote'],['image']]
+		},
+		placeholder: 'Ketik teksmu disini...',
 		theme: 'snow'
 	});
-	
-	var toolbarOptions = [[{ header: [1, 2, false] }], ['bold', 'italic', 'underline'], ['image', 'code-block']];
 	
 	var form = document.querySelector('form');
 	form.onsubmit = function() {
