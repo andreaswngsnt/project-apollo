@@ -17,7 +17,11 @@ router.post('/', function (req, res) {
     },
     function (err, article) {
         if (err) return res.status(500).send("There was a problem adding the information to the database.");
-        res.status(200).send(article);
+		
+		//TEMPORARY - REMOVE IF NEEDED
+		res.redirect('/admin/artikel/index');
+        // res.status(200).send(article);
+		// EDIT ENDS HERE
     });
 });
 
