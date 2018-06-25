@@ -16,13 +16,7 @@
 			<div class="section section-text">
 				<div class="col-md-8 ml-auto mr-auto">
 					<div class="row">
-						<%= article.body %>
-					</div>
-					<div class="row">
-						<% var content = JSON.parse(article.body) %>
-						<% content.ops.forEach(function(paragraph) { %>
-							<p><%= paragraph.insert %></p>
-						<% }) %>
+						<%- article.body %>
 					</div>
 					<div class="row">
 						<div class="col-md-6">
