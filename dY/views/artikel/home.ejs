@@ -136,12 +136,12 @@
 												<a href="/artikel/<%= article.id %>"><%= article.title %></a>
 											</h3>
 											<p class="card-description">
-												<%= article.body %>
-												<a href="/artikel/<%= article.id %>">Baca lebih</a>
+												<%= article.body.substring(0, 500) %>
 											</p>
+											<a href="/artikel/<%= article.id %>">Baca lebih</a>
 											<p class="author">
 												oleh
-												<a href="/artikel/id">
+												<a href="/artikel/<%= article.id %>">
 													<strong><%= article.author %></strong>
 												</a>
 												, <%= article.created %>
@@ -194,6 +194,5 @@
 			</div>
 		</div>
 	</div>
-
 
 <% include ../partials/footer %>
