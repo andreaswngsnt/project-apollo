@@ -80,7 +80,7 @@
 												<a href="/artikel/<%= article.id %>"><%= article.title %></a>
 											</h3>
 											<p class="card-description">
-												<%= article.body %>
+												<%= article.body.substring(0, 500) %>...
 												<a href="/artikel/<%= article.id %>">Baca lebih</a>
 											</p>
 											<p class="author">

@@ -86,19 +86,17 @@
 										</a>
 										, <%= article.created %>
 									</p>
-									<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round">
-										Baca
-									</a>
-									<a href="#" class="btn btn-warning btn-round">
-										Edit
-									</a>
-									<span class="d-inline">
-										<form class="form-inline" action="/article/<%= article.id %>?_method=DELETE" method="POST">
-											<button class="btn btn-danger btn-round">
-												Hapus
-											</button>
-										</form>
-									</span>
+									<form class="form-inline justify-content-center" action="/article/<%= article.id %>?_method=DELETE" method="POST">
+										<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round m-1">
+											Baca
+										</a>
+										<a href="#" class="btn btn-warning btn-round m-1">
+											Edit
+										</a>
+										<button class="btn btn-danger btn-round m-1">
+											Hapus
+										</button>
+									</form>
 								</div>
 							</div>
 						</div>
