@@ -16,65 +16,122 @@
     </nav>
     <div class="content">
         <div class="container-fluid">
+            <div class="header text-center ml-auto mr-auto">
+                <h3 class="title">Semua Artikel</h3>
+                <p class="category">Edit atau hapus artikel-artikel di website dokYAY disini.</p>
+            </div>
+            <div class="row d-flex align-items-center">
+				<div class="col-md-8">
+					<ul class="nav nav-pills nav-pills-primary">
+						<li class="nav-item">
+							<a class="nav-link active" href="/artikel/index">Semua</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Gejala</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Pencegahan</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Fitness</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/artikel/index">Pengobatan</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4 ml-auto">
+					<div class="card card-plain card-form-horizontal">
+						<div class="card-body">
+							<form method="" action="">
+								<div class="row">
+									<div class="col-md-10">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="Cari Artikel">
+										</div>
+									</div>
+									<div class="col-md-2 text-center">
+										<button type="submit" class="btn btn-primary btn-raised btn-fab btn-round">
+											<i class="material-icons">search</i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Tulis Artikel</h4>
-                        </div>
-                        <form method="#" action="#">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="judulArtikel">Judul Artikel</label>
-                                    <input type="text" class="form-control" id="judulArtikel" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="kategoriArtikel">Kategori Artikel</label>
-                                    <input type="text" class="tagsinput form-control" id="kategoriArtikel" data-color="primary" value="Pencegahan, Pengobatan" required>
-                                    <small id="emailHelp" class="form-text text-muted">Tambah kategori dengan menekan <em>enter</em> sekali.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="kontenArtikel">Konten Artikel</label>
-                                    <input name="kontenArtikel" type="hidden" id="kontenArtikel" required>
-                                    <div id="editor-container">
-                                        <p><em>Ketik artikelmu disini...</em></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer ">
-                                <button type="submit" class="btn btn-fill btn-primary">Pasang Artikel</button>
-                            </div>
-                        </form>
-                    </div>
+                <% if (articles.length < 1) { %>
+					<p>Belum ada artikel disini :(</p>
+				<% } else { %>
+					<% articles.forEach(function(article) { %>
+						<div class="col-md-4">
+							<div class="card card-blog">
+								<div class="card-header card-header-image">
+									<a href="#pablo">
+										<img class="img" src="/assets/img/blogs/img1.jpg">
+									</a>
+								</div>
+								<div class="card-body text-center">
+									<h6 class="card-category text-info">Gejala</h6>
+									<h3 class="card-title"><a href="/artikel/<%= article.id %>"><%= article.title %></a></h3>
+									<p class="card-description">
+										<%= article.body %>
+									</p>
+									<p class="author">
+										oleh
+										<a href="/artikel/id">
+											<strong><%= article.author %></strong>
+										</a>
+										, <%= article.created %>
+									</p>
+									<form class="form-inline justify-content-center" action="/article/<%= article.id %>?_method=DELETE" method="POST">
+										<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round m-1">
+											Baca
+										</a>
+										<a href="#" class="btn btn-warning btn-round m-1">
+											Edit
+										</a>
+										<button class="btn btn-danger btn-round m-1">
+											Hapus
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					<% }); %>
+				<% }; %>
+            </div>
+            <div class="row">
+                <div class="ml-auto mr-auto text-center">
+                    <ul class="pagination pagination-primary">
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">Sebelum</a>
+                        </li>
+                        <li class="page-item active">
+                            <a href="javascript:void(0);" class="page-link">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">Sesudah</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Quill Text Editor -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<script>
-	var quill = new Quill('#editor-container', {
-		modules: {
-			toolbar: [
-				['bold', 'italic'],
-				['link', 'blockquote', 'code-block', 'image'],
-				[{ list: 'ordered' }, { list: 'bullet' }]
-				]
-		},
-		placeholder: 'Compose an epic...',
-		theme: 'snow'
-	});
-	
-	var form = document.querySelector('form');
-	form.onsubmit = function() {
-		var content = document.querySelector('input[name=kontenArtikel]');
-		content.value = JSON.stringify(quill.getContents());
-		console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-		alert('Open the console to see the submit data!');
-		return false;
-	}
-</script>
 
 <% include ../../partials/footerDashboard %>
