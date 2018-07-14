@@ -22,7 +22,7 @@
                         <div class="card-header">
                             <h4 class="card-title">Tulis Artikel</h4>
                         </div>
-                        <form method="POST" action="/artikel">
+                        <form method="POST" action="/artikel/<%= article.id %>?_method=PUT">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="judulArtikel">Judul Artikel</label>
