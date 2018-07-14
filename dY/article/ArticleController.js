@@ -66,7 +66,7 @@ router.get('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
     Article.findByIdAndRemove(req.params.id, function (err, article) {
         if (err) return res.status(500).send("There was a problem deleting the article.");
-        res.status(200).send("Article "+ article.title +" was deleted.");
+        res.status(200).redirect("back");
     });
 });
 
@@ -74,7 +74,7 @@ router.delete('/:id', function (req, res) {
 router.put('/:id', function (req, res) {
     Article.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, article) {
         if (err) return res.status(500).send("There was a problem updating the article.");
-        res.status(200).send(article);
+        res.status(200).redirect("back");
     });
 });
 
