@@ -68,6 +68,10 @@ router.get("/admin/artikel/new", function(req, res) {
 	res.render("dashboard/artikel/new");
 });
 
+router.get('/admin/pengguna/index', function (req, res) {
+	res.render("dashboard/pengguna/index");
+});
+
 router.get("/contoh", function(req, res) {
 	res.render("artikel/contoh");
 });
