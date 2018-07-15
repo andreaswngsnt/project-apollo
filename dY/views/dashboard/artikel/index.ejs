@@ -77,7 +77,7 @@
 									<h6 class="card-category text-info">Gejala</h6>
 									<h3 class="card-title"><a href="/artikel/<%= article.id %>"><%= article.title %></a></h3>
 									<p class="card-description">
-										<%= article.body %>
+										<%= article.body.substring(0, 500) %>... %>
 									</p>
 									<p class="author">
 										oleh
@@ -87,7 +87,7 @@
 										, <%= article.created %>
 									</p>
 									<form class="form-inline justify-content-center" action="/artikel/<%= article.id %>?_method=DELETE" method="POST">
-										<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round m-1">
+										<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round m-1" target="_blank">
 											Baca
 										</a>
 										<a href="/admin/artikel/<%= article.id %>/edit" class="btn btn-warning btn-round m-1">

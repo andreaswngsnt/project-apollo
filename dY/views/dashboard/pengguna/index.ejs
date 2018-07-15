@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
         <div class="container-fluid">
             <div class="navbar-wrapper">
-                <a class="navbar-brand" href="#pablo">Artikel</a>
+                <a class="navbar-brand" href="#pablo">Pengguna</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
@@ -16,10 +16,6 @@
     </nav>
     <div class="content">
         <div class="container-fluid">
-            <div class="header text-center ml-auto mr-auto">
-                <h3 class="title">Artikel Saya</h3>
-                <p class="category">Baca, buat, edit, atau hapus artikelmu disini.</p>
-            </div>
             <div class="row d-flex align-items-center">
 				<div class="col-md-8">
 					<ul class="nav nav-pills nav-pills-primary">
@@ -27,16 +23,13 @@
 							<a class="nav-link active" href="/artikel/index">Semua</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/artikel/index">Gejala</a>
+							<a class="nav-link" href="/artikel/index">Dokter</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/artikel/index">Pencegahan</a>
+							<a class="nav-link" href="/artikel/index">Pasien</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/artikel/index">Fitness</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/artikel/index">Pengobatan</a>
+							<a class="nav-link" href="/artikel/index">Admin</a>
 						</li>
 					</ul>
 				</div>
@@ -61,82 +54,6 @@
 					</div>
 				</div>
 			</div>
-            <div class="row">
-                <% if (articles.length < 1) { %>
-					<div class="col-md-4">
-						<div class="card card-blog">
-							<div class="card-header card-header-image">
-								<a href="#pablo">
-									<img class="img" src="/assets/img/blogs/image_placeholder.jpg">
-								</a>
-							</div>
-							<div class="card-body text-center">
-								<h3 class="card-title"><a href="/admin/artikel/new">Tulis Artikel Baru</a></h3>
-								<p class="card-description">
-									Anda belum menulis artikel apapun. Tulis artikelmu sekarang!
-								</p>
-								<a href="/admin/artikel/new" class="btn btn-primary btn-round m-1">
-									Tulis Artikel
-								</a>
-							</div>
-						</div>
-					</div>
-				<% } else { %>
-					<div class="col-md-4">
-						<div class="card card-blog">
-							<div class="card-header card-header-image">
-								<a href="#pablo">
-									<img class="img" src="/assets/img/blogs/image_placeholder.jpg">
-								</a>
-							</div>
-							<div class="card-body text-center">
-								<h3 class="card-title"><a href="/admin/artikel/new">Tulis Artikel Baru</a></h3>
-								<p class="card-description">
-									Tulis artikelmu sekarang!
-								</p>
-								<a href="/admin/artikel/new" class="btn btn-primary btn-round m-1">
-									Tulis Artikel
-								</a>
-							</div>
-						</div>
-					</div>
-					<% articles.forEach(function(article) { %>
-						<div class="col-md-4">
-							<div class="card card-blog">
-								<div class="card-header card-header-image">
-									<a href="#pablo">
-										<img class="img" src="/assets/img/blogs/img1.jpg">
-									</a>
-								</div>
-								<div class="card-body text-center">
-									<h6 class="card-category text-info">Gejala</h6>
-									<h3 class="card-title"><a href="/artikel/<%= article.id %>"><%= article.title %></a></h3>
-									<p class="card-description">
-										<%= article.body.substring(0, 500) %>... %>
-									</p>
-									<p class="author">
-										oleh
-										<a href="/artikel/id">
-											<strong><%= article.author %></strong>
-										</a>
-										, <%= article.created %>
-									</p>
-									<form class="form-inline justify-content-center" action="/artikel/<%= article.id %>?_method=DELETE" method="POST">
-										<a href="/artikel/<%= article.id %>" class="btn btn-primary btn-round m-1" target="_blank">
-											Baca
-										</a>
-										<a href="/admin/artikel/<%= article.id %>/edit" class="btn btn-warning btn-round m-1">
-											Edit
-										</a>
-										<button class="btn btn-danger btn-round m-1">
-											Hapus
-										</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					<% }); %>
-				<% }; %>
             </div>
             <div class="row">
                 <div class="ml-auto mr-auto text-center">
