@@ -124,5 +124,15 @@
 			</div>
 		</div>
 	</div>
-
+	
+	<script>
+		if(document.querySelector("p > img")) {
+			let imgList = document.querySelectorAll("p > img");
+			imgList.forEach(function(element){
+				element.classList.add("card");
+				element.classList.add("card-blog");
+			});
+		}
+	</script>
+	
 <% include ../partials/footer %>
