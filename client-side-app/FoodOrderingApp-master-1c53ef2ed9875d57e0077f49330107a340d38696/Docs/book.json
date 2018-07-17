@@ -1,0 +1,20 @@
+{
+    "plugins": [
+        "scripts",
+        "ga"
+    ],
+    "title": "NativeBase Market UI Themes",
+    "variables":{
+        "options": "react-native-food-ordering-app-theme"
+    },
+    "pluginsConfig": {
+      "scripts": {
+          "files": [
+              "./engine.js"
+          ]
+      },
+      "ga": {
+        "token": "UA-91837749-1"
+        }
+    }
+}

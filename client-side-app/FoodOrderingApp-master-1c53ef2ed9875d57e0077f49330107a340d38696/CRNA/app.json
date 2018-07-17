@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "sdkVersion": "25.0.0",
+    "icon": "./assets/app-icon.png",
+    "slug": "strapfoodorderingapp",
+    "splash": {
+      "image": "./assets/launchscreen.png",
+      "resizeMode": "cover"
+    },
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "packagerOpts": {
+      "assetExts": ["ttf"]
+    },
+    "ios": {
+      "bundleIdentifier": "io.market.nativebase.geekyants.swiggyapp"
+    },
+    "android": {
+      "package": "io.market.nativebase.geekyants.swiggyapp",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC2LZQu4qesnrldWTCGnyV9ZI1yXZ2ErN0"
+        }
+      }
+    },
+    "androidStatusBarColor": "#E9F4FE",
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#E9F4FE"
+    }
+  }
+}
