@@ -73,11 +73,11 @@
 </div>
 
 <!-- Quill Text Editor -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="/assets/js/plugins/quill.js"></script>
 <script>
 	var quill = new Quill('#editor-container', {
 		modules: {
-			toolbar: [[{ header: [3, false] }],['bold', 'italic', 'underline'],[{ 'list': 'ordered'}, { 'list': 'bullet' }],['blockquote'],['image']]
+			toolbar: [[{ header: [3, false] }],['bold', 'italic', 'underline'],[{ 'list': 'ordered'}, { 'list': 'bullet' }],['blockquote','link'],['image','video']]
 		},
 		placeholder: 'Ketik teksmu disini...',
 		theme: 'snow'
