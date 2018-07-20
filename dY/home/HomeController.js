@@ -72,6 +72,18 @@ router.get('/admin/pengguna/index', function (req, res) {
 	res.render("dashboard/pengguna/index");
 });
 
+router.get('/admin/pengguna/dokter', function (req, res) {
+	res.render("dashboard/pengguna/dokter");
+});
+
+router.get('/admin/pengguna/pasien', function (req, res) {
+	res.render("dashboard/pengguna/pasien");
+});
+
+router.get('/admin/pengguna/admin', function (req, res) {
+	res.render("dashboard/pengguna/admin");
+});
+
 router.get("/contoh", function(req, res) {
 	res.render("artikel/contoh");
 });
