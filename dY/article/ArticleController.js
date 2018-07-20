@@ -35,14 +35,14 @@ router.post('/', function (req, res) {
 router.get('/', function (req, res) {
     Article.find({}, function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("artikel/home", {articles: articles});
+        res.status(200).render("artikel/home", {articles: articles, page: "home"});
     })
 });
 
 router.get('/index', function (req, res) {
     Article.find({}, function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("artikel/index", {articles: articles});
+        res.status(200).render("artikel/index", {articles: articles, page: "index"});
     })
 });
 
@@ -58,7 +58,7 @@ router.get('/:id', function (req, res) {
     Article.findById(req.params.id, function (err, article) {
         if (err) return res.status(500).send("There was a problem finding the article.");
         if (!article) return res.status(404).send("No article found.");
-        res.status(200).render("artikel/show", {article: article});
+        res.status(200).render("artikel/show", {article: article, page: "show"});
     });
 });
 

@@ -134,6 +134,11 @@
 				element.classList.add("card-blog");
 			});
 		}
+		
+		if(document.querySelector("iframe")) {
+			console.log("There's a video");
+			console.log(document.querySelector("iframe"));
+		}
 	</script>
 	
 <% include ../partials/footer %>
