@@ -16,62 +16,7 @@
     </nav>
     <div class="content">
         <div class="container-fluid">
-            <div class="row d-flex align-items-center">
-				<div class="col-md-8">
-					<ul class="nav nav-pills nav-pills-primary">
-						<li class="nav-item">
-							<a class="nav-link active" href="dashboard/pengguna/index">Semua</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="dashboard/pengguna/dokter">Dokter</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="dashboard/pengguna/pasien">Pasien</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="dashboard/pengguna/admin">Admin</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-md-1 justify-content-end">
-					<button class="btn btn-primary btn-round btn-block">
-						Filter
-					</button>
-				</div>
-				<div class="col-md-1 justify-content-end">
-					<div class="dropdown">
-						<button type="button" class="dropdown-toggle bs-placeholder btn btn-primary btn-round btn-block" data-toggle="dropdown" role="button" aria-expanded="false">
-							<span class="filter-option pull-left">Sortir</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span>
-							<div class="ripple-container"></div>
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">Nama</a>
-							<a class="dropdown-item" href="#">Terakhir online</a>
-							<a class="dropdown-item" href="#">Pengguna baru</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-2 ml-auto">
-					<div class="card card-plain card-form-horizontal">
-						<div class="card-body">
-							<form method="" action="">
-								<div class="row">
-									<div class="col-md-10">
-										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Cari Pengguna">
-										</div>
-									</div>
-									<div class="col-md-2 text-center">
-										<button type="submit" class="btn btn-primary btn-raised btn-fab btn-round">
-											<i class="material-icons">search</i>
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
+            <% include ../../partials/navbar/dashboardUserNavbar %>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
@@ -79,7 +24,7 @@
 							<div class="card-icon">
 								<i class="material-icons">assignment</i>
 							</div>
-							<h4 class="card-title">Semua Pengguna</h4>
+							<h4 class="card-title">Pengguna Dokter</h4>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -88,8 +33,9 @@
 										<tr>
 											<th class="text-center">#</th>
 											<th>Nama</th>
-											<th>Tipe Pengguna</th>
-											<th>Email</th>
+											<th>Spesialis</th>
+											<th>Reputasi</th>
+											<th>Lokasi</th>
 											<th class="text-right">Log-in Terakhir</th>
 											<th class="text-right">Aksi</th>
 										</tr>
@@ -98,6 +44,7 @@
 										<tr>
 											<td class="text-center">0</td>
 											<td>Tambah Pengguna Baru</td>
+											<td>n/a</td>
 											<td>n/a</td>
 											<td>n/a</td>
 											<td class="text-right">n/a</td>
@@ -110,7 +57,8 @@
 										<tr>
 											<td class="text-center">1</td>
 											<td>Andrew Mike</td>
-											<td>Dokter, Admin</td>
+											<td>Mata, Umum</td>
+											<td>3.8/5</td>
 											<td>Jakarta</td>
 											<td class="text-right">2 jam lalu</td>
 											<td class="td-actions text-right">
@@ -132,7 +80,8 @@
 											<td class="text-center">2</td>
 											<td>Riziek Shihab</td>
 											<td>Pasien</td>
-											<td>Jakarta</td>
+											<td>4.2/5</td>
+											<td>Bandung</td>
 											<td class="text-right">2 jam lalu</td>
 											<td class="td-actions text-right">
 												<button type="button" rel="tooltip" class="btn btn-info btn-round">
@@ -153,7 +102,8 @@
 											<td class="text-center">3</td>
 											<td>Vladimir Putin</td>
 											<td>Dokter, Pasien</td>
-											<td>Jakarta</td>
+											<td>4.5/5</td>
+											<td>Surabaya</td>
 											<td class="text-right">2 jam lalu</td>
 											<td class="td-actions text-right">
 												<button type="button" rel="tooltip" class="btn btn-info btn-round">

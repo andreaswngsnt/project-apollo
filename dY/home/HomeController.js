@@ -45,14 +45,14 @@ router.get("/admin", function(req, res) {
 router.get('/admin/artikel/index', function (req, res) {
     Article.find({}, function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("dashboard/artikel/index", {articles: articles});
+        res.status(200).render("dashboard/artikel/index", {articles: articles, page: "index"});
     })
 });
 
 router.get("/admin/artikel/user", function(req, res) {
 	Article.find({}, function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("dashboard/artikel/user", {articles: articles});
+        res.status(200).render("dashboard/artikel/user", {articles: articles, page: "index"});
     })
 });
 
