@@ -84,6 +84,10 @@ router.get('/admin/pengguna/admin', function (req, res) {
 	res.render("dashboard/pengguna/admin");
 });
 
+router.get('/admin/pengguna/id', function (req, res) {
+	res.render("dashboard/pengguna/show");
+});
+
 router.get("/contoh", function(req, res) {
 	res.render("artikel/contoh");
 });
