@@ -10764,8 +10764,10 @@ fieldset[disabled] .form-check .form-check-input,
 }
 
 .card-testimonial .card-avatar img, .card-profile .card-avatar img {
-  width: 100%;
-  height: auto;
+  position: relative;
+  left: -25%;
+  width: auto;
+  height: 100%;
 }
 
 .card-testimonial .card-body + .card-footer, .card-profile .card-body + .card-footer {
@@ -10819,8 +10821,10 @@ fieldset[disabled] .form-check .form-check-input,
 }
 
 .card-profile .card-avatar {
-  max-width: 130px;
-  max-height: 130px;
+  width: 130px;
+  height: 130px;
+  position: relative;
+  overflow: hidden;
 }
 
 .card-blog {

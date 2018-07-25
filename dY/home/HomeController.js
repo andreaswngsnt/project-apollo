@@ -45,14 +45,14 @@ router.get("/admin", function(req, res) {
 router.get('/admin/artikel/index', function (req, res) {
     Article.find({}, function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("dashboard/artikel/index", {articles: articles});
+        res.status(200).render("dashboard/artikel/index", {articles: articles, page: "index"});
     })
 });
 
 router.get("/admin/artikel/user", function(req, res) {
 	Article.find({}, function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("dashboard/artikel/user", {articles: articles});
+        res.status(200).render("dashboard/artikel/user", {articles: articles, page: "index"});
     })
 });
 
@@ -82,6 +82,10 @@ router.get('/admin/pengguna/pasien', function (req, res) {
 
 router.get('/admin/pengguna/admin', function (req, res) {
 	res.render("dashboard/pengguna/admin");
+});
+
+router.get('/admin/pengguna/id', function (req, res) {
+	res.render("dashboard/pengguna/show");
 });
 
 router.get("/contoh", function(req, res) {
