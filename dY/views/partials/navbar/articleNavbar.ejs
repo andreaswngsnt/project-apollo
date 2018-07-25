@@ -1,14 +1,10 @@
 <!-- Nav -->
 <div class="row d-flex align-items-center">
-	<div class="col-md-8">
+	<div class="col-md-8 d-inline-flex align-items-center">
+		<a class="btn btn-fab btn-primary btn-round"  href="/artikel">
+			<i class="material-icons">home</i>
+		</a>
 		<ul class="nav nav-pills nav-pills-primary">
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "home"){ %>
-						active
-					<% } %>
-				" href="/artikel">Beranda</a>
-			</li>
 			<li class="nav-item">
 				<a class="nav-link
 					<% if(page === "index"){ %>
@@ -44,9 +40,44 @@
 					<% } %>
 				" href="/artikel/index">Diet</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link
+					<% if(page === "diabetes"){ %>
+						active
+					<% } %>
+				" href="/artikel/index">Diabetes</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link
+					<% if(page === "kecantikan"){ %>
+						active
+					<% } %>
+				" href="/artikel/index">Kecantikan</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link
+					<% if(page === "kehamilan"){ %>
+						active
+					<% } %>
+				" href="/artikel/index">Kehamilan</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link
+					<% if(page === "mata"){ %>
+						active
+					<% } %>
+				" href="/artikel/index">Mata</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link
+					<% if(page === "fitness"){ %>
+						active
+					<% } %>
+				" href="/artikel/index">Fitness</a>
+			</li>
 		</ul>
 	</div>
-	<div class="col-md-4 ml-auto">
+	<div class="col-md-3 ml-auto">
 		<div class="card card-plain card-form-horizontal">
 			<div class="card-body">
 				<form method="" action="">
