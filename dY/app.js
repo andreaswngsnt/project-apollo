@@ -14,6 +14,8 @@ var db = require('./db');
 
 var HomeController = require('./home/HomeController');
 var ArticleController = require('./article/ArticleController');
+var ArticleCategoryController = require('./article/ArticleCategoryController');
+var ArticleTagController = require('./article/ArticleTagController');
 var LocationController = require('./location/LocationController');
 var PatientRegistrationController = require('./patientRegistration/PatientRegistrationController');
 ////YOSBEH.1.1[Z]
@@ -35,6 +37,8 @@ app.use(methodOverride('_method'));
 //YOSBEH.2.1[A]
 app.use('/', HomeController);
 app.use('/artikel', ArticleController);
+app.use('/kategoriArtikel', ArticleCategoryController);
+app.use('/tagArtikel', ArticleTagController);
 app.use('/locations', LocationController);
 app.use('/patientRegistrations', PatientRegistrationController);
 ////YOSBEH.2.1[Z]
