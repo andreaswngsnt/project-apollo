@@ -51,6 +51,25 @@
                                         </div>
                                         <input type="password" class="form-control" placeholder="Ulangi password" required>
                                     </div>
+									<div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">wc</i>
+                                            </span>
+                                        </div>
+                                        <select class="form-control" data-size="2" data-style="btn btn-info btn-round" required>
+											<option value="male">Laki-laki</option>
+											<option value="female">Perempuan</option>
+										</select>
+                                    </div>
+									<div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">cake</i>
+                                            </span>
+                                        </div>
+                                        <input type="input" class="form-control" placeholder="Tanggal Lahir (HH/BB/TTTT)" required>
+                                    </div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -68,65 +87,6 @@
                         </div>
                     </div>
                 </div>
-                <footer class="footer">
-    		        <div class="col-12 ml-auto mr-auto">
-    		            <nav class="float-left">
-            				<ul>
-            					<li>
-            						<a href="/tentang">
-            							Tentang Kami
-            						</a>
-            					</li>
-            					<li>
-            						<a href="#creative">
-            							Blog
-            						</a>
-            					</li>
-            					<li>
-            						<a href="/login">
-            							Admin
-            						</a>
-            					</li>
-            				</ul>
-            			</nav>
-            			<div class="copyright float-right">
-            				&copy;
-            				<script>
-            					document.write(new Date().getFullYear())
-            				</script>, PT dokYAY Sejahtera.
-            			</div>
-    		        </div>
-        		</footer>
-            </div>
-        </div>
-
-		<!--   Core JS Files   -->
-		<script src="/assets/js/core/jquery.min.js"></script>
-		<script src="/assets/js/core/popper.min.js"></script>
-		<script src="/assets/js/bootstrap-material-design.js"></script>
-
-		<!-- Plugin for Date Time Picker and Full Calendar Plugin-->
-		<script src="/assets/js/plugins/moment.min.js"></script>
-
-		<!-- Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-		<script src="/assets/js/plugins/bootstrap-selectpicker.js"></script>
-
-		<!-- Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
-		<script src="/assets/js/plugins/bootstrap-tagsinput.js"></script>
-
-		<!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-		<script src="/assets/js/plugins/jasny-bootstrap.min.js"></script>
-
-		<!-- Plugin for Small Gallery in Product Page -->
-		<script src="/assets/js/plugins/jquery.flexisel.js"></script>
-
-		<!-- Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-		<script src="/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
-
-		<!-- Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-		<script src="/assets/js/plugins/nouislider.min.js"></script>
-
-		<!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
-		<script src="/assets/js/material-kit.js?v=2.0.0"></script>
-	</body>
-</html>
+			</div>
+		</div>
+<% include ./partials/footer %>

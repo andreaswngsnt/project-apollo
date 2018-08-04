@@ -6,6 +6,7 @@ router.use(bodyParser.json());
 
 // TEMPORARY
 var Article = require('../article/Article');
+var User = require('../patientRegistration/User');
 // ENDS HERE
 
 
@@ -69,7 +70,10 @@ router.get("/admin/artikel/new", function(req, res) {
 });
 
 router.get('/admin/pengguna/index', function (req, res) {
-	res.render("dashboard/pengguna/index");
+	User.find({}, function (err, users) {
+        if (err) return res.status(500).send("There was a problem finding the users.");
+        res.status(200).render("dashboard/pengguna/index", {users: users, page: "index"});
+    })
 });
 
 router.get('/admin/pengguna/dokter', function (req, res) {
@@ -86,6 +90,10 @@ router.get('/admin/pengguna/admin', function (req, res) {
 
 router.get('/admin/pengguna/id', function (req, res) {
 	res.render("dashboard/pengguna/show");
+});
+
+router.get('/admin/pengguna/new', function (req, res) {
+	res.render("dashboard/pengguna/new");
 });
 
 router.get("/contoh", function(req, res) {
