@@ -82,6 +82,18 @@
 												<% include ../../partials/buttonSet/pengguna %>
 											</td>
 										</tr>
+										<% for(var i = 0; i < users.length; i++) { %>
+											<tr>
+												<td class="text-center"><%= i + 1 %></td>
+												<td>Vladimir Putin</td>
+												<td>Dokter, Pasien</td>
+												<td><%= users[i].username %></td>
+												<td class="text-right"><%= users[i].password %></td>
+												<td class="td-actions text-right">
+													<% include ../../partials/buttonSet/pengguna %>
+												</td>
+											</tr>
+										<% } %>
 									</tbody>
 								</table>
 							</div>
