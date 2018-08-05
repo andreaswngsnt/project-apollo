@@ -5,6 +5,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
 var Article = require('./Article');
+var ArticleCategory = require('./ArticleCategory');
 
 //CREATE
 router.post('/', function (req, res) {
@@ -30,41 +31,35 @@ router.post('/', function (req, res) {
 });
 
 //READ ALL
-// router.get('/', function (req, res) {
-//     Article.find({}, function (err, articles) {
-//         if (err) return res.status(500).send("There was a problem finding the articles.");
-//         res.status(200).send(articles);
-//     })
-// });
 router.get('/', function (req, res) {
-    Article.find({}, function (err, articles) {
+    Article.find({}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        //res.status(200).render("artikel/home", {articles: articles, page: "home"});
-        res.status(200).send(articles);
-    })
+		ArticleCategory.find({}, function(err, foundCategories) {
+			if (err) return res.status(500).send("There was a problem finding the article category.");
+			res.status(200).render("artikel/home", {articles: foundArticles, categories: foundCategories, page: "home"});
+			//res.status(200).send(articles);
+		});
+    });
 });
 
 router.get('/index', function (req, res) {
-    Article.find({}, function (err, articles) {
+    Article.find({}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("artikel/index", {articles: articles, page: "index"});
-    })
+		ArticleCategory.find({}, function(err, foundCategories) {
+			if (err) return res.status(500).send("There was a problem finding the article category.");
+			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, page: "index"});
+			//res.status(200).send(articles);
+		});
+    });
 });
 
 //READ ONE
-// router.get('/:id', function (req, res) {
-//     Article.findById(req.params.id, function (err, article) {
-//         if (err) return res.status(500).send("There was a problem finding the article.");
-//         if (!article) return res.status(404).send("No article found.");
-//         res.status(200).send(article);
-//     });
-// });
 router.get('/:id', function (req, res) {
-    Article.findById(req.params.id, function (err, article) {
+    Article.findById(req.params.id).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticle) {
         if (err) return res.status(500).send("There was a problem finding the article.");
-        if (!article) return res.status(404).send("No article found.");
-        //res.status(200).render("artikel/show", {article: article, page: "show"});
-        res.status(200).send(article);
+        if (!foundArticle) return res.status(404).send("No article found.");
+		// res.status(200).send(foundArticle + " " + foundCategory);
+		res.status(200).render("artikel/show", {article: foundArticle, page: "show"});
     });
 });
 

@@ -4,10 +4,10 @@ var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
-// TEMPORARY
+
 var Article = require('../article/Article');
+var ArticleCategory = require('../article/ArticleCategory');
 var User = require('../patientRegistration/User');
-// ENDS HERE
 
 
 // Home Routes
@@ -16,7 +16,10 @@ router.get("/", function(req, res) {
 });
 
 router.get("/home", function(req, res) {
-    res.render("home");
+	Article.find({}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
+        if (err) return res.status(500).send("There was a problem finding the articles.");
+		res.status(200).render("home", {articles: foundArticles, page: "home"});
+    });
 });
 
 router.get("/daftarpraktik", function(req, res) {
@@ -27,7 +30,7 @@ router.get("/tentang", function(req, res) {
     res.render("tentang");
 });
 
-// TEMPORARY - REMOVE IF NEEDED
+
 router.get("/login", function(req, res) {
 	res.render("login");
 });
@@ -35,26 +38,28 @@ router.get("/login", function(req, res) {
 router.get("/register", function(req, res) {
 	res.render("register");
 });
-// EDIT ENDS HERE
 
 
-// TEMPORARY - FOR THE ADMIN
+// Admin Routes
 router.get("/admin", function(req, res) {
 	res.render("dashboard/admin");
 });
 
 router.get('/admin/artikel/index', function (req, res) {
-    Article.find({}, function (err, articles) {
+    Article.find({}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("dashboard/artikel/index", {articles: articles, page: "index"});
-    })
+		ArticleCategory.find({}, function (err, categories) {
+			if (err) return res.status(500).send("There was a problem finding the article categories.");
+			res.status(200).render("dashboard/artikel/index", {articles: articles, categories: categories, page: "index"});
+		});
+    });
 });
 
-router.get("/admin/artikel/user", function(req, res) {
-	Article.find({}, function (err, articles) {
+router.get('/admin/artikel/user', function (req, res) {
+    Article.find({}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, articles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
-        res.status(200).render("dashboard/artikel/user", {articles: articles, page: "index"});
-    })
+		res.status(200).render("dashboard/artikel/user", {articles: articles, page: "index"});
+    });
 });
 
 router.get('/admin/artikel/:id/edit', function (req, res) {
@@ -99,6 +104,6 @@ router.get('/admin/pengguna/new', function (req, res) {
 router.get("/contoh", function(req, res) {
 	res.render("artikel/contoh");
 });
-// ADDITION ADDS HERE
+
 
 module.exports = router;
