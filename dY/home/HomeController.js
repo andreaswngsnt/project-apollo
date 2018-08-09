@@ -7,6 +7,7 @@ router.use(bodyParser.json());
 
 var Article = require('../article/Article');
 var ArticleCategory = require('../article/ArticleCategory');
+var ArticleTag = require('../article/ArticleTag');
 var User = require('../patientRegistration/User');
 
 
@@ -71,7 +72,13 @@ router.get('/admin/artikel/:id/edit', function (req, res) {
 });
 
 router.get("/admin/artikel/new", function(req, res) {
-	res.render("dashboard/artikel/new");
+	ArticleCategory.find({}, function (err, foundCategories) {
+		if (err) return res.status(500).send("There was a problem finding the article categories.");
+		ArticleTag.find({}, function (err, foundTags) {
+			if (err) return res.status(500).send("There was a problem finding the article tags.");
+			res.status(200).render("dashboard/artikel/new", {categories: foundCategories, tags: foundTags, page: "new"});
+		});
+	});
 });
 
 router.get('/admin/pengguna/index', function (req, res) {

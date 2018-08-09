@@ -6,28 +6,51 @@ router.use(bodyParser.json());
 
 var Article = require('./Article');
 var ArticleCategory = require('./ArticleCategory');
+var ArticleTag = require('./ArticleTag');
 
 //CREATE
 router.post('/', function (req, res) {
-    Article.create({
-        created: new Date(),
+	function findTagsId(tagNames) {
+		var tagNamesArray = tagNames.split(",");
+		var tagIdArray = [];
+		for(var i = 0; i < tagNamesArray.length; i ++) {
+			ArticleTag.find({name: tagNamesArray[i]}, function(err, foundTag) {
+				if (err) return res.status(500).send(err);
+				tagIdArray.push(String(foundTag[0]._id));
+				console.log(tagIdArray);
+			});
+			console.log("tagIdArray: " + tagIdArray.length);
+			console.log("tagNamesArray: " + tagNamesArray.length);
+			if (tagIdArray.length == tagNamesArray.length) {
+				console.log("THE SHIZ:" + tagIdArray);
+				return tagIdArray;
+			}
+		}
+	}
+	
+	var foundTagIds = findTagsId(req.body.l_article_tags_id);
+	console.log("Found Tags:" + foundTagIds);
+	
+	var newArticle = {
+		created: new Date(),
         updated: new Date(),
-        d_authors_id: req.body.d_authors_id,
+        // d_authors_id: req.body.d_authors_id,
         l_article_categories_id: req.body.l_article_categories_id,
-        l_article_tags_id: req.body.l_article_tags_id,
+        l_article_tags_id: foundTagIds,
         title: req.body.title,
         body: req.body.body,
         pictures: req.body.pictures,
         description: req.body.description
-    },
-    function (err, article) {
-        if (err) return res.status(500).send("There was a problem adding the information to the database.");
-		
-		//TEMPORARY - REMOVE IF NEEDED
-		//res.redirect('/admin/artikel/index');
-        res.status(200).send(article);
-		// EDIT ENDS HERE
-    });
+	}
+	
+	Article.create(newArticle, function (err, article) {
+		if (err) {
+			return res.status(500).send(err)
+		} else {
+			//res.redirect('/admin/artikel/index');
+			res.status(200).send(article);
+		}
+	});
 });
 
 //READ ALL
