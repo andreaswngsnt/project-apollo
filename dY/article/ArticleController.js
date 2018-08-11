@@ -9,46 +9,51 @@ var ArticleCategory = require('./ArticleCategory');
 var ArticleTag = require('./ArticleTag');
 
 //CREATE
-router.post('/', function (req, res) {
-	function findTagsId(tagNames) {
-		var tagNamesArray = tagNames.split(",");
-		var tagIdArray = [];
-		for(var i = 0; i < tagNamesArray.length; i ++) {
-			ArticleTag.find({name: tagNamesArray[i]}, function(err, foundTag) {
-				if (err) return res.status(500).send(err);
-				tagIdArray.push(String(foundTag[0]._id));
-				console.log(tagIdArray);
-			});
-			console.log("tagIdArray: " + tagIdArray.length);
-			console.log("tagNamesArray: " + tagNamesArray.length);
-			if (tagIdArray.length == tagNamesArray.length) {
-				console.log("THE SHIZ:" + tagIdArray);
-				return tagIdArray;
-			}
-		}
-	}
-	
-	var foundTagIds = findTagsId(req.body.l_article_tags_id);
-	console.log("Found Tags:" + foundTagIds);
-	
-	var newArticle = {
+router.post('/', function (req, res) {	
+	let newArticle = {
 		created: new Date(),
         updated: new Date(),
         // d_authors_id: req.body.d_authors_id,
         l_article_categories_id: req.body.l_article_categories_id,
-        l_article_tags_id: foundTagIds,
+        l_article_tags_id: [],
         title: req.body.title,
         body: req.body.body,
         pictures: req.body.pictures,
         description: req.body.description
 	}
 	
-	Article.create(newArticle, function (err, article) {
+	Article.create(newArticle, function (err, postedArticle) {
 		if (err) {
 			return res.status(500).send(err)
 		} else {
-			//res.redirect('/admin/artikel/index');
-			res.status(200).send(article);
+			let tagNamesArray = req.body.l_article_tags_id.split(",");
+			for(let i = 0; i < tagNamesArray.length; i ++) {
+				ArticleTag.find({name: tagNamesArray[i]}, function(err, foundTag) {
+					if (foundTag[0] == null) {
+						ArticleTag.create({
+							name: tagNamesArray[i],
+							created: new Date(),
+							updated: new Date()
+						}, function(err, newTag) {
+							postedArticle.l_article_tags_id.push(newTag);
+							saveChanges();
+						});
+					} else {
+						postedArticle.l_article_tags_id.push(foundTag[0]);
+						saveChanges();
+					}
+					
+					function saveChanges() {
+						if(postedArticle.l_article_tags_id.length == tagNamesArray.length) {
+							postedArticle.save(function(err){
+								if (err) res.status(500).send(err);
+								//res.redirect('/admin/artikel/index');
+								res.status(200).send(postedArticle);
+							});
+						}
+					}
+				});
+			}
 		}
 	});
 });
@@ -97,10 +102,50 @@ router.delete('/:id', function (req, res) {
 
 //UPDATE ONE
 router.put('/:id', function (req, res) {
-    Article.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, article) {
-        if (err) return res.status(500).send("There was a problem updating the article.");
-        //res.status(200).redirect("back");
-        res.status(200).send(article);
+	let updatedArticle = {
+        updated: new Date(),
+        // d_authors_id: req.body.d_authors_id,
+        l_article_categories_id: req.body.l_article_categories_id,
+        l_article_tags_id: [],
+        title: req.body.title,
+        body: req.body.body,
+        pictures: req.body.pictures,
+        description: req.body.description
+	}
+	
+    Article.findByIdAndUpdate(req.params.id, updatedArticle, {new: true}, function (err, article) {
+        if (err) {
+			return res.status(500).send("There was a problem updating the article.")
+		} else {
+			let tagNamesArray = req.body.l_article_tags_id.split(",");
+			for(let i = 0; i < tagNamesArray.length; i ++) {
+				ArticleTag.find({name: tagNamesArray[i]}, function(err, foundTag) {
+					if (foundTag[0] == null) {
+						ArticleTag.create({
+							name: tagNamesArray[i],
+							created: new Date(),
+							updated: new Date()
+						}, function(err, newTag) {
+							article.l_article_tags_id.push(newTag);
+							saveChanges();
+						});
+					} else {
+						article.l_article_tags_id.push(foundTag[0]);
+						saveChanges();
+					}
+					
+					function saveChanges() {
+						if(article.l_article_tags_id.length == tagNamesArray.length) {
+							article.save(function(err){
+								if (err) res.status(500).send(err);
+								//res.redirect('/admin/artikel/index');
+								res.status(200).send(article);
+							});
+						}
+					}
+				});
+			}
+		}
     });
 });
 

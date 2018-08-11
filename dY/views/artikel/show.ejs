@@ -30,7 +30,7 @@
 						<div class="col-md-6">
 							<div class="blog-tags">
 								Tags:
-								<% if(article.l_article_tags_id && article.l_article_tags_id > 0) { %>
+								<% if(article.l_article_tags_id && article.l_article_tags_id.length > 0) { %>
 									<% for(var i = 0; i < article.l_article_tags_id.length; i ++) { %>
 										<span class="badge badge-primary badge-pill"><%= article.l_article_tags_id[i].name %></span>
 									<% } %>

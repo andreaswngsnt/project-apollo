@@ -64,10 +64,12 @@ router.get('/admin/artikel/user', function (req, res) {
 });
 
 router.get('/admin/artikel/:id/edit', function (req, res) {
-    Article.findById(req.params.id, function (err, article) {
+    Article.findById(req.params.id).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, article) {
         if (err) return res.status(500).send("There was a problem finding the article.");
-        if (!article) return res.status(404).send("No article found.");
-        res.status(200).render("dashboard/artikel/edit", {article: article});
+		ArticleCategory.find({}, function (err, categories) {
+			if (err) return res.status(500).send("There was a problem finding the article categories.");
+			res.status(200).render("dashboard/artikel/edit", {article: article, categories: categories});
+		});
     });
 });
 
