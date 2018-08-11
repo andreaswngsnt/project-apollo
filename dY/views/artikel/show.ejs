@@ -31,8 +31,12 @@
 							<div class="blog-tags">
 								Tags:
 								<% if(article.l_article_tags_id && article.l_article_tags_id.length > 0) { %>
-									<% for(var i = 0; i < article.l_article_tags_id.length; i ++) { %>
-										<span class="badge badge-primary badge-pill"><%= article.l_article_tags_id[i].name %></span>
+									<% for(let i = 0; i < article.l_article_tags_id.length; i ++) { %>
+										<a href="/artikel/tags/<%= article.l_article_tags_id[i]._id %>">
+											<span class="badge badge-primary badge-pill">
+												<%= article.l_article_tags_id[i].name %>
+											</span>
+										</a>
 									<% } %>
 								<% } else { %>
 									<span class="badge badge-primary badge-pill">No Tags</span>

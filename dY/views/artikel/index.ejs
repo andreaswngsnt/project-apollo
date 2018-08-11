@@ -17,7 +17,15 @@
 				<% include ../partials/navbar/articleNavbar %>
 				<div class="row">
 					<div class="col-md-8 ml-auto mr-auto text-center">
-						<h3 class="title">Artikel Terbaru</h3>
+						<h3 class="title">
+							<% if(typeof tag !== "undefined") { %>
+								Artikel terbaru untuk "<%= tag[0].name %>"
+							<% } else if(typeof category !== "undefined" && category != "index" && category != "home")  { %>
+								Artikel <%= articles[0].l_article_categories_id.name %> Terbaru
+							<% } else { %>
+								Semua Artikel Terbaru
+							<% } %>
+						</h3>
 					</div>
 				</div>
 				<div class="row">

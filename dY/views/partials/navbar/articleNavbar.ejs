@@ -7,19 +7,19 @@
 		<ul class="nav nav-pills nav-pills-primary">
 			<li class="nav-item">
 				<a class="nav-link
-					<% if(page === "index"){ %>
+					<% if(typeof category !== "undefined" && category === "index"){ %>
 						active
 					<% } %>
 				" href="/artikel/index">Semua</a>
 			</li>
-			<% if(categories) { %>
-				<% for(var i = 0; i < categories.length; i ++) { %>
+			<% if(typeof categories !== "undefined") { %>
+				<% for(let i = 0; i < categories.length; i ++) { %>
 					<li class="nav-item">
 						<a class="nav-link
-							<% if(page === categories[i].name){ %>
+							<% if(typeof category !== "undefined" && category == categories[i]._id){ %>
 								active
 							<% } %>
-						" href="/artikel/<%= categories[i].name %>"><%= categories[i].name %></a>
+						" href="/artikel/categories/<%= categories[i]._id %>"><%= categories[i].name %></a>
 					</li>
 				<% } %>
 			<% } %>

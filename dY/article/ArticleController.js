@@ -64,7 +64,7 @@ router.get('/', function (req, res) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
-			res.status(200).render("artikel/home", {articles: foundArticles, categories: foundCategories, page: "home"});
+			res.status(200).render("artikel/home", {articles: foundArticles, categories: foundCategories, category: "home"});
 			//res.status(200).send(articles);
 		});
     });
@@ -75,7 +75,32 @@ router.get('/index', function (req, res) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
-			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, page: "index"});
+			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: "index"});
+			//res.status(200).send(articles);
+		});
+    });
+});
+
+router.get('/tags/:tag', function (req, res) {
+    Article.find({l_article_tags_id: req.params.tag}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
+        if (err) return res.status(500).send("There was a problem finding the articles.");
+		ArticleCategory.find({}, function(err, foundCategories) {
+			if (err) return res.status(500).send("There was a problem finding the article category.");
+			ArticleTag.find({_id: req.params.tag}, function(err, foundTag) {
+				if (err) return res.status(500).send("There was a problem finding the article tag.");
+				res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, tag: foundTag});
+				//res.status(200).send(articles);
+			});
+		});
+    });
+});
+
+router.get('/categories/:category', function (req, res) {
+    Article.find({l_article_categories_id: req.params.category}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
+        if (err) return res.status(500).send("There was a problem finding the articles.");
+		ArticleCategory.find({}, function(err, foundCategories) {
+			if (err) return res.status(500).send("There was a problem finding the article category.");
+			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: req.params.category});
 			//res.status(200).send(articles);
 		});
     });
