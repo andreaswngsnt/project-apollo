@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-router.use(bodyParser.urlencoded({extended: true}));
-router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
+	limit: '50mb',
+	extended: true
+}));
+router.use(bodyParser.json({
+	limit: '50mb'
+}));
 
 var Article = require('./Article');
 var ArticleCategory = require('./ArticleCategory');
@@ -81,6 +86,8 @@ router.get('/index', function (req, res) {
     });
 });
 
+
+// SHOW ARTICLES WITH A PARTICULAR TAG
 router.get('/tags/:tag', function (req, res) {
     Article.find({l_article_tags_id: req.params.tag}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
@@ -95,6 +102,8 @@ router.get('/tags/:tag', function (req, res) {
     });
 });
 
+
+// SHOW ARTICLES WITH A PARTICULAR CATEGORY
 router.get('/categories/:category', function (req, res) {
     Article.find({l_article_categories_id: req.params.category}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticles) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
