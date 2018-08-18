@@ -16,13 +16,14 @@ router.post('/', function (req, res) {
     ArticleCategory.create({
         created: new Date(),
         updated: new Date(),
-        name: req.body.name
+        name: req.body.categoryName
     },
     function (err, articleCategory) {
         if (err) return res.status(500).send("There was a problem adding the information to the database.");
+		console.log(articleCategory);
 		
 		//TEMPORARY - REMOVE IF NEEDED
-		res.redirect('/admin/kategoriArtikel/index');
+		res.redirect('/admin/artikel/categoryTag');
         //res.status(200).send(articleCategory);
 		//EDIT ENDS HERE
     });

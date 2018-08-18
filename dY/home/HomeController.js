@@ -51,7 +51,27 @@ router.get('/admin/artikel/index', function (req, res) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
 		ArticleCategory.find({}, function (err, categories) {
 			if (err) return res.status(500).send("There was a problem finding the article categories.");
-			res.status(200).render("dashboard/artikel/index", {articles: articles, categories: categories, page: "index"});
+			res.status(200).render("dashboard/artikel/index", {articles: articles, categories: categories, category: "index"});
+		});
+    });
+});
+
+router.get('/admin/artikel/categories/:category', function (req, res) {
+    Article.find({l_article_categories_id: req.params.category}).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, articles) {
+        if (err) return res.status(500).send("There was a problem finding the articles.");
+		ArticleCategory.find({}, function (err, categories) {
+			if (err) return res.status(500).send("There was a problem finding the article categories.");
+			res.status(200).render("dashboard/artikel/index", {articles: articles, categories: categories, category: req.params.category});
+		});
+    });
+});
+
+router.get('/admin/artikel/categoryTag', function (req, res) {
+    ArticleCategory.find({}, function (err, foundCategories) {
+        if (err) return res.status(500).send("There was a problem finding the article categories.");
+		ArticleTag.find({}, function (err, foundTags) {
+			if (err) return res.status(500).send("There was a problem finding the article tags.");
+			res.status(200).render("dashboard/artikel/editCategoryTag", {categories: foundCategories, tags: foundTags});
 		});
     });
 });
@@ -84,7 +104,7 @@ router.get("/admin/artikel/new", function(req, res) {
 });
 
 router.get('/admin/pengguna/index', function (req, res) {
-	User.find({}, function (err, users) {
+	User.find({}).populate("m_parties_id").exec(function (err, users) {
         if (err) return res.status(500).send("There was a problem finding the users.");
         res.status(200).render("dashboard/pengguna/index", {users: users, page: "index"});
     })
@@ -114,5 +134,11 @@ router.get("/contoh", function(req, res) {
 	res.render("artikel/contoh");
 });
 
+router.get("/test", function(req, res) {
+	User.find({},function (err, foundUsers) {
+        if (err) return res.status(500).send("There was a problem finding the categories.");
+        res.json(foundUsers);
+    })
+});
 
 module.exports = router;
