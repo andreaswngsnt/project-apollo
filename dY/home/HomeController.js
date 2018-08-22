@@ -67,13 +67,7 @@ router.get('/admin/artikel/categories/:category', function (req, res) {
 });
 
 router.get('/admin/artikel/categoryTag', function (req, res) {
-    ArticleCategory.find({}, function (err, foundCategories) {
-        if (err) return res.status(500).send("There was a problem finding the article categories.");
-		ArticleTag.find({}, function (err, foundTags) {
-			if (err) return res.status(500).send("There was a problem finding the article tags.");
-			res.status(200).render("dashboard/artikel/editCategoryTag", {categories: foundCategories, tags: foundTags});
-		});
-    });
+	res.status(200).render("dashboard/artikel/editCategoryTag");
 });
 
 router.get('/admin/artikel/user', function (req, res) {

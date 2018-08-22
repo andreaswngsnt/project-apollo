@@ -23,7 +23,7 @@
 							<div class="card-icon">
 								<i class="material-icons">assignment</i>
 							</div>
-							<h4 class='card-title' id='judul'>Semua Kategori <%= categories %></h4>
+							<h4 class='card-title'>Semua Kategori</h4>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -37,29 +37,20 @@
 											<th class="text-right">Aksi</th>
 										</tr>
 									</thead>
-									<tbody id='categoryTable'>
+									<tbody>
 										<tr>
 											<td class='text-center'>0</td>
 											<td>Tambah Kategori Baru</td>
 											<td>n/a</td>
 											<td class='text-right'>n/a</td>
 											<td class='td-actions text-right'>
-												<button class='btn btn-primary btn-round' onclick=dashboard.showSwal('addCategory')>
+												<button id='addCategory' class='btn btn-primary btn-round'>
 													<i class='material-icons'>add</i>
 												</button>
 											</td>
 										</tr>
-										<% for(let i = 0; i < categories.length; i++) { %>
-											<tr>
-												<td class='text-center'><%= i + 1 %></td>
-												<td><%= categories[i].name %></td>
-												<td><%= categories[i].created %></td>
-												<td class='text-right'><%= categories[i].updated %></td>
-												<td class='td-actions text-right'>
-													<% include ../../partials/buttonSet/categoryTag %>
-												</td>
-											</tr>
-										<% } %>
+									</tbody>
+									<tbody id="categoryTable">
 									</tbody>
 								</table>
 							</div>
@@ -91,22 +82,13 @@
 											<td>n/a</td>
 											<td class="text-right">n/a</td>
 											<td class="td-actions text-right">
-												<button class="btn btn-primary btn-round" onclick=dashboard.showSwal('addCategory')>
+												<button id='addTag' class="btn btn-primary btn-round">
 													<i class="material-icons">add</i>
 												</button>
 											</td>
 										</tr>
-										<% for(let i = 0; i < tags.length; i++) { %>
-											<tr>
-												<td class="text-center"><%= i + 1 %></td>
-												<td><%= tags[i].name %></td>
-												<td><%= tags[i].created %></td>
-												<td class="text-right"><%= tags[i].updated %></td>
-												<td class="td-actions text-right">
-													<% include ../../partials/buttonSet/categoryTag %>
-												</td>
-											</tr>
-										<% } %>
+									</tbody>
+									<tbody id="tagTable">
 									</tbody>
 								</table>
 							</div>
@@ -145,6 +127,6 @@
     </div>
 </div>
 
-<script src="/assets/js/dashboard.js"></script>
+<script src="/assets/js/editCategoryTag.js"></script>
 
 <% include ../../partials/footerDashboard %>
