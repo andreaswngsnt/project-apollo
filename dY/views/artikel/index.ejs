@@ -17,7 +17,15 @@
 				<% include ../partials/navbar/articleNavbar %>
 				<div class="row">
 					<div class="col-md-8 ml-auto mr-auto text-center">
-						<h3 class="title">Artikel Terbaru</h3>
+						<h3 class="title">
+							<% if(typeof tag !== "undefined") { %>
+								Artikel terbaru untuk "<%= tag[0].name %>"
+							<% } else if(typeof category !== "undefined" && category != "index" && category != "home")  { %>
+								Artikel <%= articles[0].l_article_categories_id.name %> Terbaru
+							<% } else { %>
+								Semua Artikel Terbaru
+							<% } %>
+						</h3>
 					</div>
 				</div>
 				<div class="row">
@@ -34,17 +42,27 @@
 											</div>
 										</div>
 										<div class="col-md-8">
-											<h6 class="card-category text-info">Gejala</h6>
+											<h6 class="card-category text-info">
+												<% if(article.l_article_categories_id) { %>
+													<%= article.l_article_categories_id.name %>
+												<% } else  { %>
+													Uncategorized
+												<% } %>
+											</h6>
 											<h3 class="card-title">
 												<a href="/artikel/<%= article.id %>"><%= article.title %></a>
 											</h3>
-											<!-- <p class="card-description"> -->
-												<!-- <%= article.body.substring(0, 500) %>... -->
-											<!-- </p> -->
+											<p class="card-description">
+												<% if(article.description) { %>
+													<%= article.description %>
+												<% } else { %>
+													Baca artikel untuk tahu lebih lanjut
+												<% } %>
+											</p>
 											<a href="/artikel/<%= article.id %>">Baca lebih</a>
 											<p class="author">
 												oleh
-												<a href="/artikel/id">
+												<a href="/artikel/<%= article.id %>">
 													<strong><%= article.author %></strong>
 												</a>
 												, <%= article.created %>

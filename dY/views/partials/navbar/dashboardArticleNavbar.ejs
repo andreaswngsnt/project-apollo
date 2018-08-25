@@ -4,74 +4,22 @@
 		<ul class="nav nav-pills nav-pills-primary">
 			<li class="nav-item">
 				<a class="nav-link
-					<% if(page === "index"){ %>
+					<% if(typeof category !== "undefined" && category === "index"){ %>
 						active
 					<% } %>
-				" href="/artikel/index">Semua</a>
+				" href="/admin/artikel/index">Semua</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "jantung"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Jantung</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "kulit"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Kulit</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "anak"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Anak</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "diet"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Diet</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "diabetes"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Diabetes</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "kecantikan"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Kecantikan</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "kehamilan"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Kehamilan</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "mata"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Mata</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link
-					<% if(page === "fitness"){ %>
-						active
-					<% } %>
-				" href="/artikel/index">Fitness</a>
-			</li>
+			<% if(typeof categories !== "undefined") { %>
+				<% for(let i = 0; i < categories.length; i ++) { %>
+					<li class="nav-item">
+						<a class="nav-link
+							<% if(typeof category !== "undefined" && category == categories[i]._id){ %>
+								active
+							<% } %>
+						" href="/admin/artikel/categories/<%= categories[i]._id %>"><%= categories[i].name %></a>
+					</li>
+				<% } %>
+			<% } %>
 		</ul>
 	</div>
 	<div class="col-md-3 ml-auto">
