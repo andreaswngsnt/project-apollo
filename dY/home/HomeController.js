@@ -31,7 +31,6 @@ router.get("/tentang", function(req, res) {
     res.render("tentang");
 });
 
-
 router.get("/login", function(req, res) {
 	res.render("login");
 });
