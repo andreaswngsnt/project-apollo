@@ -23,22 +23,29 @@ router.get("/home", function(req, res) {
     });
 });
 
-router.get("/daftarpraktik", function(req, res) {
-    res.render("daftar");
+router.get("/ikut", function(req, res) {
+    res.render("ikut");
 });
 
 router.get("/tentang", function(req, res) {
     res.render("tentang");
 });
 
-router.get("/login", function(req, res) {
-	res.render("login");
+router.get("/loginumum", function(req, res) {
+	res.render("loginUmum");
 });
 
-router.get("/register", function(req, res) {
-	res.render("register");
+router.get("/registerumum", function(req, res) {
+	res.render("registerUmum");
 });
 
+router.get("/logindokter", function(req, res) {
+	res.render("loginDokter");
+});
+
+router.get("/registerdokter", function(req, res) {
+	res.render("registerDokter");
+});
 
 // Admin Routes
 router.get("/admin", function(req, res) {
