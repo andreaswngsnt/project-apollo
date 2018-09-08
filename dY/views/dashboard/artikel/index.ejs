@@ -34,10 +34,20 @@
 									</a>
 								</div>
 								<div class="card-body text-center">
-									<h6 class="card-category text-info">Gejala</h6>
+									<h6 class="card-category text-info">
+										<% if(article.l_article_categories_id) { %>
+											<%= article.l_article_categories_id.name %>
+										<% } else  { %>
+											Uncategorized
+										<% } %>
+									</h6>
 									<h3 class="card-title"><a href="/artikel/<%= article.id %>"><%= article.title %></a></h3>
 									<p class="card-description">
-										<%= article.body.substring(0, 500) %>... %>
+										<% if(article.description) { %>
+											<%= article.description %>
+										<% } else { %>
+											Baca artikel untuk tahu lebih lanjut
+										<% } %>
 									</p>
 									<p class="author">
 										oleh

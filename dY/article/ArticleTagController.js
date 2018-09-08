@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-router.use(bodyParser.urlencoded({extended: true}));
-router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
+	limit: '50mb',
+	extended: true
+}));
+router.use(bodyParser.json({
+	limit: '50mb'
+}));
 
 var ArticleTag = require('./ArticleTag');
 
@@ -11,31 +16,20 @@ router.post('/', function (req, res) {
     ArticleTag.create({
         created: new Date(),
         updated: new Date(),
-        name: req.body.name
-    },
-    function (err, articleTag) {
-        if (err) return res.status(500).send("There was a problem adding the information to the database.");
-		
-		//TEMPORARY - REMOVE IF NEEDED
-		//res.redirect('/admin/tagArtikel/index');
-        res.status(200).send(articleTag);
-		//EDIT ENDS HERE
+        name: req.body.tagName
+    }, function (err, newTag) {
+		if (err) return res.status(500).send("There was a problem adding the information to the database.");
+		res.json(newTag);
+        //res.status(200).send(newTag);
     });
 });
 
 //READ ALL
-// router.get('/', function (req, res) {
-//     ArticleTag.find({}, function (err, articles) {
-//         if (err) return res.status(500).send("There was a problem finding the articles.");
-//         res.status(200).send(articles);
-//     })
-// });
 router.get('/', function (req, res) {
-    ArticleTag.find({}, function (err, articleTags) {
-        if (err) return res.status(500).send("There was a problem finding the article tags.");
-        //res.status(200).render("tagArtikel/home", {articleTags: articleTags, page: "home"});
-        res.status(200).send(articleTags);
-    })
+	ArticleTag.find({}, function (err, foundTags) {
+		if (err) return res.status(500).send("There was a problem finding the article tags.");
+		res.json(foundTags);
+	})
 });
 
 router.get('/index', function (req, res) {
@@ -46,13 +40,6 @@ router.get('/index', function (req, res) {
 });
 
 //READ ONE
-// router.get('/:id', function (req, res) {
-//     ArticleTag.findById(req.params.id, function (err, article) {
-//         if (err) return res.status(500).send("There was a problem finding the article.");
-//         if (!article) return res.status(404).send("No article found.");
-//         res.status(200).send(article);
-//     });
-// });
 router.get('/:id', function (req, res) {
     ArticleTag.findById(req.params.id, function (err, articleTag) {
         if (err) return res.status(500).send("There was a problem finding the article tag.");
@@ -64,19 +51,22 @@ router.get('/:id', function (req, res) {
 
 //DELETE ONE
 router.delete('/:id', function (req, res) {
-    ArticleTag.findByIdAndRemove(req.params.id, function (err, articleTag) {
+    ArticleTag.findByIdAndRemove(req.params.id, function (err, deletedTag) {
         if (err) return res.status(500).send("There was a problem deleting the article tag.");
-        //res.status(200).redirect("back");
-        res.status(200).send("Article tag "+ articleTag.name +" was deleted.");
+		res.json(deletedTag);
+        // res.status(200).send("Article tag "+ articleTag.name +" was deleted.");
     });
 });
 
 //UPDATE ONE
 router.put('/:id', function (req, res) {
-    ArticleTag.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, articleTag) {
+	let updatedArticleTag = {
+        updated: new Date(),
+		name: req.body.tagName
+	}
+    ArticleTag.findByIdAndUpdate(req.params.id, updatedArticleTag, {new: true}, function (err, updatedTag) {
         if (err) return res.status(500).send("There was a problem updating the article tag.");
-        //res.status(200).redirect("back");
-        res.status(200).send(articleTag);
+        res.status(200).send(updatedTag);
     });
 });
 

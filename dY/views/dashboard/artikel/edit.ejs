@@ -30,26 +30,22 @@
                                 </div>
 								<div class="form-group">
                                     <label for="penulisArtikel">Penulis Artikel</label>
-                                    <input name="author" type="text" class="form-control" id="penulisArtikel" value="<%= article.author %>" required>
+                                    <input name="author" type="text" class="form-control" id="penulisArtikel" value="Walter White" required>
                                 </div>
                                 <div class="form-group">
 									<label for="kategoriArtikel">Kategori Artikel</label>
-									<select class="selectpicker" data-style="btn select-with-transition" id="kategoriArtikel" required>
-										<option disabled selected>Pilih Kategori</option>
-										<option>Jantung</option>
-										<option>Kulit</option>
-										<option>Anak</option>
-										<option>Diet</option>
-										<option>Diabetes</option>
-										<option>Kecantikan</option>
-										<option>Kehamilan</option>
-										<option>Mata</option>
-										<option>Fitness</option>
+									<select name="l_article_categories_id" class="selectpicker" data-style="btn select-with-transition" id="kategoriArtikel" required>
+										<% for(let i = 0; i < categories.length; i++) { %>
+											<option value="<%= categories[i]._id %>">
+												<%= categories[i].name %>
+											</option>
+										<% } %>
 									</select>
 								</div>
 								<div class="form-group">
                                     <label for="deskripsiArtikel">Deskripsi Artikel</label>
-                                    <input type="text" class="form-control" id="deskripsiArtikel" value="LALALLALA" required>
+                                    <input name="description" type="text" class="form-control" id="deskripsiArtikel" value="<%= article.description %>" required>
+									<small class="form-text text-muted">Deskripsikan artikelmu dengan 1-4 kalimat.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="kontenArtikel">Konten Artikel</label>
@@ -60,7 +56,11 @@
                                 </div>
 								<div class="form-group">
                                     <label for="tagArtikel">Tag Artikel</label>
-                                    <input type="text" class="tagsinput form-control" id="tagArtikel" data-color="primary" value="Pencegahan, Pengobatan" required>
+                                    <input name="l_article_tags_id" type="text" class="tagsinput form-control" id="tagArtikel" data-color="primary" value="
+										<% for(let i = 0; i < article.l_article_tags_id.length; i ++) { %>
+											<%= article.l_article_tags_id[i].name %>, 
+										<% } %>
+									" required>
                                     <small class="form-text text-muted">Tambah tag dengan menekan <em>enter</em> sekali.</small>
                                 </div>
 								<p class="text-muted">Background Artikel</p>
