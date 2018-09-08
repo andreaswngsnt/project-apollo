@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-router.use(bodyParser.urlencoded({extended: true}));
-router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
+	limit: '50mb',
+	extended: true
+}));
+router.use(bodyParser.json({
+	limit: '50mb'
+}));
 
 var ArticleCategory = require('./ArticleCategory');
 
@@ -11,30 +16,20 @@ router.post('/', function (req, res) {
     ArticleCategory.create({
         created: new Date(),
         updated: new Date(),
-        name: req.body.name
-    },
-    function (err, articleCategory) {
+        name: req.body.categoryName
+    }, function (err, newCategory) {
         if (err) return res.status(500).send("There was a problem adding the information to the database.");
-		
-		//TEMPORARY - REMOVE IF NEEDED
-		res.redirect('/admin/kategoriArtikel/index');
-        //res.status(200).send(articleCategory);
-		//EDIT ENDS HERE
+		res.json(newCategory);
+        //res.status(200).send(newCategory);
     });
 });
 
 //READ ALL
-// router.get('/', function (req, res) {
-//     ArticleCategory.find({}, function (err, articles) {
-//         if (err) return res.status(500).send("There was a problem finding the articles.");
-//         res.status(200).send(articles);
-//     })
-// });
 router.get('/', function (req, res) {
-    ArticleCategory.find({}, function (err, articleCategories) {
+    ArticleCategory.find({}, function (err, foundCategories) {
         if (err) return res.status(500).send("There was a problem finding the article categories.");
-        res.status(200).render("kategoriArtikel/home", {articleCategories: articleCategories, page: "home"});
-        //res.status(200).send(articleCategories);
+        res.json(foundCategories);
+        //res.status(200).send(foundCategories);
     })
 });
 
@@ -46,13 +41,6 @@ router.get('/index', function (req, res) {
 });
 
 //READ ONE
-// router.get('/:id', function (req, res) {
-//     ArticleCategory.findById(req.params.id, function (err, article) {
-//         if (err) return res.status(500).send("There was a problem finding the article.");
-//         if (!article) return res.status(404).send("No article found.");
-//         res.status(200).send(article);
-//     });
-// });
 router.get('/:id', function (req, res) {
     ArticleCategory.findById(req.params.id, function (err, articleCategory) {
         if (err) return res.status(500).send("There was a problem finding the article category.");
@@ -64,19 +52,22 @@ router.get('/:id', function (req, res) {
 
 //DELETE ONE
 router.delete('/:id', function (req, res) {
-    ArticleCategory.findByIdAndRemove(req.params.id, function (err, articleCategory) {
+    ArticleCategory.findByIdAndRemove(req.params.id, function (err, deletedCategory) {
         if (err) return res.status(500).send("There was a problem deleting the article category.");
-        res.status(200).redirect("back");
+		res.json(deletedCategory);
         //res.status(200).send("Article category "+ articleCategory.name +" was deleted.");
     });
 });
 
 //UPDATE ONE
 router.put('/:id', function (req, res) {
-    ArticleCategory.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, articleCategory) {
+	let updatedArticleCategory = {
+        updated: new Date(),
+		name: req.body.categoryName
+	}
+    ArticleCategory.findByIdAndUpdate(req.params.id, updatedArticleCategory, {new: true}, function (err, updatedCategory) {
         if (err) return res.status(500).send("There was a problem updating the article category.");
-        res.status(200).redirect("back");
-        //res.status(200).send(articleCategory);
+        res.status(200).send(updatedCategory);
     });
 });
 

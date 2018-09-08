@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
         <div class="container-fluid">
             <div class="navbar-wrapper">
-                <a class="navbar-brand" href="#pablo">Pengguna</a>
+                <a class="navbar-brand" href="#pablo">Kategori & Tag</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
@@ -16,7 +16,6 @@
     </nav>
     <div class="content">
         <div class="container-fluid">
-            <% include ../../partials/navbar/dashboardUserNavbar %>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
@@ -24,7 +23,7 @@
 							<div class="card-icon">
 								<i class="material-icons">assignment</i>
 							</div>
-							<h4 class="card-title">Pengguna Dokter</h4>
+							<h4 class='card-title'>Semua Kategori</h4>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -32,61 +31,64 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th>Nama</th>
-											<th>Spesialis</th>
-											<th>Reputasi</th>
-											<th>Lokasi</th>
-											<th class="text-right">Log-in Terakhir</th>
+											<th>Nama Kategori</th>
+											<th>Tanggal Dibuat</th>
+											<th class="text-right">Update Terakhir</th>
+											<th class="text-right">Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class='text-center'>0</td>
+											<td>Tambah Kategori Baru</td>
+											<td>n/a</td>
+											<td class='text-right'>n/a</td>
+											<td class='td-actions text-right'>
+												<button id='addCategory' class='btn btn-primary btn-round'>
+													<i class='material-icons'>add</i>
+												</button>
+											</td>
+										</tr>
+									</tbody>
+									<tbody id="categoryTable">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header card-header-rose card-header-icon">
+							<div class="card-icon">
+								<i class="material-icons">assignment</i>
+							</div>
+							<h4 class="card-title">Semua Tag</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th>Nama Tag</th>
+											<th>Tanggal Dibuat</th>
+											<th class="text-right">Update Terakhir</th>
 											<th class="text-right">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td class="text-center">0</td>
-											<td>Tambah Pengguna Baru</td>
-											<td>n/a</td>
-											<td>n/a</td>
+											<td>Tambah Tag Baru</td>
 											<td>n/a</td>
 											<td class="text-right">n/a</td>
 											<td class="td-actions text-right">
-												<a class="btn btn-primary btn-round" href="/admin/pengguna/new">
+												<button id='addTag' class="btn btn-primary btn-round">
 													<i class="material-icons">add</i>
-												</a>
+												</button>
 											</td>
 										</tr>
-										<tr>
-											<td class="text-center">1</td>
-											<td>Andrew Mike</td>
-											<td>Mata, Umum</td>
-											<td>3.8/5</td>
-											<td>Jakarta</td>
-											<td class="text-right">2 jam lalu</td>
-											<td class="td-actions text-right">
-												<% include ../../partials/buttonSet/pengguna %>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-center">2</td>
-											<td>Riziek Shihab</td>
-											<td>Pasien</td>
-											<td>4.2/5</td>
-											<td>Bandung</td>
-											<td class="text-right">2 jam lalu</td>
-											<td class="td-actions text-right">
-												<% include ../../partials/buttonSet/pengguna %>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-center">3</td>
-											<td>Vladimir Putin</td>
-											<td>Dokter, Pasien</td>
-											<td>4.5/5</td>
-											<td>Surabaya</td>
-											<td class="text-right">2 jam lalu</td>
-											<td class="td-actions text-right">
-												<% include ../../partials/buttonSet/pengguna %>
-											</td>
-										</tr>
+									</tbody>
+									<tbody id="tagTable">
 									</tbody>
 								</table>
 							</div>
@@ -124,5 +126,7 @@
         </div>
     </div>
 </div>
+
+<script src="/assets/js/editCategoryTag.js"></script>
 
 <% include ../../partials/footerDashboard %>

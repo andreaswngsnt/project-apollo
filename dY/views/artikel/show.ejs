@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 <% include ../partials/header %>
+<body class="blog-post">
 <% include ../partials/navbarNormal %>
 	<!-- Header Stuff -->
 	<div class="page-header header-filter" data-parallax="true" style=" background-image: url('/assets/img/blogs/steam.jpg'); ">
@@ -6,7 +9,14 @@
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto text-center">
                     <h2 class="title"><%= article.title %></h2>
-                    <h4>Gejala | <%= article.created %> | Ditulis oleh: <%= article.author %></h4>
+                    <h4>
+						<% if(article.l_article_categories_id) { %>
+							<%= article.l_article_categories_id.name %>
+						<% } else  { %>
+							Uncategorized
+						<% } %>
+						| <%= article.created %> | Ditulis oleh: Walter White
+					</h4>
                 </div>
             </div>
         </div>
@@ -22,10 +32,18 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="blog-tags">
-								Kategori:
-								<span class="badge badge-primary badge-pill">Gejala</span>
-								<span class="badge badge-primary badge-pill">Kanker</span>
-								<span class="badge badge-primary badge-pill">Perut</span>
+								Tags:
+								<% if(article.l_article_tags_id && article.l_article_tags_id.length > 0) { %>
+									<% for(let i = 0; i < article.l_article_tags_id.length; i ++) { %>
+										<a href="/artikel/tags/<%= article.l_article_tags_id[i]._id %>">
+											<span class="badge badge-primary badge-pill">
+												<%= article.l_article_tags_id[i].name %>
+											</span>
+										</a>
+									<% } %>
+								<% } else { %>
+									<span class="badge badge-primary badge-pill">No Tags</span>
+								<% } %>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -52,7 +70,7 @@
 								</div>
 							</div>
 							<div class="col-md-10">
-								<h4 class="card-title"><%= article.author %></h4>
+								<h4 class="card-title">Walter White</h4>
 								<p class="description">I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound...I like good music from Youtube.</p>
 							</div>
 						</div>
@@ -132,6 +150,7 @@
 			imgList.forEach(function(element){
 				element.classList.add("card");
 				element.classList.add("card-blog");
+				element.classList.add("mw-100");
 			});
 		}
 		
@@ -142,3 +161,5 @@
 	</script>
 	
 <% include ../partials/footer %>
+	</body>
+</html>

@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="description" content="Cari dan booking dokter berkualitas dimanasaja dan kapansaja. Baca artikel kesehatan gratis. Download dokYAY sekarang!">
 		<title>
-			dokYAY!
+			<% if(typeof article !== "undefined") { %>
+				<%= article.title %>
+			<% } else { %>
+				dokYAY!
+			<% } %>
 		</title>
 		<!--     Fonts and icons     -->
 		<link rel="shortcut icon" href="/assets/img/logo/dokyay_logo_big.jpg" type="image/jpg">
@@ -20,4 +22,3 @@
 		<script src="/assets/js/core/popper.min.js"></script>
 		<script src="/assets/js/bootstrap-material-design.js"></script>
 	</head>
-	<body class="landing-page ">
