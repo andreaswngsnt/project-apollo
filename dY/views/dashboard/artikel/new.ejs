@@ -22,7 +22,7 @@
                         <div class="card-header">
                             <h4 class="card-title">Tulis Artikel</h4>
                         </div>
-                        <form method="POST" action="/artikel">
+                        <form method="POST" action="/artikel" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="judulArtikel">Judul Artikel</label>
@@ -34,22 +34,16 @@
                                 </div>
                                 <div class="form-group">
 									<label for="kategoriArtikel">Kategori Artikel</label>
-									<select class="selectpicker" data-style="btn select-with-transition" id="kategoriArtikel" required>
-										<option disabled selected>Pilih Kategori</option>
-										<option>Jantung</option>
-										<option>Kulit</option>
-										<option>Anak</option>
-										<option>Diet</option>
-										<option>Diabetes</option>
-										<option>Kecantikan</option>
-										<option>Kehamilan</option>
-										<option>Mata</option>
-										<option>Fitness</option>
+									<select name="l_article_categories_id" class="selectpicker" data-style="btn select-with-transition" id="kategoriArtikel" required>
+										<% for(var i = 0; i < categories.length; i++) { %>
+											<option value="<%= categories[i]._id %>"><%= categories[i].name %></option>
+										<% } %>
 									</select>
 								</div>
 								<div class="form-group">
                                     <label for="deskripsiArtikel">Deskripsi Artikel</label>
-                                    <input type="text" class="form-control" id="deskripsiArtikel" required>
+                                    <input name="description" type="text" class="form-control" id="deskripsiArtikel" required>
+									<small class="form-text text-muted">Deskripsikan artikelmu dengan 1-4 kalimat.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="kontenArtikel">Konten Artikel</label>
@@ -60,7 +54,7 @@
                                 </div>
 								<div class="form-group">
                                     <label for="tagArtikel">Tag Artikel</label>
-                                    <input type="text" class="tagsinput form-control" id="tagArtikel" data-color="primary" value="Pencegahan, Pengobatan" required>
+                                    <input name="l_article_tags_id" type="text" class="tagsinput form-control" id="tagArtikel" data-color="primary" required>
                                     <small class="form-text text-muted">Tambah tag dengan menekan <em>enter</em> sekali.</small>
                                 </div>
 								<p class="text-muted">Background Artikel</p>
@@ -73,10 +67,10 @@
 										<span class="btn btn-raised btn-primary btn-file">
 											<span class="fileinput-new">Pilih foto</span>
 											<span class="fileinput-exists">Change</span>
-											<input type="file" name="...">
+											<input type="file" name="picture">
 										</span>
 										<a href="#pablo" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">
-										<i class="fa fa-times"></i> Remove</a>
+										<i class="fa fa-times"></i>Remove</a>
 									</div>
 								</div>
                             </div>

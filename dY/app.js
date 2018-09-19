@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
-
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 
@@ -13,11 +12,11 @@ var app = express();
 var db = require('./db');
 
 var HomeController = require('./home/HomeController');
-var ArticleController = require('./article/ArticleController');
-var ArticleCategoryController = require('./article/ArticleCategoryController');
-var ArticleTagController = require('./article/ArticleTagController');
-var LocationController = require('./location/LocationController');
-var PatientRegistrationController = require('./patientRegistration/PatientRegistrationController');
+var ArticleController = require('./models_controllers/article/ArticleController');
+var ArticleCategoryController = require('./models_controllers/article/ArticleCategoryController');
+var ArticleTagController = require('./models_controllers/article/ArticleTagController');
+var LocationController = require('./models_controllers/location/LocationController');
+var PatientRegistrationController = require('./models_controllers/patientRegistration/PatientRegistrationController');
 ////YOSBEH.1.1[Z]
 
 // view engine setup
@@ -25,8 +24,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({
+	limit: '50mb'
+}));
+app.use(express.urlencoded({
+	extended: false,
+	limit: '50mb'
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));

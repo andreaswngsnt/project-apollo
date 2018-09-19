@@ -1,0 +1,132 @@
+<% include ../../partials/headerDashboard %>
+
+<div class="main-panel">
+    <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <a class="navbar-brand" href="#pablo">Kategori & Tag</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header card-header-rose card-header-icon">
+							<div class="card-icon">
+								<i class="material-icons">assignment</i>
+							</div>
+							<h4 class='card-title'>Semua Kategori</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th>Nama Kategori</th>
+											<th>Tanggal Dibuat</th>
+											<th class="text-right">Update Terakhir</th>
+											<th class="text-right">Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class='text-center'>0</td>
+											<td>Tambah Kategori Baru</td>
+											<td>n/a</td>
+											<td class='text-right'>n/a</td>
+											<td class='td-actions text-right'>
+												<button id='addCategory' class='btn btn-primary btn-round'>
+													<i class='material-icons'>add</i>
+												</button>
+											</td>
+										</tr>
+									</tbody>
+									<tbody id="categoryTable">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header card-header-rose card-header-icon">
+							<div class="card-icon">
+								<i class="material-icons">assignment</i>
+							</div>
+							<h4 class="card-title">Semua Tag</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th>Nama Tag</th>
+											<th>Tanggal Dibuat</th>
+											<th class="text-right">Update Terakhir</th>
+											<th class="text-right">Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="text-center">0</td>
+											<td>Tambah Tag Baru</td>
+											<td>n/a</td>
+											<td class="text-right">n/a</td>
+											<td class="td-actions text-right">
+												<button id='addTag' class="btn btn-primary btn-round">
+													<i class="material-icons">add</i>
+												</button>
+											</td>
+										</tr>
+									</tbody>
+									<tbody id="tagTable">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="row">
+                <div class="ml-auto mr-auto text-center">
+                    <ul class="pagination pagination-primary">
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">Sebelum</a>
+                        </li>
+                        <li class="page-item active">
+                            <a href="javascript:void(0);" class="page-link">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="javascript:void(0);" class="page-link">Sesudah</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/editCategoryTag.js"></script>
+
+<% include ../../partials/footerDashboard %>

@@ -1,15 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
 <% include ./partials/header %>
+<body class="blog-posts">
 <% include ./partials/navbarNormal %>
 	<!-- Full Screen Stuff -->
 	<div class="page-header header-filter" data-parallax="true" style="background-image: url('/assets/img/bg/bg1.jpg'); ">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 ml-auto mr-auto text-center">
-					<h1 class="title">Temukan Dokter Terbaik Tanpa Antri</h1>
-					<h4>Lihat ulasan dokter dan booking dimanapun & kapanpun.</h4>
-					<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-primary btn-round">
-						Download DokYAY!
-					</a>
+				<div class="col-md-12 ml-auto mr-auto text-center">
+					<h2 class="title">Temukan Dokter Terbaik Tanpa Antri</h2>
+					<h5>Lihat ulasan dokter dan booking dimanapun & kapanpun.</h5>
+					<div class="card card-raised card-form-horizontal">
+						<div class="card-body ">
+							<form method="" action="">
+								<div class="row d-flex align-items-center">
+									<div class="col-md-4">
+										<select class="selectpicker" data-style="select-with-transition" data-size="5">
+											<option value="umum" disabled selected>Spesialisasi Dokter</option>
+											<option value="umum">Umum</option>
+											<option value="anak">Anak</option>
+											<option value="gigi">Gigi</option>
+											<option value="kandungan">Kandungan</option>
+											<option value="kecantikan">Kecantikan</option>
+											<option value="psikiater">Psikiater</option>
+											<option value="kulitKelamin">Kulit & Kelamin</option>
+											<option value="mata">Mata</option>
+											<option value="tht">THT</option>
+											<option value="internis">Internis</option>
+											<option value="paru">Paru-paru</option>
+											<option value="saraf">Saraf</option>
+											<option value="lain">Lainnya</option>
+										</select>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<input id="lokasi" type="text" placeholder="Lokasi" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<input id="namaDokter" type="text" placeholder="Nama Dokter/Klinik" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-2">
+										<button type="button" class="btn btn-primary btn-block btn-round">Cari</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -93,54 +132,64 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						<div class="card card-raised card-background" style="background-image: url('/assets/img/blogs/img1.jpg')">
-							<div class="card-body">
-								<h6 class="card-category text-info">Gejala</h6>
-								<a href="/contoh">
-									<h3 class="card-title">Sakit Perut? Kenali 10 Gejala Kanker!</h3>
-								</a>
-								<p class="card-description">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-								</p>
-								<a href="/contoh" class="btn btn-primary btn-round">
-									Baca Artikel
-								</a>
+					<% if (articles.length < 3) { %>
+						<p>Belum ada artikel yang cukup :(</p>
+					<% } else { %>
+						<div class="col-md-12">
+							<div class="card card-raised card-background" style="background-image: url('/assets/img/blogs/img1.jpg')">
+								<div class="card-body">
+									<h6 class="card-category text-info">
+										<% if(articles[articles.length - 1].l_article_categories_id) { %>
+											<%= articles[articles.length - 1].l_article_categories_id.name %>
+										<% } else  { %>
+											Uncategorized
+										<% } %>
+									</h6>
+									<a href="/artikel/<%= articles[articles.length - 1].id %>">
+										<h3 class="card-title"><%= articles[articles.length - 1].title %></h3>
+									</a>
+									<p class="card-description">
+										<% if(articles[articles.length - 1].description) { %>
+											<%= articles[articles.length - 1].description %>
+										<% } else { %>
+											Baca artikel untuk tahu lebih lanjut
+										<% } %>
+									</p>
+									<a href="/artikel/<%= articles[articles.length - 1].id %>" class="btn btn-primary btn-round">
+										Baca Artikel
+									</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="card card-raised card-background" style="background-image: url('/assets/img/blogs/img2.jpg')">
-							<div class="card-body">
-								<h6 class="card-category text-info">Pencegahan</h6>
-								<a href="/contoh">
-									<h3 class="card-title">Cara Mencegah Sakit Kepala</h3>
-								</a>
-								<p class="card-description">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-								</p>
-								<a href="/contoh" class="btn btn-primary btn-round">
-									Baca Artikel
-								</a>
+						<% for(var i = 1;  i < 3; i++) { %>
+							<div class="col-md-6">
+								<div class="card card-raised card-background" style="background-image: url('/assets/img/blogs/img2.jpg')">
+									<div class="card-body">
+										<h6 class="card-category text-info">
+											<% if(articles[articles.length - 1 - i].l_article_categories_id) { %>
+												<%= articles[articles.length - 1 - i].l_article_categories_id.name %>
+											<% } else  { %>
+												Uncategorized
+											<% } %>
+										</h6>
+										<a href="/artikel/<%= articles[articles.length - 1 - i].id %>">
+											<h3 class="card-title"><%= articles[articles.length - 1 - i].title %></h3>
+										</a>
+										<p class="card-description">
+											<% if(articles[articles.length - 1 - i].description) { %>
+												<%= articles[articles.length - 1 - i].description %>
+											<% } else { %>
+												Baca artikel untuk tahu lebih lanjut
+											<% } %>
+										</p>
+										<a href="/artikel/<%= articles[articles.length - 1 - i].id %>" class="btn btn-primary btn-round">
+											Baca Artikel
+										</a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="card card-raised card-background" style="background-image: url('/assets/img/blogs/img3.jpg')">
-							<div class="card-body">
-								<h6 class="card-category text-info">Pengobatan</h6>
-								<a href="/contoh">
-									<h3 class="card-title">Cegah Komplikasi! Banyaknya Obat Dengan Efek Samping yang Berbahaya.</h3>
-								</a>
-								<p class="card-description">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-								</p>
-								<a href="/contoh" class="btn btn-primary btn-round">
-									Baca Artikel
-								</a>
-							</div>
-						</div>
-					</div>
+						<% } %>
+					<% }; %>
 				</div>
 				<div class="row">
 					<div class="col-md-8 ml-auto mr-auto text-center">
@@ -185,3 +234,5 @@
 	</div>
 
 <% include ./partials/footer %>
+	</body>
+</html>
