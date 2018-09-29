@@ -1,22 +1,29 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var methodOverride = require('method-override');
-//var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
+const config = require('./config.json');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const passport = require('passport');
+//const indexRouter = require('./routes/index');
+//const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 //YOSBEH.1.1[A]
-var db = require('./db');
+const db = require('./_helpers/db');
+const jwt = require('./_helpers/jwt');
+//const errorHandler = require('_helpers/error-handler');
 
-var HomeController = require('./home/HomeController');
-var ArticleController = require('./models_controllers/article/ArticleController');
-var ArticleCategoryController = require('./models_controllers/article/ArticleCategoryController');
-var ArticleTagController = require('./models_controllers/article/ArticleTagController');
-var LocationController = require('./models_controllers/location/LocationController');
-var PatientRegistrationController = require('./models_controllers/patientRegistration/PatientRegistrationController');
+const HomeController = require('./home/HomeController');
+const ArticleController = require('./models_controllers/article/ArticleController');
+const ArticleCategoryController = require('./models_controllers/article/ArticleCategoryController');
+const ArticleTagController = require('./models_controllers/article/ArticleTagController');
+const LocationController = require('./models_controllers/location/LocationController');
+const PatientRegistrationController = require('./models_controllers/patientRegistration/PatientRegistrationController');
+const UserController = require('./models_controllers/user/UserController');
 ////YOSBEH.1.1[Z]
 
 // view engine setup
@@ -39,13 +46,19 @@ app.use(methodOverride('_method'));
 //app.use('/users', usersRouter);
 
 //YOSBEH.2.1[A]
+app.use(cors());
+app.use(jwt());
+app.use(passport.initialize());
+app.use(passport.session()) require('./');
 app.use('/', HomeController);
 app.use('/artikel', ArticleController);
 app.use('/kategoriArtikel', ArticleCategoryController);
 app.use('/tagArtikel', ArticleTagController);
 app.use('/locations', LocationController);
 app.use('/patientRegistrations', PatientRegistrationController);
-////YOSBEH.2.1[Z]
+app.use('/users', UserController);
+//app.use(errorHandler);
+//YOSBEH.2.1[Z]
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

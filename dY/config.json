@@ -1,0 +1,4 @@
+{
+  "connectionString" : "mongodb://localhost/apollo",
+  "secret" : "open sesame"
+}

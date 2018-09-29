@@ -6,7 +6,7 @@ router.use(bodyParser.json());
 
 var Party = require('./Party');
 var Patient = require('./Patient');
-var User = require('./User');
+var User = require('../user/User');
 
 //CREATE
 router.post('/', function (req, res) {

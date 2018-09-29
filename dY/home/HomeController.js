@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 var Article = require('../models_controllers/article/Article');
 var ArticleCategory = require('../models_controllers/article/ArticleCategory');
 var ArticleTag = require('../models_controllers/article/ArticleTag');
-var User = require('../models_controllers/patientRegistration/User');
+//var User = require('../models_controllers/patientRegistration/User');
 
 
 // Home Routes

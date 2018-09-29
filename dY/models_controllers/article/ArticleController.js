@@ -74,7 +74,7 @@ router.get('/', function (req, res) {
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
 			res.status(200).render("artikel/home", {articles: foundArticles, categories: foundCategories, category: "home"});
-			//res.status(200).send(articles);
+			//res.status(200).send(foundArticles);
 		});
     });
 });
@@ -85,7 +85,7 @@ router.get('/index', function (req, res) {
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
 			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: "index"});
-			//res.status(200).send(articles);
+			//res.status(200).send(foundArticles);
 		});
     });
 });
@@ -100,7 +100,7 @@ router.get('/tags/:tag', function (req, res) {
 			ArticleTag.find({_id: req.params.tag}, function(err, foundTag) {
 				if (err) return res.status(500).send("There was a problem finding the article tag.");
 				res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, tag: foundTag});
-				//res.status(200).send(articles);
+				//res.status(200).send(foundArticles);
 			});
 		});
     });
@@ -114,7 +114,7 @@ router.get('/categories/:category', function (req, res) {
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
 			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: req.params.category});
-			//res.status(200).send(articles);
+			//res.status(200).send(foundArticles);
 		});
     });
 });
