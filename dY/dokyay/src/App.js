@@ -2,9 +2,10 @@ import React, { Component }          from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Login from './admin/login'
+import HomePage from './admin/home'
 
 import logo from './logo.svg'
-import './App.css'
+import "./assets/scss/material-kit-pro-react.css?v=1.1.0"
 
 class App extends Component {
 	state = {
@@ -34,20 +35,8 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route exact path='/'
-						render={() => (
-							<div className='App'>
-								<header className='App-header'>
-									<img src={logo} className='App-logo' alt='logo' />
-									<h1 className='App-title'>Welcome to React</h1>
-								</header>
-								<p className='App-intro'>
-									Homepage bois
-								</p>
-							</div>
-						)} />
-					<Route exact path='/login'
-						render={() => (<Login />)} />
+					<Route exact path='/' component={HomePage} />
+					<Route exact path='/login' component={Login} />
 				</Switch>
 			</BrowserRouter>
 		)
