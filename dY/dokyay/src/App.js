@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Login from './admin/login'
 import HomePage from './admin/home'
+import PromoPage from './admin/promo'
 
 import logo from './logo.svg'
 import "./assets/scss/material-kit-pro-react.css?v=1.1.0"
@@ -36,7 +37,8 @@ class App extends Component {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path='/' component={HomePage} />
-					<Route exact path='/login' component={Login} />
+					<Route path='/promo' component={PromoPage} />
+					<Route path='/login' component={Login} />
 				</Switch>
 			</BrowserRouter>
 		)

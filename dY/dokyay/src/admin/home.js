@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import classNames from 'classnames'
 
@@ -7,6 +8,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 
 import Header from '../components/Header/Header'
+import HeaderLinks from '../components/Header/HeaderLinks'
 import Button from '../components/CustomButtons/Button'
 import Footer from '../components/Footer/Footer'
 import GridContainer from '../components/Grid/GridContainer'
@@ -17,6 +19,8 @@ import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landing
 
 import AppFeature from '../sections/AppFeature'
 
+import parallaxBg from '../assets/img/bg/bg1.jpg'
+
 class HomePage extends Component {
 	render() {
 		const { classes, ...rest } = this.props
@@ -24,21 +28,21 @@ class HomePage extends Component {
 			<div>
 				<Header
 					color="transparent"
-					brand="DokYAY"
+					links={<HeaderLinks dropdownHoverColor="dark" />}
 					fixed
 					changeColorOnScroll={{
 						height: 300,
-						color: "info"
+						color: "white"
 					}}
 					{...rest}
 				/>
-				<Parallax image={require("../assets/img/bg8.jpg")} filter="dark">
+				<Parallax image={parallaxBg} filter="dark">
 					<div className={classes.container}>
 						<GridContainer>
 							<GridItem xs={12} sm={6} md={6}>
-								<h1 className={classes.title}>Hello World</h1>
+								<h1 className={classes.title}>Temukan Dokter Terbaik Tanpa Antri</h1>
 								<h4>
-									Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.
+									Lihat ulasan dokter dan booking dimanapun & kapanpun.
 								</h4>
 								<br />
 								<Button
@@ -64,24 +68,24 @@ class HomePage extends Component {
 							<div className={classes.left}>
 								<List className={classes.list}>
 									<ListItem className={classes.inlineBlock}>
-										<a href="https://www.creative-tim.com/" className={classes.block}>
-											Creative Tim
-										</a>
+										<Link to="#" className={classes.block}>
+											Tentang Kami
+										</Link>
 									</ListItem>
 									<ListItem className={classes.inlineBlock}>
-										<a href="https://www.creative-tim.com/" className={classes.block}>
-											About Us
-										</a>
-									</ListItem>
-									<ListItem className={classes.inlineBlock}>
-										<a href="https://www.creative-tim.com/" className={classes.block}>
+										<Link to="#" className={classes.block}>
 											Blog
-										</a>
+										</Link>
+									</ListItem>
+									<ListItem className={classes.inlineBlock}>
+										<Link to="#" className={classes.block}>
+											Admin
+										</Link>
 									</ListItem>
 								</List>
 							</div>
 							<div className={classes.right}>
-								&copy; {new Date().getFullYear()} , made by <a href="https://www.creative-tim.com">Creative Tim</a> for a better web.
+								&copy; {new Date().getFullYear()}, PT dokYAY.
 							</div>
 						</div>
 					}
