@@ -18,6 +18,7 @@ import Parallax from '../components/Parallax/Parallax'
 import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landingPageStyle'
 
 import AppFeature from '../sections/AppFeature'
+import TopBlogs from '../sections/TopBlogs'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
@@ -60,6 +61,7 @@ class HomePage extends Component {
 				<div className={classNames(classes.main, classes.mainRaised)}>
 					<div className={classes.container}>
 						<AppFeature />
+						<TopBlogs />
 					</div>
 				</div>
 				<Footer

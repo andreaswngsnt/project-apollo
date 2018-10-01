@@ -1171,6 +1171,9 @@
     <Compile Include="dY\dokyay\src\admin\home.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dY\dokyay\src\admin\promo.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\assets\img\assets-for-demo\sections\imgs.jsx" />
     <Compile Include="dY\dokyay\src\assets\jss\material-kit-pro-react.jsx" />
     <Compile Include="dY\dokyay\src\assets\jss\material-kit-pro-react\buttonGroupStyle.jsx" />
@@ -1309,6 +1312,9 @@
     <Compile Include="dY\dokyay\src\components\Typography\Success.jsx" />
     <Compile Include="dY\dokyay\src\components\Typography\Warning.jsx" />
     <Compile Include="dY\dokyay\src\sections\AppFeature.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\sections\PromoText.js">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
