@@ -19,6 +19,7 @@ import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landing
 
 import AppFeature from '../sections/AppFeature'
 import TopBlogs from '../sections/TopBlogs'
+import SubscribeNewsletter from '../sections/SubscribeNewsletter'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
@@ -62,6 +63,14 @@ class HomePage extends Component {
 					<div className={classes.container}>
 						<AppFeature />
 						<TopBlogs />
+						<GridContainer>
+							<GridItem xs={12} sm={12} md={12} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
+								<Button round color="primary">
+									Baca Artikel Lainnya
+								</Button>
+							</GridItem>
+						</GridContainer>
+						<SubscribeNewsletter />
 					</div>
 				</div>
 				<Footer

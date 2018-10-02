@@ -1311,7 +1311,8 @@
     <Compile Include="dY\dokyay\src\components\Typography\Small.jsx" />
     <Compile Include="dY\dokyay\src\components\Typography\Success.jsx" />
     <Compile Include="dY\dokyay\src\components\Typography\Warning.jsx" />
-    <Compile Include="dY\dokyay\src\sections\AppFeature.js">
+    <Compile Include="dY\dokyay\src\sections\AppFeature.js" />
+    <Compile Include="dY\dokyay\src\sections\TopBlogs.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\sections\PromoText.js">

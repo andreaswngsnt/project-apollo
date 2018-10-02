@@ -10,6 +10,7 @@ import Today from '@material-ui/icons/Today'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem from '../components/Grid/GridItem'
 import InfoArea from '../components/InfoArea/InfoArea'
+import Button from '../components/CustomButtons/Button'
 
 import featuresStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/featuresStyle'
 
@@ -61,6 +62,11 @@ class AppFeature extends Component {
 							description="Anda tidak akan lupa akan pertemuan dokter karena kami akan mengingatkan anda akan pertemuan anda yang akan datang."
 							iconColor="success"
 						/>
+					</GridItem>
+					<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
+						<Button round color="primary">
+							Download Aplikasi
+						</Button>
 					</GridItem>
 				</GridContainer>
 			</div>

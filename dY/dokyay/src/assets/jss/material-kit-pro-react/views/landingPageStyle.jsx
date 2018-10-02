@@ -1,11 +1,15 @@
 import {
   container,
-  title,
+		title,
+		mlAuto,
+		mrAuto,
   main,
   mainRaised
 } from "../../material-kit-pro-react.jsx";
 
 const landingPageStyle = {
+		mlAuto,
+		mrAuto,
   container: {
     color: "#FFFFFF",
     ...container,
