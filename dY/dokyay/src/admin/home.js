@@ -62,9 +62,16 @@ class HomePage extends Component {
 				<div className={classNames(classes.main, classes.mainRaised)}>
 					<div className={classes.container}>
 						<AppFeature />
+						<GridContainer>
+							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
+								<Button round color="primary">
+									Download Aplikasi
+								</Button>
+							</GridItem>
+						</GridContainer>
 						<TopBlogs />
 						<GridContainer>
-							<GridItem xs={12} sm={12} md={12} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
+							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
 								<Button round color="primary">
 									Baca Artikel Lainnya
 								</Button>

@@ -10,6 +10,9 @@ import {
 const landingPageStyle = {
 		mlAuto,
 		mrAuto,
+		textCenter: {
+			textAlign: "center"
+		},
   container: {
     color: "#FFFFFF",
     ...container,

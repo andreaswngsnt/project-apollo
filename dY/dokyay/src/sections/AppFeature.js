@@ -63,11 +63,6 @@ class AppFeature extends Component {
 							iconColor="success"
 						/>
 					</GridItem>
-					<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
-						<Button round color="primary">
-							Download Aplikasi
-						</Button>
-					</GridItem>
 				</GridContainer>
 			</div>
 		)
