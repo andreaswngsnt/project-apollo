@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react'
+﻿import React from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 import InputAdornment from '@material-ui/core/InputAdornment'

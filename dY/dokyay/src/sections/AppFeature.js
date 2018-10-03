@@ -10,7 +10,6 @@ import Today from '@material-ui/icons/Today'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem from '../components/Grid/GridItem'
 import InfoArea from '../components/InfoArea/InfoArea'
-import Button from '../components/CustomButtons/Button'
 
 import featuresStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/featuresStyle'
 

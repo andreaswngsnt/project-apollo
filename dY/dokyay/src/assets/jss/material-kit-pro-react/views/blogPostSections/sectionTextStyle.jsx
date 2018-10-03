@@ -19,7 +19,10 @@ const sectionTextStyle = {
   },
   quoteText: {
     fontSize: "1.5rem !important"
-  },
+		},
+		textCenter: {
+			textAlign: "center"
+		},
   ...imagesStyles
 };
 

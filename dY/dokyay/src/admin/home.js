@@ -41,7 +41,7 @@ class HomePage extends Component {
 				<Parallax image={parallaxBg} filter="dark">
 					<div className={classes.container}>
 						<GridContainer>
-							<GridItem xs={12} sm={6} md={6}>
+							<GridItem xs={12} sm={6} md={6} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
 								<h1 className={classes.title}>Temukan Dokter Terbaik Tanpa Antri</h1>
 								<h4>
 									Lihat ulasan dokter dan booking dimanapun & kapanpun.
