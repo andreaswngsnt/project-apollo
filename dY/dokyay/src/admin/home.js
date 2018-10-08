@@ -4,57 +4,77 @@ import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 import withStyles from '@material-ui/core/styles/withStyles'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
+import List       from '@material-ui/core/List'
+import ListItem   from '@material-ui/core/ListItem'
 
-import Header from '../components/Header/Header'
-import HeaderLinks from '../components/Header/HeaderLinks'
-import Button from '../components/CustomButtons/Button'
-import Footer from '../components/Footer/Footer'
+import Button        from '../components/CustomButtons/Button'
+import Footer        from '../components/Footer/Footer'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem from '../components/Grid/GridItem'
-import Parallax from '../components/Parallax/Parallax'
+import GridItem      from '../components/Grid/GridItem'
+import Header        from '../components/Header/Header'
+import HeaderLinks   from '../components/Header/HeaderLinks'
+import Parallax      from '../components/Parallax/Parallax'
 
 import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landingPageStyle'
 
+<<<<<<< HEAD
+import HeaderSearchDoctor from '../sections/HeaderSearchDoctor'
 import AppFeature from '../sections/AppFeature'
 import TopBlogs from '../sections/TopBlogs'
+=======
+import AppFeature          from '../sections/AppFeature'
+>>>>>>> bcf3009c711993806137011f21ada478cd904e87
 import SubscribeNewsletter from '../sections/SubscribeNewsletter'
+import TopBlogs            from '../sections/TopBlogs'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
 class HomePage extends Component {
+	componentDidMount() {
+		window.scrollTo(0, 0)
+		document.body.scrollTop = 0
+	}
+
 	render() {
 		const { classes, ...rest } = this.props
 		return (
 			<div>
 				<Header
+<<<<<<< HEAD
 					color="transparent"
-					links={<HeaderLinks dropdownHoverColor="dark" />}
+					links={<HeaderLinks dropdownHoverColor="primary" />}
+=======
+					color='transparent'
+					links={<HeaderLinks dropdownHoverColor='dark' />}
+>>>>>>> bcf3009c711993806137011f21ada478cd904e87
 					fixed
 					changeColorOnScroll={{
 						height: 300,
-						color: "white"
+						color: 'white'
 					}}
-					{...rest}
-				/>
-				<Parallax image={parallaxBg} filter="dark">
+					{...rest} />
+				<Parallax image={parallaxBg} filter='dark'>
 					<div className={classes.container}>
 						<GridContainer>
 							<GridItem xs={12} sm={6} md={6} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
-								<h1 className={classes.title}>Temukan Dokter Terbaik Tanpa Antri</h1>
+								<h2 className={classes.title}>Temukan Dokter Terbaik Tanpa Antri</h2>
 								<h4>
 									Lihat ulasan dokter dan booking dimanapun & kapanpun.
 								</h4>
+<<<<<<< HEAD
+							</GridItem>
+							<GridItem>
+								<HeaderSearchDoctor />
+=======
 								<br />
 								<Button
-									color="danger"
-									size="lg"
-									href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-									target="_blank"
-								>
-									<i className="fas fa-play" />Watch video
+									color='danger'
+									size='lg'
+									href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+									target='_blank'>
+									<i className='fas fa-play' />Watch video
 								</Button>
+>>>>>>> bcf3009c711993806137011f21ada478cd904e87
 							</GridItem>
 						</GridContainer>
 					</div>
@@ -64,7 +84,7 @@ class HomePage extends Component {
 						<AppFeature />
 						<GridContainer>
 							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
-								<Button round color="primary">
+								<Button round color='primary'>
 									Download Aplikasi
 								</Button>
 							</GridItem>
@@ -72,7 +92,7 @@ class HomePage extends Component {
 						<TopBlogs />
 						<GridContainer>
 							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
-								<Button round color="primary">
+								<Button round color='primary'>
 									Baca Artikel Lainnya
 								</Button>
 							</GridItem>
@@ -86,17 +106,21 @@ class HomePage extends Component {
 							<div className={classes.left}>
 								<List className={classes.list}>
 									<ListItem className={classes.inlineBlock}>
-										<Link to="#" className={classes.block}>
+<<<<<<< HEAD
+										<Link to="/tentang" className={classes.block}>
+=======
+										<Link to='#' className={classes.block}>
+>>>>>>> bcf3009c711993806137011f21ada478cd904e87
 											Tentang Kami
 										</Link>
 									</ListItem>
 									<ListItem className={classes.inlineBlock}>
-										<Link to="#" className={classes.block}>
+										<Link to='#' className={classes.block}>
 											Blog
 										</Link>
 									</ListItem>
 									<ListItem className={classes.inlineBlock}>
-										<Link to="#" className={classes.block}>
+										<Link to='#' className={classes.block}>
 											Admin
 										</Link>
 									</ListItem>
@@ -106,8 +130,7 @@ class HomePage extends Component {
 								&copy; {new Date().getFullYear()}, PT dokYAY.
 							</div>
 						</div>
-					}
-				/>
+					} />
 			</div>
 		)
 	}

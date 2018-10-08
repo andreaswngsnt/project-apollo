@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from './admin/login'
 import HomePage from './admin/home'
 import PromoPage from './admin/promo'
+import AboutPage from './admin/about'
 
 import logo from './logo.svg'
 import "./assets/scss/material-kit-pro-react.css?v=1.1.0"
@@ -38,6 +39,7 @@ class App extends Component {
 				<Switch>
 					<Route exact path='/' component={HomePage} />
 					<Route path='/promo' component={PromoPage} />
+					<Route path='/tentang' component={AboutPage} />
 					<Route path='/login' component={Login} />
 				</Switch>
 			</BrowserRouter>

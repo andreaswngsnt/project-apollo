@@ -4,8 +4,10 @@ import {
   mrAuto,
   title
 } from "../../../material-kit-pro-react.jsx";
+import customSelectStyle from "../../customSelectStyle";
 
 const headersSection = theme => ({
+		...customSelectStyle,
   ...headerLinksStyle(theme),
   sectionBlank: {
     height: "70px",

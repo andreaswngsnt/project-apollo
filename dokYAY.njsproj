@@ -1188,6 +1188,9 @@
     <Compile Include=".gitignore">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dY\dokyay\src\admin\about.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\admin\home.js">
       <SubType>Code</SubType>
     </Compile>
@@ -1332,6 +1335,10 @@
     <Compile Include="dY\dokyay\src\components\Typography\Success.jsx" />
     <Compile Include="dY\dokyay\src\components\Typography\Warning.jsx" />
     <Compile Include="dY\dokyay\src\sections\AppFeature.js" />
+    <Compile Include="dY\dokyay\src\sections\HeaderSearchDoctor.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\sections\AboutText.js" />
     <Compile Include="dY\dokyay\src\sections\SubscribeNewsletter.js">
       <SubType>Code</SubType>
     </Compile>
