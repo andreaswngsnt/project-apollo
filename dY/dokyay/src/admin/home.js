@@ -17,13 +17,8 @@ import Parallax      from '../components/Parallax/Parallax'
 
 import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landingPageStyle'
 
-<<<<<<< HEAD
-import HeaderSearchDoctor from '../sections/HeaderSearchDoctor'
-import AppFeature from '../sections/AppFeature'
-import TopBlogs from '../sections/TopBlogs'
-=======
-import AppFeature          from '../sections/AppFeature'
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
+import AppFeature										from '../sections/AppFeature'
+import HeaderSearchDoctor		from '../sections/HeaderSearchDoctor'
 import SubscribeNewsletter from '../sections/SubscribeNewsletter'
 import TopBlogs            from '../sections/TopBlogs'
 
@@ -40,13 +35,8 @@ class HomePage extends Component {
 		return (
 			<div>
 				<Header
-<<<<<<< HEAD
-					color="transparent"
-					links={<HeaderLinks dropdownHoverColor="primary" />}
-=======
 					color='transparent'
-					links={<HeaderLinks dropdownHoverColor='dark' />}
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
+					links={<HeaderLinks dropdownHoverColor='primary' />}
 					fixed
 					changeColorOnScroll={{
 						height: 300,
@@ -61,20 +51,9 @@ class HomePage extends Component {
 								<h4>
 									Lihat ulasan dokter dan booking dimanapun & kapanpun.
 								</h4>
-<<<<<<< HEAD
 							</GridItem>
 							<GridItem>
 								<HeaderSearchDoctor />
-=======
-								<br />
-								<Button
-									color='danger'
-									size='lg'
-									href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-									target='_blank'>
-									<i className='fas fa-play' />Watch video
-								</Button>
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
 							</GridItem>
 						</GridContainer>
 					</div>
@@ -106,11 +85,7 @@ class HomePage extends Component {
 							<div className={classes.left}>
 								<List className={classes.list}>
 									<ListItem className={classes.inlineBlock}>
-<<<<<<< HEAD
-										<Link to="/tentang" className={classes.block}>
-=======
-										<Link to='#' className={classes.block}>
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
+										<Link to='/tentang' className={classes.block}>
 											Tentang Kami
 										</Link>
 									</ListItem>

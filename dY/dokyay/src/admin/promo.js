@@ -30,13 +30,8 @@ class PromoPage extends Component {
 		return (
 			<div>
 				<Header
-<<<<<<< HEAD
-					color="transparent"
-					links={<HeaderLinks dropdownHoverColor="primary" />}
-=======
 					color='transparent'
-					links={<HeaderLinks dropdownHoverColor='dark' />}
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
+					links={<HeaderLinks dropdownHoverColor='primary' />}
 					fixed
 					changeColorOnScroll={{
 						height: 300,
@@ -52,16 +47,9 @@ class PromoPage extends Component {
 								</h4>
 								<br />
 								<Button
-<<<<<<< HEAD
-									color="primary"
-									href="#paket"
-									round
-								>
-=======
 									color='primary'
-									href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+									href='#paket'
 									round>
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
 									Lihat Paket
 								</Button>
 							</GridItem>
@@ -79,11 +67,7 @@ class PromoPage extends Component {
 							<div className={classes.left}>
 								<List className={classes.list}>
 									<ListItem className={classes.inlineBlock}>
-<<<<<<< HEAD
-										<Link to="/tentang" className={classes.block}>
-=======
-										<Link to='#' className={classes.block}>
->>>>>>> bcf3009c711993806137011f21ada478cd904e87
+										<Link to='/tentang' className={classes.block}>
 											Tentang Kami
 										</Link>
 									</ListItem>
