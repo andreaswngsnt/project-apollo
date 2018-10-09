@@ -14,7 +14,7 @@ const passport = require('passport');
 const app = express();
 //YOSBEH.1.1[A]
 const db = require('./_helpers/db');
-const jwt = require('./_helpers/jwt');
+//const jwt = require('./_helpers/jwt');
 //const errorHandler = require('_helpers/error-handler');
 
 const HomeController = require('./home/HomeController');
@@ -24,6 +24,7 @@ const ArticleTagController = require('./models_controllers/article/ArticleTagCon
 const LocationController = require('./models_controllers/location/LocationController');
 const PatientRegistrationController = require('./models_controllers/patientRegistration/PatientRegistrationController');
 const UserController = require('./models_controllers/user/UserController');
+const PartyController = require('./models_controllers/party/PartyController');
 ////YOSBEH.1.1[Z]
 
 // view engine setup
@@ -47,9 +48,14 @@ app.use(methodOverride('_method'));
 
 //YOSBEH.2.1[A]
 app.use(cors());
-app.use(jwt());
+app.use(bodyParser.json());
+
+//Authentication
+//app.use(jwt());
 app.use(passport.initialize());
-app.use(passport.session()) require('./');
+app.use(passport.session());
+require('./_helpers/passport')(passport);
+
 app.use('/', HomeController);
 app.use('/artikel', ArticleController);
 app.use('/kategoriArtikel', ArticleCategoryController);
@@ -57,6 +63,7 @@ app.use('/tagArtikel', ArticleTagController);
 app.use('/locations', LocationController);
 app.use('/patientRegistrations', PatientRegistrationController);
 app.use('/users', UserController);
+app.use('/parties', PartyController);
 //app.use(errorHandler);
 //YOSBEH.2.1[Z]
 

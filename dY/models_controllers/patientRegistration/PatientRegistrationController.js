@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
-var Party = require('./Party');
+var Party = require('../party/Party');
 var Patient = require('./Patient');
 var User = require('../user/User');
 
@@ -15,8 +15,8 @@ router.post('/', function (req, res) {
         updated: new Date(),
         type: "Patient",
         name : req.body.name,
-        governmentIdType: req.body.governmentIdType,
-        governmentId: req.body.governmentId,
+        ICType: req.body.ICType,
+        ICNumber: req.body.ICNumber,
         gender: req.body.gender,
         birthDate: req.body.birthDate,
         address: req.body.address,

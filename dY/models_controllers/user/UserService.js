@@ -2,21 +2,27 @@ const config = require('../../config.json');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('./User');
+const passport = require('passport');
 
 module.exports = {
     authenticate,
     getAll,
     getById,
+    getUserById,
+    //getByUsername,
     create,
     update,
-    delete: _delete
+    delete: _delete,
+    profile
 };
 
 async function authenticate({username, password}) {
     const user = await User.findOne({username});
     if (user && bcrypt.compareSync(password, user.hash)) {
         const {hash, ...userWithoutHash} = user.toObject();
-        const token = jwt.sign({sub: user.id}, config.secret);
+        const token = jwt.sign({sub: user.id}, config.secret, {
+            expiresIn: 604800
+        });
         return {
             ...userWithoutHash,
             token
@@ -31,6 +37,16 @@ async function getAll() {
 async function getById(id) {
     return await User.findById(id).select('-hash');
 }
+
+//passport.js
+function getUserById(id, callback) {
+    User.findById(id, callback);
+}
+
+// async function getByUsername(username) {
+//     const query = {username: username};
+//     return await User.findOne(query).select('-hash');
+// }
 
 async function create(userParam) {
     // validate
@@ -71,4 +87,8 @@ async function update(id, userParam) {
 
 async function _delete(id) {
     await User.findByIdAndRemove(id);
+}
+
+async function profile() {
+    await passport.authenticate('jwt', {session:false});
 }
