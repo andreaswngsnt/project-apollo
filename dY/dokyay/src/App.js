@@ -1,10 +1,10 @@
 import React, { Component }          from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Login from './admin/login'
-import HomePage from './admin/home'
-import PromoPage from './admin/promo'
-import AboutPage from './admin/about'
+import Login					from './admin/login'
+import HomePage		from './home/home'
+import PromoPage from './home/promo'
+import AboutPage from './home/about'
 
 import logo from './logo.svg'
 import "./assets/scss/material-kit-pro-react.css?v=1.1.0"

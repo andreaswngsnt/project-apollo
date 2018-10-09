@@ -1,16 +1,16 @@
 ﻿import React, { Component } from 'react'
 
-import withStyles from '@material-ui/core/styles/withStyles'
+import withStyles		from '@material-ui/core/styles/withStyles'
 import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
+import Select						from '@material-ui/core/Select'
+import MenuItem				from '@material-ui/core/MenuItem'
 
-import Button from '../components/CustomButtons/Button'
-import Card from '../components/Card/Card'
-import CardBody from '../components/Card/CardBody'
-import CustomInput from '../components/CustomInput/CustomInput'
+import Button								from '../components/CustomButtons/Button'
+import Card										from '../components/Card/Card'
+import CardBody						from '../components/Card/CardBody'
+import CustomInput			from '../components/CustomInput/CustomInput'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem from '../components/Grid/GridItem'
+import GridItem						from '../components/Grid/GridItem'
 
 import headersStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/headersStyle'
 
@@ -45,23 +45,23 @@ class HeaderSearchDoctor extends Component {
 										value={this.state.selectedSpecialization}
 										onChange={this.handleSpecialization}
 										inputProps={{
-											name: "selectedSpecialization",
-											id: "specialization-select"
+											name: 'selectedSpecialization',
+											id: 'specialization-select'
 										}}
 									>
-										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value="1" disabled>
+										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value='1' disabled>
 											Spesialisasi Dokter
 										</MenuItem>
-										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value="2">
+										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value='2'>
 											Umum
 										</MenuItem>
-										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value="3">
+										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value='3'>
 											Anak
 										</MenuItem>
-										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value="4">
+										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value='4'>
 											Gigi
 										</MenuItem>
-										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value="5">
+										<MenuItem classes={{ root: classes.selectMenuItem, selected: classes.selectMenuItemSelected }} value='5'>
 											Kandungan
 										</MenuItem>
 									</Select>
@@ -69,9 +69,9 @@ class HeaderSearchDoctor extends Component {
 							</GridItem>
 							<GridItem xs={12} sm={3} md={3}>
 								<CustomInput
-									id="location"
+									id='location'
 									inputProps={{
-										placeholder: "Lokasi"
+										placeholder: 'Lokasi'
 									}}
 									formControlProps={{
 										fullWidth: true,
@@ -81,9 +81,9 @@ class HeaderSearchDoctor extends Component {
 							</GridItem>
 							<GridItem xs={12} sm={3} md={3}>
 								<CustomInput
-									id="name"
+									id='name'
 									inputProps={{
-										placeholder: "Nama Dokter/Klinik"
+										placeholder: 'Nama Dokter/Klinik'
 									}}
 									formControlProps={{
 										fullWidth: true,
@@ -92,7 +92,7 @@ class HeaderSearchDoctor extends Component {
 								/>
 							</GridItem>
 							<GridItem xs={12} sm={3} md={3}>
-								<Button block round color="primary" className={classes.button}>
+								<Button block round color='primary' className={classes.button}>
 									Cari
 								</Button>
 							</GridItem>

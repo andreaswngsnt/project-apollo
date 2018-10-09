@@ -3,17 +3,17 @@
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import AccessTime from '@material-ui/icons/AccessTime'
-import Search from '@material-ui/icons/Search'
-import Star from '@material-ui/icons/Star'
-import Person from '@material-ui/icons/Person'
+import Search					from '@material-ui/icons/Search'
+import Star							from '@material-ui/icons/Star'
+import Person					from '@material-ui/icons/Person'
 
-import Button from '../components/CustomButtons/Button'
-import Card from '../components/Card/Card'
-import CardBody from '../components/Card/CardBody'
-import CardFooter from '../components/Card/CardFooter'
+import Button								from '../components/CustomButtons/Button'
+import Card										from '../components/Card/Card'
+import CardBody						from '../components/Card/CardBody'
+import CardFooter				from '../components/Card/CardFooter'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem from '../components/Grid/GridItem'
-import InfoArea from '../components/InfoArea/InfoArea'
+import GridItem						from '../components/Grid/GridItem'
+import InfoArea						from '../components/InfoArea/InfoArea'
 
 import sectionTextStyle from '../assets/jss/material-kit-pro-react/views/blogPostSections/sectionTextStyle'
 
@@ -22,7 +22,7 @@ function PromoText({ ...props }) {
 
 	return (
 		<div className={classes.section}>
-			<GridContainer justify="center">
+			<GridContainer justify='center'>
 				<GridItem xs={12} sm={8} md={8}>
 					<h3 className={classes.title}>Bagaimana Kami Membuat Praktikmu Lebih Baik</h3>
 					<p>
@@ -33,18 +33,18 @@ function PromoText({ ...props }) {
 							<InfoArea
 								vertical
 								icon={Search}
-								title="Buat Praktikmu Terlihat"
-								description="Beri tahu kepada pasien tentang informasi praktik anda. Pasien lama dan baru akan menemukan praktikmu online dan menemui anda."
-								iconColor="info"
+								title='Buat Praktikmu Terlihat'
+								description='Beri tahu kepada pasien tentang informasi praktik anda. Pasien lama dan baru akan menemukan praktikmu online dan menemui anda.'
+								iconColor='info'
 							/>
 						</GridItem>
 						<GridItem xs={12} sm={6} md={6}>
 							<InfoArea
 								vertical
 								icon={Person}
-								title="Tunjukkan Keahlianmu"
-								description="Tunjukkan spesialisasi anda. Beri daftar perawatan yang anda lakukan. Banyak pasien yang kesulitan mencari dokter yang tepat."
-								iconColor="success"
+								title='Tunjukkan Keahlianmu'
+								description='Tunjukkan spesialisasi anda. Beri daftar perawatan yang anda lakukan. Banyak pasien yang kesulitan mencari dokter yang tepat.'
+								iconColor='success'
 							/>
 						</GridItem>
 					</GridContainer>
@@ -56,22 +56,22 @@ function PromoText({ ...props }) {
 							<InfoArea
 								vertical
 								icon={AccessTime}
-								title="Isi Semua Waktu Tersedia Anda"
-								description="Kami akan membuat pasien yang membutuhkan perawatan bertemu anda di saat anda memiliki waktu yang tersedia. Pasien bisa melihat waktu tersediamu online."
-								iconColor="primary"
+								title='Isi Semua Waktu Tersedia Anda'
+								description='Kami akan membuat pasien yang membutuhkan perawatan bertemu anda di saat anda memiliki waktu yang tersedia. Pasien bisa melihat waktu tersediamu online.'
+								iconColor='primary'
 							/>
 						</GridItem>
 						<GridItem xs={12} sm={6} md={6}>
 							<InfoArea
 								vertical
 								icon={Star}
-								title="Perkuat Reputasi Anda"
-								description="Kami percaya bahwa dokter yang baik seharusnya juga memiliki reputasi yang baik. Reputasi onlinemu akan dijaga dengan sistem ulasan yang terverifikasi."
-								iconColor="warning"
+								title='Perkuat Reputasi Anda'
+								description='Kami percaya bahwa dokter yang baik seharusnya juga memiliki reputasi yang baik. Reputasi onlinemu akan dijaga dengan sistem ulasan yang terverifikasi.'
+								iconColor='warning'
 							/>
 						</GridItem>
 					</GridContainer>
-					<h3 className={classes.title} id="paket">Biaya simpel, tanpa embel-embel</h3>
+					<h3 className={classes.title} id='paket'>Biaya simpel, tanpa embel-embel</h3>
 					<GridContainer>
 						<GridItem xs={12} sm={6} md={6}>
 							<h5 className={classes.description}>
@@ -79,7 +79,7 @@ function PromoText({ ...props }) {
 							</h5>
 						</GridItem>
 						<GridItem xs={12} sm={6} md={6}>
-							<Card pricing raised color="info">
+							<Card pricing raised color='info'>
 								<CardBody pricing>
 									<h6 className={classes.cardDescription}>Simpel</h6>
 									<h3 className={classes.cardTitleWhite}>
@@ -104,7 +104,7 @@ function PromoText({ ...props }) {
 									</ul>
 								</CardBody>
 								<CardFooter pricing className={classes.justifyContentCenter}>
-									<Button color="primary" round>
+									<Button color='primary' round>
 										Daftar Sekarang
 									</Button>
 								</CardFooter>
