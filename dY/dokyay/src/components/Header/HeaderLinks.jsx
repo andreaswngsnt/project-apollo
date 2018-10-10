@@ -74,7 +74,7 @@ function HeaderLinks({ ...props }) {
 				</Link>
 			</ListItem>
 			<ListItem className={classes.listItem}>
-				<Link to='/'
+				<Link to='/artikel'
 					className={classes.navLink}
 					color="transparent">
 					Artikel Kesehatan
@@ -84,7 +84,7 @@ function HeaderLinks({ ...props }) {
 				<Link to='/promo'
 					className={classes.navLink}
 					color="transparent">
-					Cari Dokter
+					Daftar Praktik
 				</Link>
 			</ListItem>
 			<ListItem className={classes.listItem}>

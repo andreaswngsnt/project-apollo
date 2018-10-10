@@ -20,7 +20,7 @@ import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landing
 import AppFeature										from '../sections/AppFeature'
 import HeaderSearchDoctor		from '../sections/HeaderSearchDoctor'
 import SubscribeNewsletter from '../sections/SubscribeNewsletter'
-import TopBlogs            from '../sections/TopBlogs'
+import TopArticles            from '../sections/TopArticles'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
@@ -68,7 +68,7 @@ class HomePage extends Component {
 								</Button>
 							</GridItem>
 						</GridContainer>
-						<TopBlogs />
+						<TopArticles />
 						<GridContainer>
 							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
 								<Button round color='primary'>

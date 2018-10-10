@@ -1,13 +1,13 @@
-import { cardTitle } from "assets/jss/material-kit-pro-react.jsx";
+import { cardTitle } from "../../../material-kit-pro-react";
 
-import tooltipsStyle from "assets/jss/material-kit-pro-react/tooltipsStyle.jsx";
+import tooltipsStyle from "../../tooltipsStyle";
 
 const sectionPillsStyle = {
   ...tooltipsStyle,
   section: {
     backgroundPosition: "50%",
     backgroundSize: "cover",
-    padding: "70px 0"
+    padding: "70px 0 0"
   },
   textCenter: {
     textAlign: "center"

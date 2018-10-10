@@ -1148,6 +1148,7 @@
     <Folder Include="dY\dokyay\src\components\Snackbar\" />
     <Folder Include="dY\dokyay\src\components\Table\" />
     <Folder Include="dY\dokyay\src\components\Typography\" />
+    <Folder Include="dY\dokyay\src\home\" />
     <Folder Include="dY\dokyay\src\sections\" />
     <Folder Include="dY\_old" />
     <Folder Include="dY\_old\article" />
@@ -1188,13 +1189,14 @@
     <Compile Include=".gitignore">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="dY\dokyay\src\admin\about.js">
+    <Compile Include="dY\dokyay\public\utils.js" />
+    <Compile Include="dY\dokyay\src\home\about.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="dY\dokyay\src\admin\home.js">
+    <Compile Include="dY\dokyay\src\home\home.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="dY\dokyay\src\admin\promo.js">
+    <Compile Include="dY\dokyay\src\home\promo.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\assets\img\assets-for-demo\sections\imgs.jsx" />
