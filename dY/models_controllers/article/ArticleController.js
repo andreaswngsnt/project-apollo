@@ -73,8 +73,8 @@ router.get('/', function (req, res) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
-			res.status(200).render("artikel/home", {articles: foundArticles, categories: foundCategories, category: "home"});
-			//res.status(200).send(foundArticles);
+			//res.status(200).render("artikel/home", {articles: foundArticles, categories: foundCategories, category: "home"});
+			res.status(200).send(foundArticles);
 		});
     });
 });
@@ -84,8 +84,8 @@ router.get('/index', function (req, res) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
-			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: "index"});
-			//res.status(200).send(foundArticles);
+			//res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: "index"});
+			res.status(200).send(foundArticles);
 		});
     });
 });
@@ -99,8 +99,8 @@ router.get('/tags/:tag', function (req, res) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
 			ArticleTag.find({_id: req.params.tag}, function(err, foundTag) {
 				if (err) return res.status(500).send("There was a problem finding the article tag.");
-				res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, tag: foundTag});
-				//res.status(200).send(foundArticles);
+				//res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, tag: foundTag});
+				res.status(200).send(foundArticles);
 			});
 		});
     });
@@ -113,8 +113,8 @@ router.get('/categories/:category', function (req, res) {
         if (err) return res.status(500).send("There was a problem finding the articles.");
 		ArticleCategory.find({}, function(err, foundCategories) {
 			if (err) return res.status(500).send("There was a problem finding the article category.");
-			res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: req.params.category});
-			//res.status(200).send(foundArticles);
+			//res.status(200).render("artikel/index", {articles: foundArticles, categories: foundCategories, category: req.params.category});
+			res.status(200).send(foundArticles);
 		});
     });
 });
@@ -124,8 +124,8 @@ router.get('/:id', function (req, res) {
     Article.findById(req.params.id).populate("l_article_tags_id").populate("l_article_categories_id").exec(function (err, foundArticle) {
         if (err) return res.status(500).send("There was a problem finding the article.");
         if (!foundArticle) return res.status(404).send("No article found.");
-		// res.status(200).send(foundArticle + " " + foundCategory);
-		res.status(200).render("artikel/show", {article: foundArticle, page: "show"});
+		res.status(200).send(foundArticle);
+		//res.status(200).render("artikel/show", {article: foundArticle, page: "show"});
     });
 });
 
@@ -139,7 +139,7 @@ router.delete('/:id', function (req, res) {
 });
 
 //UPDATE ONE
-router.put('/:id', function (req, res) {
+router.put('/:id', upload.single('picture'), function (req, res) {
 	let updatedArticle = {
         updated: new Date(),
         // d_authors_id: req.body.d_authors_id,
@@ -147,7 +147,7 @@ router.put('/:id', function (req, res) {
         l_article_tags_id: [],
         title: req.body.title,
         body: req.body.body,
-        pictures: req.body.pictures,
+        picture: req.file.filename,
         description: req.body.description
 	}
 	
@@ -176,7 +176,7 @@ router.put('/:id', function (req, res) {
 						if(article.l_article_tags_id.length == tagNamesArray.length) {
 							article.save(function(err){
 								if (err) res.status(500).send(err);
-								//res.redirect('/admin/artikel/index');
+								// res.redirect('/admin/artikel/index');
 								res.status(200).send(article);
 							});
 						}
