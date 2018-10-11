@@ -1,8 +1,8 @@
 import React, { Component }          from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Login from './admin/login'
-import HomePage from './admin/home'
+import Login     from './admin/login'
+import HomePage  from './admin/home'
 import PromoPage from './admin/promo'
 
 import logo from './logo.svg'
