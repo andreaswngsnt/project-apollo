@@ -506,6 +506,24 @@
     <Content Include="client-side-app\FoodOrderingApp\React-Native\src\theme\variables\platform.js" />
     <Content Include="dY\dokyay\package-lock.json" />
     <Content Include="dY\dokyay\package.json" />
+    <Content Include="dY\dokyay\public\css\MyFontsWebfontsKit.css" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_0_0.eot" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_0_0.ttf" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_0_0.woff" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_0_0.woff2" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_1_0.eot" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_1_0.ttf" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_1_0.woff" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_1_0.woff2" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_2_0.eot" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_2_0.ttf" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_2_0.woff" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_2_0.woff2" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_3_0.eot" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_3_0.ttf" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_3_0.woff" />
+    <Content Include="dY\dokyay\public\webfonts\36035D_3_0.woff2" />
+    <Content Include="dY\dokyay\public\webfonts\desktop.ini" />
     <Content Include="dY\dokyay\README.md" />
     <Content Include="dY\dokyay\src\assets\img\apple-icon.png" />
     <Content Include="dY\dokyay\src\assets\img\arrow-left.cur" />
@@ -1075,6 +1093,8 @@
     <Folder Include="client-side-app\FoodOrderingApp\React-Native\src\theme\components" />
     <Folder Include="client-side-app\FoodOrderingApp\React-Native\src\theme\variables" />
     <Folder Include="dY" />
+    <Folder Include="dY\dokyay\public\css\" />
+    <Folder Include="dY\dokyay\public\webfonts\" />
     <Folder Include="dY\dokyay\src\assets\" />
     <Folder Include="dY\dokyay\src\assets\img\" />
     <Folder Include="dY\dokyay\src\assets\img\assets-for-demo\" />
@@ -1166,6 +1186,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include=".gitignore">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\admin\about.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\admin\home.js">
@@ -1312,6 +1335,13 @@
     <Compile Include="dY\dokyay\src\components\Typography\Success.jsx" />
     <Compile Include="dY\dokyay\src\components\Typography\Warning.jsx" />
     <Compile Include="dY\dokyay\src\sections\AppFeature.js" />
+    <Compile Include="dY\dokyay\src\sections\HeaderSearchDoctor.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\sections\AboutText.js" />
+    <Compile Include="dY\dokyay\src\sections\SubscribeNewsletter.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\sections\TopBlogs.js">
       <SubType>Code</SubType>
     </Compile>

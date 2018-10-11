@@ -1,6 +1,8 @@
 ﻿import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import classNames from 'classnames'
+
 import withStyles from '@material-ui/core/styles/withStyles'
 import List       from '@material-ui/core/List'
 import ListItem   from '@material-ui/core/ListItem'
@@ -13,47 +15,68 @@ import Header        from '../components/Header/Header'
 import HeaderLinks   from '../components/Header/HeaderLinks'
 import Parallax      from '../components/Parallax/Parallax'
 
-import blogPostPageStyle from '../assets/jss/material-kit-pro-react/views/blogPostPageStyle'
+import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landingPageStyle'
 
-import PromoText from '../sections/PromoText'
+import AppFeature										from '../sections/AppFeature'
+import HeaderSearchDoctor		from '../sections/HeaderSearchDoctor'
+import SubscribeNewsletter from '../sections/SubscribeNewsletter'
+import TopBlogs            from '../sections/TopBlogs'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
-class PromoPage extends Component {
+class HomePage extends Component {
+	componentDidMount() {
+		window.scrollTo(0, 0)
+		document.body.scrollTop = 0
+	}
+
 	render() {
-		const { classes } = this.props
+		const { classes, ...rest } = this.props
 		return (
 			<div>
 				<Header
 					color='transparent'
-					links={<HeaderLinks dropdownHoverColor='dark' />}
+					links={<HeaderLinks dropdownHoverColor='primary' />}
 					fixed
 					changeColorOnScroll={{
 						height: 300,
 						color: 'white'
-					}} />
+					}}
+					{...rest} />
 				<Parallax image={parallaxBg} filter='dark'>
 					<div className={classes.container}>
-						<GridContainer justify='center'>
-							<GridItem md={8} className={classes.textCenter}>
-								<h1 className={classes.title}>Jadilah Dokter Terbaik</h1>
-								<h4 className={classes.subtitle}>
-									Daftarlah dengan kami untuk memaksimalkan praktik anda.
+						<GridContainer>
+							<GridItem xs={12} sm={6} md={6} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
+								<h2 className={classes.title}>Temukan Dokter Terbaik Tanpa Antri</h2>
+								<h4>
+									Lihat ulasan dokter dan booking dimanapun & kapanpun.
 								</h4>
-								<br />
-								<Button
-									color='primary'
-									href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-									round>
-									Lihat Paket
-								</Button>
+							</GridItem>
+							<GridItem>
+								<HeaderSearchDoctor />
 							</GridItem>
 						</GridContainer>
 					</div>
 				</Parallax>
-				<div className={classes.main}>
+				<div className={classNames(classes.main, classes.mainRaised)}>
 					<div className={classes.container}>
-						<PromoText />
+						<AppFeature />
+						<GridContainer>
+							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
+								<Button round color='primary'>
+									Download Aplikasi
+								</Button>
+							</GridItem>
+						</GridContainer>
+						<TopBlogs />
+						<GridContainer>
+							<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
+								<Button round color='primary'>
+									Baca Artikel Lainnya
+								</Button>
+							</GridItem>
+						</GridContainer>
+						<SubscribeNewsletter />
 					</div>
 				</div>
 				<Footer
@@ -62,7 +85,7 @@ class PromoPage extends Component {
 							<div className={classes.left}>
 								<List className={classes.list}>
 									<ListItem className={classes.inlineBlock}>
-										<Link to='#' className={classes.block}>
+										<Link to='/tentang' className={classes.block}>
 											Tentang Kami
 										</Link>
 									</ListItem>
@@ -88,4 +111,4 @@ class PromoPage extends Component {
 	}
 }
 
-export default withStyles(blogPostPageStyle)(PromoPage)
+export default withStyles(landingPageStyle)(HomePage)

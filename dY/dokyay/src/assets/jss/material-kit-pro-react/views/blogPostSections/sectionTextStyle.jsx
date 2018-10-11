@@ -1,10 +1,17 @@
-import { container, title } from "../../../material-kit-pro-react";
+import { cardTitle, container, description, title, mlAuto, mrAuto } from "../../../material-kit-pro-react";
 
 import imagesStyles from "../../imagesStyles";
 
 const sectionTextStyle = {
-  container,
-  title,
+		container,
+		description,
+		title,
+		mlAuto,
+		mrAuto,
+		cardTitleWhite: {
+			...cardTitle,
+			color: "#FFFFFF !important"
+		},
   section: {
     paddingBottom: "0",
     backgroundPosition: "50%",
@@ -16,10 +23,18 @@ const sectionTextStyle = {
       color: "#555",
       marginBottom: "30px"
     }
-  },
+		},
+		justifyContentCenter: {
+				WebkitBoxPack: "center !important",
+				MsFlexPack: "center !important",
+				justifyContent: "center !important"
+		},
   quoteText: {
     fontSize: "1.5rem !important"
-  },
+		},
+		textCenter: {
+			textAlign: "center"
+		},
   ...imagesStyles
 };
 

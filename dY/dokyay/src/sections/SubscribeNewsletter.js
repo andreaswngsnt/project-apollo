@@ -1,16 +1,16 @@
-﻿import React, { Component } from 'react'
+﻿import React from 'react'
 
-import withStyles from '@material-ui/core/styles/withStyles'
+import withStyles					from '@material-ui/core/styles/withStyles'
 import InputAdornment from '@material-ui/core/InputAdornment'
 
 import Mail from '@material-ui/icons/Mail'
 
-import Button from '../components/CustomButtons/Button'
-import Card from '../components/Card/Card'
-import CardBody from '../components/Card/CardBody'
-import CustomInput from '../components/CustomInput/CustomInput'
+import Button								from '../components/CustomButtons/Button'
+import Card										from '../components/Card/Card'
+import CardBody						from '../components/Card/CardBody'
+import CustomInput			from '../components/CustomInput/CustomInput'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem from '../components/Grid/GridItem'
+import GridItem						from '../components/Grid/GridItem'
 
 import sectionSubscribeLineStyle from '../assets/jss/material-kit-pro-react/views/blogPostsSections/sectionSubscribeLineStyle'
 
@@ -40,15 +40,15 @@ function SubscribeNewsletter({ ...props }) {
 												}}
 												inputProps={{
 													startAdornment: (
-														<InputAdornment position="start">
+														<InputAdornment position='start'>
 															<Mail className={classes.icon} />
 														</InputAdornment>),
-													placeholder: "Email anda"
+													placeholder: 'Email anda'
 												}}
 											/>
 										</GridItem>
 										<GridItem xs={12} sm={4} md={4}>
-											<Button round block color="primary">
+											<Button round block color='primary'>
 												Langganan
 									</Button>
 										</GridItem>

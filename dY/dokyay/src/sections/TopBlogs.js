@@ -2,11 +2,11 @@
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import Button from '../components/CustomButtons/Button'
-import Card from '../components/Card/Card'
-import CardBody from '../components/Card/CardBody'
+import Button								from '../components/CustomButtons/Button'
+import Card										from '../components/Card/Card'
+import CardBody						from '../components/Card/CardBody'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem from '../components/Grid/GridItem'
+import GridItem						from '../components/Grid/GridItem'
 
 import projectsStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/projectsStyle'
 
@@ -18,7 +18,7 @@ class TopBlogs extends Component {
 	render() {
 		const { classes, ...rest } = this.props
 		return (
-			<div className="cd-section" {...rest}>
+			<div className='cd-section' {...rest}>
 				<div className={classes.projects}>
 					<div className={classes.container}>
 						<GridContainer>
@@ -41,7 +41,7 @@ class TopBlogs extends Component {
 										<p className={classes.cardDescription}>
 											Take a trip back to the '90s
 										</p>
-										<Button round color="primary">
+										<Button round color='primary'>
 											Baca Artikel
 										</Button>
 									</CardBody>
@@ -59,7 +59,7 @@ class TopBlogs extends Component {
 										<p className={classes.cardDescription}>
 											The king of graphics cards has a new heir
 										</p>
-										<Button round color="primary">
+										<Button round color='primary'>
 											Baca Artikel
 										</Button>
 									</CardBody>
@@ -77,7 +77,7 @@ class TopBlogs extends Component {
 										<p className={classes.cardDescription}>
 											How I learned to manage my bi-racial hair despite my hair pulling disorder.
 										</p>
-										<Button round color="primary">
+										<Button round color='primary'>
 											Baca Artikel
 										</Button>
 									</CardBody>

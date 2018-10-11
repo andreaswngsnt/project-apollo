@@ -60,40 +60,32 @@ function HeaderLinks({ ...props }) {
 	return (
 		<List className={classes.list + " " + classes.mlAuto}>
 			<ListItem className={classes.listItem}>
-				<Button
-					href="#"
+				<Link to='/'
 					className={classes.navLink}
-					color="transparent"
-				>
+					color="transparent">
 					Cari Dokter
-				</Button>
+				</Link>
 			</ListItem>
 			<ListItem className={classes.listItem}>
-				<Button
-					href="#"
+				<Link to='/'
 					className={classes.navLink}
-					color="transparent"
-				>
+					color="transparent">
 					Peta Dokter
-				</Button>
+				</Link>
 			</ListItem>
 			<ListItem className={classes.listItem}>
-				<Button
-					href="#"
+				<Link to='/'
 					className={classes.navLink}
-					color="transparent"
-				>
+					color="transparent">
 					Artikel Kesehatan
-				</Button>
+				</Link>
 			</ListItem>
 			<ListItem className={classes.listItem}>
-				<Button
-					href="/promo"
+				<Link to='/promo'
 					className={classes.navLink}
-					color="transparent"
-				>
-					Daftarkan Praktekmu
-				</Button>
+					color="transparent">
+					Cari Dokter
+				</Link>
 			</ListItem>
 			<ListItem className={classes.listItem}>
 				<CustomDropdown
