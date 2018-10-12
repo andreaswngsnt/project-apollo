@@ -15,7 +15,10 @@ const blogsSection = {
   cardTitle,
   mlAuto,
   mrAuto,
-  description,
+		description,
+		textCenter: {
+				textAlign: "center"
+		},
   blog: {
     padding: "50px 0"
   },

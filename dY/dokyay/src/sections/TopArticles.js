@@ -14,7 +14,7 @@ import blogImg1 from '../assets/img/blogs/img1.jpg'
 import blogImg2 from '../assets/img/blogs/img2.jpg'
 import blogImg3 from '../assets/img/blogs/img3.jpg'
 
-class TopBlogs extends Component {
+class TopArticles extends Component {
 	render() {
 		const { classes, ...rest } = this.props
 		return (
@@ -91,4 +91,4 @@ class TopBlogs extends Component {
 	}
 }
 
-export default withStyles(projectsStyle)(TopBlogs)
+export default withStyles(projectsStyle)(TopArticles)
