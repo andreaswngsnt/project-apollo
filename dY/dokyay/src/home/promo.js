@@ -6,7 +6,7 @@ import List       from '@material-ui/core/List'
 import ListItem   from '@material-ui/core/ListItem'
 
 import Button        from '../components/CustomButtons/Button'
-import Footer        from '../components/Footer/Footer'
+import DokYayFooter	 from '../components/DokYay/DokYayFooter'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem      from '../components/Grid/GridItem'
 import Header        from '../components/Header/Header'
@@ -61,33 +61,7 @@ class PromoPage extends Component {
 						<PromoText />
 					</div>
 				</div>
-				<Footer
-					content={
-						<div>
-							<div className={classes.left}>
-								<List className={classes.list}>
-									<ListItem className={classes.inlineBlock}>
-										<Link to='/tentang' className={classes.block}>
-											Tentang Kami
-										</Link>
-									</ListItem>
-									<ListItem className={classes.inlineBlock}>
-										<Link to='#' className={classes.block}>
-											Blog
-										</Link>
-									</ListItem>
-									<ListItem className={classes.inlineBlock}>
-										<Link to='#' className={classes.block}>
-											Admin
-										</Link>
-									</ListItem>
-								</List>
-							</div>
-							<div className={classes.right}>
-								&copy; {new Date().getFullYear()}, PT dokYAY.
-							</div>
-						</div>
-					} />
+				<DokYayFooter />
 			</div>
 		)
 	}

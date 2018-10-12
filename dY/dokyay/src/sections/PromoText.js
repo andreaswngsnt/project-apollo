@@ -3,17 +3,17 @@
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import AccessTime from '@material-ui/icons/AccessTime'
-import Search					from '@material-ui/icons/Search'
-import Star							from '@material-ui/icons/Star'
-import Person					from '@material-ui/icons/Person'
+import Search	  from '@material-ui/icons/Search'
+import Star		  from '@material-ui/icons/Star'
+import Person	  from '@material-ui/icons/Person'
 
-import Button								from '../components/CustomButtons/Button'
-import Card										from '../components/Card/Card'
-import CardBody						from '../components/Card/CardBody'
-import CardFooter				from '../components/Card/CardFooter'
+import Button		 from '../components/CustomButtons/Button'
+import Card			 from '../components/Card/Card'
+import CardBody		 from '../components/Card/CardBody'
+import CardFooter	 from '../components/Card/CardFooter'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem						from '../components/Grid/GridItem'
-import InfoArea						from '../components/InfoArea/InfoArea'
+import GridItem		 from '../components/Grid/GridItem'
+import InfoArea		 from '../components/InfoArea/InfoArea'
 
 import sectionTextStyle from '../assets/jss/material-kit-pro-react/views/blogPostSections/sectionTextStyle'
 
@@ -35,8 +35,7 @@ function PromoText({ ...props }) {
 								icon={Search}
 								title='Buat Praktikmu Terlihat'
 								description='Beri tahu kepada pasien tentang informasi praktik anda. Pasien lama dan baru akan menemukan praktikmu online dan menemui anda.'
-								iconColor='info'
-							/>
+								iconColor='info' />
 						</GridItem>
 						<GridItem xs={12} sm={6} md={6}>
 							<InfoArea
@@ -44,8 +43,7 @@ function PromoText({ ...props }) {
 								icon={Person}
 								title='Tunjukkan Keahlianmu'
 								description='Tunjukkan spesialisasi anda. Beri daftar perawatan yang anda lakukan. Banyak pasien yang kesulitan mencari dokter yang tepat.'
-								iconColor='success'
-							/>
+								iconColor='success' />
 						</GridItem>
 					</GridContainer>
 					<p>
@@ -58,8 +56,7 @@ function PromoText({ ...props }) {
 								icon={AccessTime}
 								title='Isi Semua Waktu Tersedia Anda'
 								description='Kami akan membuat pasien yang membutuhkan perawatan bertemu anda di saat anda memiliki waktu yang tersedia. Pasien bisa melihat waktu tersediamu online.'
-								iconColor='primary'
-							/>
+								iconColor='primary'/>
 						</GridItem>
 						<GridItem xs={12} sm={6} md={6}>
 							<InfoArea
@@ -67,8 +64,7 @@ function PromoText({ ...props }) {
 								icon={Star}
 								title='Perkuat Reputasi Anda'
 								description='Kami percaya bahwa dokter yang baik seharusnya juga memiliki reputasi yang baik. Reputasi onlinemu akan dijaga dengan sistem ulasan yang terverifikasi.'
-								iconColor='warning'
-							/>
+								iconColor='warning' />
 						</GridItem>
 					</GridContainer>
 					<h3 className={classes.title} id='paket'>Biaya simpel, tanpa embel-embel</h3>

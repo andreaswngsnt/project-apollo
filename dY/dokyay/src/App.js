@@ -7,7 +7,7 @@ import PromoPage from './home/promo'
 import AboutPage from './home/about'
 
 import logo from './logo.svg'
-import "./assets/scss/material-kit-pro-react.css?v=1.1.0"
+import './assets/scss/material-kit-pro-react.css?v=1.1.0'
 
 class App extends Component {
 	state = {
@@ -38,9 +38,9 @@ class App extends Component {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path='/' component={HomePage} />
-					<Route path='/promo' component={PromoPage} />
-					<Route path='/tentang' component={AboutPage} />
-					<Route path='/login' component={Login} />
+					<Route path='/promo'  component={PromoPage} />
+					<Route path='/about'  component={AboutPage} />
+					<Route path='/login'  component={Login} />
 				</Switch>
 			</BrowserRouter>
 		)

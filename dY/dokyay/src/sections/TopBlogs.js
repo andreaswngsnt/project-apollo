@@ -2,11 +2,11 @@
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import Button								from '../components/CustomButtons/Button'
-import Card										from '../components/Card/Card'
-import CardBody						from '../components/Card/CardBody'
+import Button		 from '../components/CustomButtons/Button'
+import Card			 from '../components/Card/Card'
+import CardBody		 from '../components/Card/CardBody'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem						from '../components/Grid/GridItem'
+import GridItem		 from '../components/Grid/GridItem'
 
 import projectsStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/projectsStyle'
 

@@ -2,21 +2,21 @@
 import { Link } from 'react-router-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
-import List							from '@material-ui/core/List'
-import ListItem			from '@material-ui/core/ListItem'
+import List		  from '@material-ui/core/List'
+import ListItem	  from '@material-ui/core/ListItem'
 
-import Header								from '../components/Header/Header'
-import HeaderLinks			from '../components/Header/HeaderLinks'
-import Footer								from '../components/Footer/Footer'
+import Header		 from '../components/Header/Header'
+import HeaderLinks	 from '../components/Header/HeaderLinks'
+import DokYayFooter	 from '../components/DokYay/DokYayFooter'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem						from '../components/Grid/GridItem'
-import Parallax						from '../components/Parallax/Parallax'
+import GridItem		 from '../components/Grid/GridItem'
+import Parallax		 from '../components/Parallax/Parallax'
 
 import blogPostPageStyle from '../assets/jss/material-kit-pro-react/views/blogPostPageStyle'
+import parallaxBg        from '../assets/img/bg/bg1.jpg'
 
 import AboutText from '../sections/AboutText'
 
-import parallaxBg from '../assets/img/bg/bg1.jpg'
 
 class AboutPage extends Component {
 	componentDidMount() {
@@ -34,7 +34,7 @@ class AboutPage extends Component {
 					fixed
 					changeColorOnScroll={{
 						height: 300,
-						color: 'white'
+						color:  'white'
 					}}
 				/>
 				<Parallax image={parallaxBg} filter='dark'>
@@ -54,34 +54,7 @@ class AboutPage extends Component {
 						<AboutText />
 					</div>
 				</div>
-				<Footer
-					content={
-						<div>
-							<div className={classes.left}>
-								<List className={classes.list}>
-									<ListItem className={classes.inlineBlock}>
-										<Link to="/tentang" className={classes.block}>
-											Tentang Kami
-										</Link>
-									</ListItem>
-									<ListItem className={classes.inlineBlock}>
-										<Link to="#" className={classes.block}>
-											Blog
-										</Link>
-									</ListItem>
-									<ListItem className={classes.inlineBlock}>
-										<Link to="#" className={classes.block}>
-											Admin
-										</Link>
-									</ListItem>
-								</List>
-							</div>
-							<div className={classes.right}>
-								&copy; {new Date().getFullYear()}, PT dokYAY.
-							</div>
-						</div>
-					}
-				/>
+				<DokYayFooter />
 			</div>
 		)
 	}
