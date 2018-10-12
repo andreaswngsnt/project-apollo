@@ -1095,6 +1095,7 @@
     <Folder Include="dY" />
     <Folder Include="dY\dokyay\public\css\" />
     <Folder Include="dY\dokyay\public\webfonts\" />
+    <Folder Include="dY\dokyay\src\article\" />
     <Folder Include="dY\dokyay\src\assets\" />
     <Folder Include="dY\dokyay\src\assets\img\" />
     <Folder Include="dY\dokyay\src\assets\img\assets-for-demo\" />
@@ -1190,6 +1191,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\public\utils.js" />
+    <Compile Include="dY\dokyay\src\article\home.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\home\about.js">
       <SubType>Code</SubType>
     </Compile>
@@ -1337,6 +1341,12 @@
     <Compile Include="dY\dokyay\src\components\Typography\Success.jsx" />
     <Compile Include="dY\dokyay\src\components\Typography\Warning.jsx" />
     <Compile Include="dY\dokyay\src\sections\AppFeature.js" />
+    <Compile Include="dY\dokyay\src\sections\ArticleCategoriesNavbar.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\sections\ArticleList.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\sections\HeaderSearchDoctor.js">
       <SubType>Code</SubType>
     </Compile>
@@ -1344,7 +1354,7 @@
     <Compile Include="dY\dokyay\src\sections\SubscribeNewsletter.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="dY\dokyay\src\sections\TopBlogs.js">
+    <Compile Include="dY\dokyay\src\sections\TopArticles.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\sections\PromoText.js">

@@ -1,9 +1,13 @@
 ﻿import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import classNames from 'classnames'
 
 import withStyles from '@material-ui/core/styles/withStyles'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
 
+import Footer from '../components/Footer/Footer'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem from '../components/Grid/GridItem'
 import Header from '../components/Header/Header'
@@ -55,6 +59,33 @@ class ArticleHomePage extends Component {
 						<ArticleList />
 					</div>
 				</div>
+				<Footer
+					content={
+						<div>
+							<div className={classes.left}>
+								<List className={classes.list}>
+									<ListItem className={classes.inlineBlock}>
+										<Link to='/tentang' className={classes.block}>
+											Tentang Kami
+										</Link>
+									</ListItem>
+									<ListItem className={classes.inlineBlock}>
+										<Link to='#' className={classes.block}>
+											Blog
+										</Link>
+									</ListItem>
+									<ListItem className={classes.inlineBlock}>
+										<Link to='#' className={classes.block}>
+											Admin
+										</Link>
+									</ListItem>
+								</List>
+							</div>
+							<div className={classes.right}>
+								&copy; {new Date().getFullYear()}, PT dokYAY.
+							</div>
+						</div>
+					} />
 			</div>
 		)
 	}
