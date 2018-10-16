@@ -1,16 +1,12 @@
 ﻿import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
-import List		  from '@material-ui/core/List'
-import ListItem	  from '@material-ui/core/ListItem'
 
-import Header		 from '../components/Header/Header'
-import HeaderLinks	 from '../components/Header/HeaderLinks'
-import DokYayFooter	 from '../components/DokYay/DokYayFooter'
+import DokYayFooter		from '../components/DokYay/DokYayFooter'
+import DokYayHeader		from '../components/DokYay/DokYayHeader'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem		 from '../components/Grid/GridItem'
-import Parallax		 from '../components/Parallax/Parallax'
+import GridItem						from '../components/Grid/GridItem'
+import Parallax						from '../components/Parallax/Parallax'
 
 import blogPostPageStyle from '../assets/jss/material-kit-pro-react/views/blogPostPageStyle'
 import parallaxBg        from '../assets/img/bg/bg1.jpg'
@@ -28,15 +24,7 @@ class AboutPage extends Component {
 		const { classes } = this.props
 		return (
 			<div>
-				<Header
-					color='transparent'
-					links={<HeaderLinks dropdownHoverColor='primary' />}
-					fixed
-					changeColorOnScroll={{
-						height: 300,
-						color:  'white'
-					}}
-				/>
+				<DokYayHeader />
 				<Parallax image={parallaxBg} filter='dark'>
 					<div className={classes.container}>
 						<GridContainer justify='center'>

@@ -11,7 +11,7 @@ import GridItem						from '../components/Grid/GridItem'
 import InfoArea						from '../components/InfoArea/InfoArea'
 import Quote									from '../components/Typography/Quote'
 
-import sectionTextStyle from '../assets/jss/material-kit-pro-react/views/blogPostSections/sectionTextStyle'
+import regularTextStyle from '../assets/jss/dokYayStyles/sections/regularTextStyle'
 
 function PromoText({ ...props }) {
 	const { classes } = props
@@ -69,4 +69,4 @@ function PromoText({ ...props }) {
 	)
 }
 
-export default withStyles(sectionTextStyle)(PromoText)
+export default withStyles(regularTextStyle)(PromoText)

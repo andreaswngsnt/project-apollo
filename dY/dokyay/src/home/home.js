@@ -1,18 +1,14 @@
 ﻿import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import classNames from 'classnames'
 
 import withStyles from '@material-ui/core/styles/withStyles'
-import List       from '@material-ui/core/List'
-import ListItem   from '@material-ui/core/ListItem'
 
 import Button        from '../components/CustomButtons/Button'
-import DokYayFooter	 from '../components/DokYay/DokYayFooter'
+import DokYayFooter		from '../components/DokYay/DokYayFooter'
+import DokYayHeader		from '../components/DokYay/DokYayHeader'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem      from '../components/Grid/GridItem'
-import Header        from '../components/Header/Header'
-import HeaderLinks   from '../components/Header/HeaderLinks'
 import Parallax      from '../components/Parallax/Parallax'
 
 import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landingPageStyle'
@@ -20,7 +16,7 @@ import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landing
 import AppFeature          from '../sections/AppFeature'
 import HeaderSearchDoctor  from '../sections/HeaderSearchDoctor'
 import SubscribeNewsletter from '../sections/SubscribeNewsletter'
-import TopArticles            from '../sections/TopArticles'
+import TopArticles									from '../sections/TopArticles'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
@@ -34,15 +30,7 @@ class HomePage extends Component {
 		const { classes, ...rest } = this.props
 		return (
 			<div>
-				<Header
-					color='transparent'
-					links={<HeaderLinks dropdownHoverColor='primary' />}
-					fixed
-					changeColorOnScroll={{
-						height: 300,
-						color: 'white'
-					}}
-					{...rest} />
+				<DokYayHeader />
 				<Parallax image={parallaxBg} filter='dark'>
 					<div className={classes.container}>
 						<GridContainer>

@@ -46,7 +46,7 @@ class ArticleList extends Component {
 
 		return this.state.articles.map((article) => {
 			return (
-				<Card plain blog className={classes.card}>
+				<Card plain blog className={classes.card} key={article.title}>
 					<GridContainer>
 						<GridItem xs={12} sm={4} md={4}>
 							<CardHeader image plain>

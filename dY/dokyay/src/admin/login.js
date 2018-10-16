@@ -5,16 +5,15 @@ import withStyles from '@material-ui/core/styles/withStyles'
 
 import Button    from '@material-ui/core/Button'
 import Card      from '@material-ui/core/Card'
-import List		 from '@material-ui/core/List'
+import List						from '@material-ui/core/List'
 import ListItem	 from '@material-ui/core/ListItem'
 import TextField from '@material-ui/core/TextField'
 
-import Header		 from '../components/Header/Header'
-import HeaderLinks	 from '../components/Header/HeaderLinks'
-import DokYayFooter	 from '../components/DokYay/DokYayFooter'
+import DokYayFooter		from '../components/DokYay/DokYayFooter'
+import DokYayHeader		from '../components/DokYay/DokYayHeader'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem		 from '../components/Grid/GridItem'
-import Parallax		 from '../components/Parallax/Parallax'
+import GridItem						from '../components/Grid/GridItem'
+import Parallax						from '../components/Parallax/Parallax'
 
 import loginPageStyle from '../assets/jss/material-kit-pro-react/views/loginPageStyle'
 import parallaxBg     from '../assets/img/bg/bg1.jpg'
@@ -153,15 +152,8 @@ class Login extends Component {
 		}
 
 		return (
-			<div style={{border: '1px solid black', height: '100vh'}}>
-				<Header
-					color='dark'
-					links={<HeaderLinks dropdownHoverColor='primary' />}
-					fixed
-					changeColorOnScroll={{
-						height: 300,
-						color:  'dark'
-					}} />
+			<div style={{ border: '1px solid black', height: '100vh' }}>
+				<DokYayHeader />
 				<div className={classes.main}>
 					<div className={classes.container} style={{color: '#000000'}}>
 						{loginForm}

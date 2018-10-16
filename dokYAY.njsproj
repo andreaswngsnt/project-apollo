@@ -1137,6 +1137,7 @@
     <Folder Include="dY\dokyay\src\components\CustomLinearProgress\" />
     <Folder Include="dY\dokyay\src\components\CustomTabs\" />
     <Folder Include="dY\dokyay\src\components\CustomUpload\" />
+    <Folder Include="dY\dokyay\src\components\DokYay\" />
     <Folder Include="dY\dokyay\src\components\Footer\" />
     <Folder Include="dY\dokyay\src\components\Grid\" />
     <Folder Include="dY\dokyay\src\components\Header\" />
@@ -1194,6 +1195,7 @@
     <Compile Include="dY\dokyay\src\article\home.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dY\dokyay\src\components\DokYay\DokYayFooter.js" />
     <Compile Include="dY\dokyay\src\home\about.js">
       <SubType>Code</SubType>
     </Compile>
