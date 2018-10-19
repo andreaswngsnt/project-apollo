@@ -1,7 +1,5 @@
 ﻿import React, { Component } from 'react'
 
-import classNames from 'classnames'
-
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import Button        from '../components/CustomButtons/Button'
@@ -11,7 +9,7 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem      from '../components/Grid/GridItem'
 import Parallax      from '../components/Parallax/Parallax'
 
-import landingPageStyle from '../assets/jss/material-kit-pro-react/views/landingPageStyle'
+import homePagesStyle from '../assets/jss/dokYayStyles/pages/homePagesStyle'
 
 import AppFeature          from '../sections/AppFeature'
 import HeaderSearchDoctor  from '../sections/HeaderSearchDoctor'
@@ -27,14 +25,14 @@ class HomePage extends Component {
 	}
 
 	render() {
-		const { classes, ...rest } = this.props
+		const { classes } = this.props
 		return (
 			<div>
 				<DokYayHeader />
 				<Parallax image={parallaxBg} filter='dark'>
 					<div className={classes.container}>
 						<GridContainer>
-							<GridItem xs={12} sm={6} md={6} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
+							<GridItem xs={12} sm={6} md={6} className={`${classes.mlAuto} ${classes.mrAuto} ${classes.textCenter}`}>
 								<h2 className={classes.title}>Temukan Dokter Terbaik Tanpa Antri</h2>
 								<h4>
 									Lihat ulasan dokter dan booking dimanapun & kapanpun.
@@ -46,7 +44,7 @@ class HomePage extends Component {
 						</GridContainer>
 					</div>
 				</Parallax>
-				<div className={classNames(classes.main, classes.mainRaised)}>
+				<div className={`${classes.main} ${classes.mainRaised}`}>
 					<div className={classes.container}>
 						<AppFeature />
 						<GridContainer>
@@ -73,4 +71,4 @@ class HomePage extends Component {
 	}
 }
 
-export default withStyles(landingPageStyle)(HomePage)
+export default withStyles(homePagesStyle)(HomePage)

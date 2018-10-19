@@ -1,7 +1,5 @@
 ﻿import React, { Component } from 'react'
 
-import classNames from 'classnames'
-
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import Card from '../components/Card/Card'
@@ -9,11 +7,10 @@ import CardHeader from '../components/Card/CardHeader'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem from '../components/Grid/GridItem'
 
-import blogsStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/blogsStyle'
+import articleListStyle from '../assets/jss/dokYayStyles/sections/articleListStyle'
 
 import blogImg1 from '../assets/img/blogs/img1.jpg'
 import blogImg2 from '../assets/img/blogs/img2.jpg'
-import blogImg3 from '../assets/img/blogs/img3.jpg'
 
 class ArticleList extends Component {
 	constructor(props) {
@@ -93,7 +90,7 @@ class ArticleList extends Component {
 			<div className={classes.blog}>
 				<div className={classes.container}>
 					<GridContainer>
-						<GridItem xs={12} sm={12} md={12} className={classNames(classes.mlAuto, classes.mrAuto, classes.textCenter)}>
+						<GridItem xs={12} sm={12} md={12} className={`${classes.mlAuto} ${classes.mrAuto} ${classes.textCenter}`}>
 							<h2 className={classes.title}>Artikel Kesehatan Terbaru</h2>
 						</GridItem>
 						<GridItem xs={12} sm={12} md={12}>
@@ -106,4 +103,4 @@ class ArticleList extends Component {
 	}
 }
 
-export default withStyles(blogsStyle)(ArticleList)
+export default withStyles(articleListStyle)(ArticleList)

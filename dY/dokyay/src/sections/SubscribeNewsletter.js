@@ -12,7 +12,7 @@ import CustomInput			from '../components/CustomInput/CustomInput'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem						from '../components/Grid/GridItem'
 
-import sectionSubscribeLineStyle from '../assets/jss/material-kit-pro-react/views/blogPostsSections/sectionSubscribeLineStyle'
+import subscribeNewsletterStyle from '../assets/jss/dokYayStyles/sections/subscribeNewsletterStyle'
 
 function SubscribeNewsletter({ ...props }) {
 	const { classes } = props
@@ -63,4 +63,4 @@ function SubscribeNewsletter({ ...props }) {
 	)
 }
 
-export default withStyles(sectionSubscribeLineStyle)(SubscribeNewsletter)
+export default withStyles(subscribeNewsletterStyle)(SubscribeNewsletter)

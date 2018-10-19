@@ -6,7 +6,7 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem from '../components/Grid/GridItem'
 import NavPills from '../components/NavPills/NavPills'
 
-import sectionPillsStyle from '../assets/jss/material-kit-pro-react/views/blogPostsSections/sectionPillsStyle'
+import articleCategoriesNavbarStyle from '../assets/jss/dokYayStyles/sections/articleCategoriesNavbarStyle'
 
 class ArticleCategoriesNavbar extends Component {
 	render() {
@@ -38,4 +38,4 @@ class ArticleCategoriesNavbar extends Component {
 	}
 }
 
-export default withStyles(sectionPillsStyle)(ArticleCategoriesNavbar)
+export default withStyles(articleCategoriesNavbarStyle)(ArticleCategoriesNavbar)

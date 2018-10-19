@@ -8,7 +8,7 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem      from '../components/Grid/GridItem'
 import Parallax      from '../components/Parallax/Parallax'
 
-import blogPostsPageStyle from '../assets/jss/material-kit-pro-react/views/blogPostsPageStyle'
+import articlePagesStyle from '../assets/jss/dokYayStyles/pages/articlePagesStyle'
 
 import ArticleCategoriesNavbar from '../sections/ArticleCategoriesNavbar'
 import TopArticles from '../sections/TopArticles'
@@ -23,7 +23,7 @@ class ArticleHomePage extends Component {
 	}
 
 	render() {
-		const { classes, ...rest } = this.props
+		const { classes } = this.props
 
 		return (
 			<div>
@@ -39,7 +39,7 @@ class ArticleHomePage extends Component {
 						</GridContainer>
 					</div>
 				</Parallax>
-				<div className={classes.main}>
+				<div className={`${classes.main} ${classes.mainRaised}`}>
 					<div className={classes.container}>
 						<ArticleCategoriesNavbar />
 						<TopArticles />
@@ -52,4 +52,4 @@ class ArticleHomePage extends Component {
 	}
 }
 
-export default withStyles(blogPostsPageStyle)(ArticleHomePage)
+export default withStyles(articlePagesStyle)(ArticleHomePage)

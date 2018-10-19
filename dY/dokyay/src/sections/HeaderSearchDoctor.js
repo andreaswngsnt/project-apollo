@@ -12,7 +12,7 @@ import CustomInput	 from '../components/CustomInput/CustomInput'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem		 from '../components/Grid/GridItem'
 
-import headersStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/headersStyle'
+import headerSearchDoctorStyle from '../assets/jss/dokYayStyles/sections/headerSearchDoctorStyle'
 
 class HeaderSearchDoctor extends Component {
 	constructor(props) {
@@ -101,4 +101,4 @@ class HeaderSearchDoctor extends Component {
 	}
 }
 
-export default withStyles(headersStyle)(HeaderSearchDoctor)
+export default withStyles(headerSearchDoctorStyle)(HeaderSearchDoctor)

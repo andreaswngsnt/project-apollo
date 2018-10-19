@@ -9,7 +9,7 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem      from '../components/Grid/GridItem'
 import Parallax      from '../components/Parallax/Parallax'
 
-import blogPostPageStyle from '../assets/jss/material-kit-pro-react/views/blogPostPageStyle'
+import homePagesStyle from '../assets/jss/dokYayStyles/pages/homePagesStyle'
 
 import PromoText from '../sections/PromoText'
 
@@ -45,7 +45,7 @@ class PromoPage extends Component {
 						</GridContainer>
 					</div>
 				</Parallax>
-				<div className={classes.main}>
+				<div className={`${classes.main} ${classes.mainRaised}`}>
 					<div className={classes.container}>
 						<PromoText />
 					</div>
@@ -56,4 +56,4 @@ class PromoPage extends Component {
 	}
 }
 
-export default withStyles(blogPostPageStyle)(PromoPage)
+export default withStyles(homePagesStyle)(PromoPage)

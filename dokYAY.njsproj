@@ -1108,6 +1108,8 @@
     <Folder Include="dY\dokyay\src\assets\img\flags\" />
     <Folder Include="dY\dokyay\src\assets\img\sections\" />
     <Folder Include="dY\dokyay\src\assets\jss\" />
+    <Folder Include="dY\dokyay\src\assets\jss\dokYayStyles\pages\" />
+    <Folder Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\" />
     <Folder Include="dY\dokyay\src\assets\jss\material-kit-pro-react\" />
     <Folder Include="dY\dokyay\src\assets\jss\material-kit-pro-react\components\" />
     <Folder Include="dY\dokyay\src\assets\jss\material-kit-pro-react\views\" />
@@ -1120,6 +1122,7 @@
     <Folder Include="dY\dokyay\src\assets\jss\material-kit-pro-react\views\presentationSections\" />
     <Folder Include="dY\dokyay\src\assets\jss\material-kit-pro-react\views\pricingSections\" />
     <Folder Include="dY\dokyay\src\assets\jss\material-kit-pro-react\views\sectionsSections\" />
+    <Folder Include="dY\dokyay\src\assets\jss\dokYayStyles\" />
     <Folder Include="dY\dokyay\src\assets\scss\" />
     <Folder Include="dY\dokyay\src\assets\scss\core\" />
     <Folder Include="dY\dokyay\src\assets\scss\core\mixins\" />
@@ -1195,7 +1198,34 @@
     <Compile Include="dY\dokyay\src\article\home.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\pages\homePagesStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\appFeatureStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\articleCategoriesNavbarStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\articleListStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\headerSearchDoctorStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\regularTextStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\subscribeNewsletterStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\topArticlesStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\components\DokYay\DokYayFooter.js" />
+    <Compile Include="dY\dokyay\src\components\DokYay\DokYayHeader.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dY\dokyay\src\home\about.js">
       <SubType>Code</SubType>
     </Compile>

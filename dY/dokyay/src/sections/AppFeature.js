@@ -11,7 +11,7 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem						from '../components/Grid/GridItem'
 import InfoArea						from '../components/InfoArea/InfoArea'
 
-import featuresStyle from '../assets/jss/material-kit-pro-react/views/sectionsSections/featuresStyle'
+import appFeatureStyle from '../assets/jss/dokYayStyles/sections/appFeatureStyle'
 
 import phoneGif from '../assets/img/features/phone.gif'
 
@@ -19,7 +19,7 @@ class AppFeature extends Component {
 	render() {
 		const { classes } = this.props
 		return (
-			<div className={classes.features4}>
+			<div className={classes.features}>
 				<GridContainer>
 					<GridItem xs={12} sm={8} md={8} className={`${classes.mlAuto} ${classes.mrAuto} ${classes.textCenter}`}>
 						<h2 className={classes.title}>Aplikasi dokYAY!</h2>
@@ -68,4 +68,4 @@ class AppFeature extends Component {
 	}
 }
 
-export default withStyles(featuresStyle)(AppFeature)
+export default withStyles(appFeatureStyle)(AppFeature)

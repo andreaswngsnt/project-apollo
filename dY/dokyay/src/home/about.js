@@ -8,7 +8,8 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem						from '../components/Grid/GridItem'
 import Parallax						from '../components/Parallax/Parallax'
 
-import blogPostPageStyle from '../assets/jss/material-kit-pro-react/views/blogPostPageStyle'
+import homePagesStyle from '../assets/jss/dokYayStyles/pages/homePagesStyle'
+
 import parallaxBg        from '../assets/img/bg/bg1.jpg'
 
 import AboutText from '../sections/AboutText'
@@ -37,7 +38,7 @@ class AboutPage extends Component {
 						</GridContainer>
 					</div>
 				</Parallax>
-				<div className={classes.main}>
+				<div className={`${classes.main} ${classes.mainRaised}`}>
 					<div className={classes.container}>
 						<AboutText />
 					</div>
@@ -48,4 +49,4 @@ class AboutPage extends Component {
 	}
 }
 
-export default withStyles(blogPostPageStyle)(AboutPage)
+export default withStyles(homePagesStyle)(AboutPage)

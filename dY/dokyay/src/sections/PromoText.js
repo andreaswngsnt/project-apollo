@@ -15,7 +15,7 @@ import GridContainer from '../components/Grid/GridContainer'
 import GridItem		 from '../components/Grid/GridItem'
 import InfoArea		 from '../components/InfoArea/InfoArea'
 
-import sectionTextStyle from '../assets/jss/material-kit-pro-react/views/blogPostSections/sectionTextStyle'
+import regularTextStyle from '../assets/jss/dokYayStyles/sections/regularTextStyle'
 
 function PromoText({ ...props }) {
 	const { classes } = props
@@ -77,7 +77,7 @@ function PromoText({ ...props }) {
 						<GridItem xs={12} sm={6} md={6}>
 							<Card pricing raised color='info'>
 								<CardBody pricing>
-									<h6 className={classes.cardDescription}>Simpel</h6>
+									<h6>Simpel</h6>
 									<h3 className={classes.cardTitleWhite}>
 										Rp. 250.000,00 /bulan
 									</h3>
@@ -113,4 +113,4 @@ function PromoText({ ...props }) {
 	)
 }
 
-export default withStyles(sectionTextStyle)(PromoText)
+export default withStyles(regularTextStyle)(PromoText)
