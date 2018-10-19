@@ -5,18 +5,12 @@ import withStyles from '@material-ui/core/styles/withStyles'
 
 import Button    from '@material-ui/core/Button'
 import Card      from '@material-ui/core/Card'
-import List						from '@material-ui/core/List'
-import ListItem	 from '@material-ui/core/ListItem'
 import TextField from '@material-ui/core/TextField'
 
 import DokYayFooter	 from '../components/DokYay/DokYayFooter'
 import DokYayHeader	 from '../components/DokYay/DokYayHeader'
-import GridContainer from '../components/Grid/GridContainer'
-import GridItem	     from '../components/Grid/GridItem'
-import Parallax	     from '../components/Parallax/Parallax'
 
 import loginPageStyle from '../assets/jss/material-kit-pro-react/views/loginPageStyle'
-import parallaxBg     from '../assets/img/bg/bg1.jpg'
 
 class Login extends Component {
 
@@ -65,8 +59,7 @@ class Login extends Component {
 
 	render = () => {
 		const { classes } = this.props
-		let loginForm = null,
-			userTypeText = this.state.userType === 'dokter' ? 'Dokter' : 'Umum'
+		let userTypeText = this.state.userType === 'dokter' ? 'Dokter' : 'Umum'
 
 		return (
 			<div style={{ border: '1px solid black', height: '100vh' }}>

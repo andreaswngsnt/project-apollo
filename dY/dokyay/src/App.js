@@ -1,6 +1,7 @@
 import React, { Component }             from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import RegisterPage    from './admin/register'
 import Login		   from './admin/login'
 import HomePage		   from './home/home'
 import PromoPage	   from './home/promo'
@@ -42,6 +43,7 @@ class App extends Component {
 					<Route path='/promo'   component={PromoPage} />
 					<Route path='/about'   component={AboutPage} />
 					<Route path='/artikel' component={ArticleHomePage} />
+					<Route path='/registerUmum' component={RegisterPage} />
 					<Route path='/login'   component={Login} />
 				</Switch>
 			</BrowserRouter>
