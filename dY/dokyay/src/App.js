@@ -1,6 +1,7 @@
 import React, { Component }             from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import RegisterPage				from './admin/register'
 import Login											from './admin/login'
 import HomePage								from './home/home'
 import PromoPage							from './home/promo'
@@ -39,12 +40,13 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route exact path='/'									component={HomePage} />
-					<Route path='/promo'										component={PromoPage} />
-					<Route path='/about'										component={AboutPage} />
-					<Route exact path='/artikel'		component={ArticleHomePage} />
-					<Route path='/artikel/:id'				component={ArticleShowPage} />
-					<Route path='/login'										component={Login} />
+					<Route exact path='/'								component={HomePage} />
+					<Route path='/promo'									component={PromoPage} />
+					<Route path='/about'									component={AboutPage} />
+					<Route exact path='/artikel'	component={ArticleHomePage} />
+					<Route path='/artikel/:id'			component={ArticleShowPage} />
+					<Route path='/registerUmum'		component={RegisterPage} />
+					<Route path='/login'									component={Login} />
 				</Switch>
 			</BrowserRouter>
 		)

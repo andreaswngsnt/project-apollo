@@ -3,8 +3,8 @@
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import Button        from '../components/CustomButtons/Button'
-import DokYayFooter		from '../components/DokYay/DokYayFooter'
-import DokYayHeader		from '../components/DokYay/DokYayHeader'
+import DokYayFooter	 from '../components/DokYay/DokYayFooter'
+import DokYayHeader	 from '../components/DokYay/DokYayHeader'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem      from '../components/Grid/GridItem'
 import Parallax      from '../components/Parallax/Parallax'
@@ -14,7 +14,7 @@ import homePagesStyle from '../assets/jss/dokYayStyles/pages/homePagesStyle'
 import AppFeature          from '../sections/AppFeature'
 import HeaderSearchDoctor  from '../sections/HeaderSearchDoctor'
 import SubscribeNewsletter from '../sections/SubscribeNewsletter'
-import TopArticles									from '../sections/TopArticles'
+import TopArticles         from '../sections/TopArticles'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
