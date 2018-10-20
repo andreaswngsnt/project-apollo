@@ -1,20 +1,23 @@
 ﻿import { container, main, mainRaised, title } from '../../material-kit-pro-react'
 
-const articlePagesStyle = {
+const articlesPagesStyle = {
 	main,
 	mainRaised,
 	container: {
 		...container,
-		zIndex: "2",
-		position: "relative"
+		zIndex: '2',
+		position: 'relative'
 	},
 	textCenter: {
-		textAlign: "center"
+		textAlign: 'center'
 	},
 	title: {
 		...title,
-		color: "#FFFFFF"
-	}
+		color: '#FFFFFF'
+	},
+	subtitle: {
+		color: '#FFFFFF'
+	},
 }
 
-export default articlePagesStyle
+export default articlesPagesStyle

@@ -1,11 +1,12 @@
 import React, { Component }             from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Login		   from './admin/login'
-import HomePage		   from './home/home'
-import PromoPage	   from './home/promo'
-import AboutPage	   from './home/about'
+import Login											from './admin/login'
+import HomePage								from './home/home'
+import PromoPage							from './home/promo'
+import AboutPage							from './home/about'
 import ArticleHomePage from './article/home'
+import ArticleShowPage from './article/show'
 
 import logo from './logo.svg'
 import './assets/scss/material-kit-pro-react.css?v=1.1.0'
@@ -38,11 +39,12 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route exact path='/'  component={HomePage} />
-					<Route path='/promo'   component={PromoPage} />
-					<Route path='/about'   component={AboutPage} />
-					<Route path='/artikel' component={ArticleHomePage} />
-					<Route path='/login'   component={Login} />
+					<Route exact path='/'									component={HomePage} />
+					<Route path='/promo'										component={PromoPage} />
+					<Route path='/about'										component={AboutPage} />
+					<Route exact path='/artikel'		component={ArticleHomePage} />
+					<Route path='/artikel/:id'				component={ArticleShowPage} />
+					<Route path='/login'										component={Login} />
 				</Switch>
 			</BrowserRouter>
 		)

@@ -1,8 +1,11 @@
 ﻿import { cardTitle, description, title } from '../../material-kit-pro-react'
 
+import imagesStyles from '../../material-kit-pro-react/imagesStyles'
+
 const regularTextStyle = {
 	description,
 	title,
+	...imagesStyles,
 	cardTitleWhite: {
 		...cardTitle,
 		color: '#FFFFFF !important'
