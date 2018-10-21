@@ -10,6 +10,7 @@ import Parallax from '../components/Parallax/Parallax'
 
 import articlesPagesStyle from '../assets/jss/dokYayStyles/pages/articlesPagesStyle'
 
+import ArticleInfo from '../sections/ArticleInfo'
 import ArticleText from '../sections/ArticleText'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
@@ -31,7 +32,7 @@ class ArticleShowPage extends Component {
 						<GridContainer justify='center'>
 							<GridItem xs={12} sm={12} md={8} className={classes.textCenter}>
 								<h1 className={classes.title}>
-									Article Show Page!
+									Jee-had!!!!
 								</h1>
 								<h4 className={classes.subtitle}>
 									The last 48 hours of my life were total madness. This is what I did.
@@ -43,6 +44,7 @@ class ArticleShowPage extends Component {
 				<div className={`${classes.main} ${classes.mainRaised}`}>
 					<div className={classes.container}>
 						<ArticleText />
+						<ArticleInfo />
 					</div>
 				</div>
 				<DokYayFooter />

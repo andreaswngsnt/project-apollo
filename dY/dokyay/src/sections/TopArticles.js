@@ -51,14 +51,14 @@ class TopArticles extends Component {
 					<GridItem xs={12} sm={6} md={6}>
 						<Card raised background style={{ backgroundImage: `url(${blogImg2})` }}>
 							<CardBody background>
+								<h6 className={classes.cardCategory}>
+									Hardware
+								</h6>
 								<Link to='/artikel/contoh'>
-									<h6 className={classes.cardCategory}>
-										Hardware
-									</h6>
+									<h3 className={classes.cardTitleWhite}>
+										Hands on: Nvidia GeForce RTX 2080 Ti review
+									</h3>
 								</Link>
-								<h3 className={classes.cardTitleWhite}>
-									Hands on: Nvidia GeForce RTX 2080 Ti review
-								</h3>
 								<p className={classes.cardDescription}>
 									The king of graphics cards has a new heir
 								</p>

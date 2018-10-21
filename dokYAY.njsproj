@@ -605,6 +605,13 @@
     <Content Include="dY\dokyay\src\assets\img\bg7.jpg" />
     <Content Include="dY\dokyay\src\assets\img\bg8.jpg" />
     <Content Include="dY\dokyay\src\assets\img\bg9.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\bg\bg1.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\blogs\image_placeholder.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\blogs\img1.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\blogs\img2.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\blogs\img3.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\blogs\plus.png" />
+    <Content Include="dY\dokyay\src\assets\img\blogs\steam.jpg" />
     <Content Include="dY\dokyay\src\assets\img\dg1.jpg" />
     <Content Include="dY\dokyay\src\assets\img\dg10.jpg" />
     <Content Include="dY\dokyay\src\assets\img\dg2.jpg" />
@@ -693,6 +700,8 @@
     <Content Include="dY\dokyay\src\assets\img\faces\kendall.jpg" />
     <Content Include="dY\dokyay\src\assets\img\faces\marc.jpg" />
     <Content Include="dY\dokyay\src\assets\img\favicon.png" />
+    <Content Include="dY\dokyay\src\assets\img\features\phone.gif" />
+    <Content Include="dY\dokyay\src\assets\img\features\phone.png" />
     <Content Include="dY\dokyay\src\assets\img\flags\AD.png" />
     <Content Include="dY\dokyay\src\assets\img\flags\AE.png" />
     <Content Include="dY\dokyay\src\assets\img\flags\AG.png" />
@@ -796,8 +805,29 @@
     <Content Include="dY\dokyay\src\assets\img\image_placeholder.jpg" />
     <Content Include="dY\dokyay\src\assets\img\loading-bubbles.svg" />
     <Content Include="dY\dokyay\src\assets\img\logo.png" />
+    <Content Include="dY\dokyay\src\assets\img\logo\dokyay_logo_big.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\logo\dokyay_logo_main.png" />
+    <Content Include="dY\dokyay\src\assets\img\logo\dokyay_logo_main.svg" />
     <Content Include="dY\dokyay\src\assets\img\office2.jpg" />
     <Content Include="dY\dokyay\src\assets\img\placeholder.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\image_placeholder.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\img1.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\img2.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\img3.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\img4.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\img5.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\places\img6.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\default-avatar.png" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img1.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img10.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img2.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img3.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img4.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img5.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img6.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img7.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img8.jpg" />
+    <Content Include="dY\dokyay\src\assets\img\portraits\img9.jpg" />
     <Content Include="dY\dokyay\src\assets\img\product1.jpg" />
     <Content Include="dY\dokyay\src\assets\img\product2.jpg" />
     <Content Include="dY\dokyay\src\assets\img\product3.jpg" />
@@ -1103,9 +1133,15 @@
     <Folder Include="dY\dokyay\src\assets\img\assets-for-demo\ourClients\" />
     <Folder Include="dY\dokyay\src\assets\img\assets-for-demo\presentationViewSectionComponent\" />
     <Folder Include="dY\dokyay\src\assets\img\assets-for-demo\sections\" />
+    <Folder Include="dY\dokyay\src\assets\img\bg\" />
+    <Folder Include="dY\dokyay\src\assets\img\blogs\" />
     <Folder Include="dY\dokyay\src\assets\img\examples\" />
     <Folder Include="dY\dokyay\src\assets\img\faces\" />
+    <Folder Include="dY\dokyay\src\assets\img\features\" />
     <Folder Include="dY\dokyay\src\assets\img\flags\" />
+    <Folder Include="dY\dokyay\src\assets\img\logo\" />
+    <Folder Include="dY\dokyay\src\assets\img\places\" />
+    <Folder Include="dY\dokyay\src\assets\img\portraits\" />
     <Folder Include="dY\dokyay\src\assets\img\sections\" />
     <Folder Include="dY\dokyay\src\assets\jss\" />
     <Folder Include="dY\dokyay\src\assets\jss\dokYayStyles\pages\" />
@@ -1195,6 +1231,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\public\utils.js" />
+    <Compile Include="dY\dokyay\src\admin\register.js" />
     <Compile Include="dY\dokyay\src\article\home.js">
       <SubType>Code</SubType>
     </Compile>
@@ -1211,6 +1248,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\articleCategoriesNavbarStyle.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\articleInfoStyle.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\assets\jss\dokYayStyles\sections\articleListStyle.js">
@@ -1380,6 +1420,9 @@
     <Compile Include="dY\dokyay\src\components\Typography\Warning.jsx" />
     <Compile Include="dY\dokyay\src\sections\AppFeature.js" />
     <Compile Include="dY\dokyay\src\sections\ArticleCategoriesNavbar.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dY\dokyay\src\sections\ArticleInfo.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="dY\dokyay\src\sections\ArticleList.js">
