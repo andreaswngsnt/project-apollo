@@ -2,6 +2,10 @@
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
+import Search from '@material-ui/icons/Search'
+
+import Button from '../components/CustomButtons/Button'
+import CustomInput from '../components/CustomInput/CustomInput'
 import GridContainer from '../components/Grid/GridContainer'
 import GridItem from '../components/Grid/GridItem'
 import NavPills from '../components/NavPills/NavPills'
@@ -13,10 +17,9 @@ class ArticleCategoriesNavbar extends Component {
 		const { classes } = this.props
 		return (
 			<div className={classes.section}>
-				<GridContainer justify='center'>
-					<GridItem xs={12} sm={12} md={8} className={classes.textCenter}>
+				<GridContainer alignItems='center'>
+					<GridItem xs={12} sm={9} md={9} className={classes.textCenter}>
 						<NavPills
-							alignCenter
 							tabs={[
 								{
 									tabButton: 'Beranda',
@@ -31,6 +34,23 @@ class ArticleCategoriesNavbar extends Component {
 									tabContent: ''
 								}
 							]} />
+					</GridItem>
+					<GridItem xs={12} sm={3} md={3}>
+						<GridContainer alignItems='center'>
+							<GridItem xs={9} sm={9} md={9}>
+								<CustomInput
+									inputProps={{
+										placeholder: 'Cari Artikel'
+									}}
+									formControlProps={{
+										fullWidth: true,
+										className: classes.formControl
+									}} />
+							</GridItem>
+							<GridItem xs={3} sm={3} md={3}>
+								<Button justIcon round color='primary'><Search /></Button>
+							</GridItem>
+						</GridContainer>
 					</GridItem>
 				</GridContainer>
 			</div>
