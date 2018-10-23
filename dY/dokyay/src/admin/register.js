@@ -72,7 +72,7 @@ class Register extends Component {
 
 		return (
 			<MaterialUiPickersProvider utils={MomentUtils} moment={moment}>
-			<div style={{ border: '1px solid black', height: '100vh' }}>
+			<div>
 				<DokYayHeader />
 				<div className={classes.main}>
 					<div className={classes.container} style={{color: '#000000'}}>

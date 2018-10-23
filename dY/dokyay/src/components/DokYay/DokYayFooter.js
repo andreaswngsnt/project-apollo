@@ -18,11 +18,11 @@ class DokYayFooter extends React.Component {
 
 		return (
 			<Footer content={
-				<div>
+				<div style={{ position: 'relative', bottom: '0px'}}>
 					<div className={classes.left}>
 						<List className={classes.list} style={{marginTop: '16px'}}>
 							<ListItem className={classes.inlineBlock}>
-								<Link to='/about'
+								<Link to='/tentang'
 									style={{
 										color:       '#000000',
 										marginRight: '16px'

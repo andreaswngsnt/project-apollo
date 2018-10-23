@@ -62,7 +62,7 @@ class Login extends Component {
 		let userTypeText = this.state.userType === 'dokter' ? 'Dokter' : 'Umum'
 
 		return (
-			<div style={{ border: '1px solid black', height: '100vh' }}>
+			<div style={{height: '100vh'}}>
 				<DokYayHeader />
 				<div className={classes.main}>
 					<div className={classes.container} style={{color: '#000000'}}>
