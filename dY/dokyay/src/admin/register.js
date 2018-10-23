@@ -8,6 +8,11 @@ import Card      from '@material-ui/core/Card'
 import Checkbox  from '@material-ui/core/Checkbox'
 import TextField from '@material-ui/core/TextField'
 
+import moment from 'moment'
+import MomentUtils from 'material-ui-pickers/utils/moment-utils'
+import MaterialUiPickersProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider'
+import { DatePicker } from 'material-ui-pickers'
+
 import DokYayFooter	 from '../components/DokYay/DokYayFooter'
 import DokYayHeader	 from '../components/DokYay/DokYayHeader'
 import Parallax	     from '../components/Parallax/Parallax'
@@ -26,7 +31,7 @@ class Register extends Component {
 		password:        '',
 		confirmPassword: '',
 		sex:             '',
-		dateOfBirth:     '',
+		dateOfBirth:     null,
 		invitationCode:  ''
 	}
 
@@ -66,6 +71,7 @@ class Register extends Component {
 			}
 
 		return (
+			<MaterialUiPickersProvider utils={MomentUtils} moment={moment}>
 			<div style={{ border: '1px solid black', height: '100vh' }}>
 				<DokYayHeader />
 				<div className={classes.main}>
@@ -159,6 +165,15 @@ class Register extends Component {
 									type='password'
 									value={this.state.confirmPassword}
 									onChange={this.handleChange('confirmPassword')} />
+								<br/>
+								<i className='fas fa-birthday-cake' style={iconStyle}></i>
+								<DatePicker
+									placeholder='Date of Birth'
+									format='DD/MMM/YYYY'
+									value={this.state.dateOfBirth}
+									animateYearScrolling={false}
+									maxDate={new Date()}
+									onChange={date => { this.setState({ dateOfBirth: date }) }} />
 								<br/><br/>
 								Sudah punya akun? <a href='/login?type=umum'>Login di sini</a>
 								<Button variant='contained' color='primary' className={classes.button} onClick={this.submitLogin}>
@@ -171,6 +186,7 @@ class Register extends Component {
 				</div>
 				<DokYayFooter />
 			</div>
+			</MaterialUiPickersProvider>
 		)
 	}
 }
