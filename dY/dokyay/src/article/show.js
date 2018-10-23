@@ -2,21 +2,20 @@
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import DokYayFooter		from '../components/DokYay/DokYayFooter'
-import DokYayHeader		from '../components/DokYay/DokYayHeader'
+import DokYayFooter from '../components/DokYay/DokYayFooter'
+import DokYayHeader from '../components/DokYay/DokYayHeader'
 import GridContainer from '../components/Grid/GridContainer'
-import GridItem      from '../components/Grid/GridItem'
-import Parallax      from '../components/Parallax/Parallax'
+import GridItem from '../components/Grid/GridItem'
+import Parallax from '../components/Parallax/Parallax'
 
 import articlesPagesStyle from '../assets/jss/dokYayStyles/pages/articlesPagesStyle'
 
-import ArticleCategoriesNavbar from '../sections/ArticleCategoriesNavbar'
-import TopArticles from '../sections/TopArticles'
-import ArticleList from '../sections/ArticleList'
+import ArticleInfo from '../sections/ArticleInfo'
+import ArticleText from '../sections/ArticleText'
 
 import parallaxBg from '../assets/img/bg/bg1.jpg'
 
-class ArticleHomePage extends Component {
+class ArticleShowPage extends Component {
 	componentDidMount() {
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
@@ -28,22 +27,24 @@ class ArticleHomePage extends Component {
 		return (
 			<div>
 				<DokYayHeader />
-				<Parallax image={parallaxBg} filter='dark' small>
+				<Parallax image={parallaxBg} filter='dark'>
 					<div className={classes.container}>
 						<GridContainer justify='center'>
 							<GridItem xs={12} sm={12} md={8} className={classes.textCenter}>
-								<h2 className={classes.title}>
-									Beranda Artikel-artikel Kesehatan
-								</h2>
+								<h1 className={classes.title}>
+									Jee-had!!!!
+								</h1>
+								<h4 className={classes.subtitle}>
+									The last 48 hours of my life were total madness. This is what I did.
+								</h4>
 							</GridItem>
 						</GridContainer>
 					</div>
 				</Parallax>
 				<div className={`${classes.main} ${classes.mainRaised}`}>
 					<div className={classes.container}>
-						<ArticleCategoriesNavbar />
-						<TopArticles />
-						<ArticleList />
+						<ArticleText />
+						<ArticleInfo />
 					</div>
 				</div>
 				<DokYayFooter />
@@ -52,4 +53,4 @@ class ArticleHomePage extends Component {
 	}
 }
 
-export default withStyles(articlesPagesStyle)(ArticleHomePage)
+export default withStyles(articlesPagesStyle)(ArticleShowPage)

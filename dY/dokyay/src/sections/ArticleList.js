@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -47,34 +48,34 @@ class ArticleList extends Component {
 					<GridContainer>
 						<GridItem xs={12} sm={4} md={4}>
 							<CardHeader image plain>
-								<a href="#pablito" onClick={e => e.preventDefault()}>
-									<img src={article.image} alt="..." />
-								</a>
+								<Link to='/artikel/contoh'>
+									<img src={article.image} alt='...' />
+								</Link>
 								<div
 									className={classes.coloredShadow}
 									style={{
 										backgroundImage: `url(${article.image})`,
-										opacity: "1"
+										opacity: '1'
 									}} />
 							</CardHeader>
 						</GridItem>
 						<GridItem xs={12} sm={8} md={8}>
 							<h6 className={classes.cardCategory}>{article.category}</h6>
 							<h3 className={classes.cardTitle}>
-								<a href="#pablo" onClick={e => e.preventDefault()}>
+								<Link to='/artikel/contoh'>
 									{article.title}
-								</a>
+								</Link>
 							</h3>
 							<p className={classes.description}>
 								{article.description}
 							</p>
 							<p>
-								<a href="#pablo" onClick={e => e.preventDefault()}>
+								<Link to='/artikel/contoh'>
 									Baca lebih...
-								</a>
+								</Link>
 							</p>
 							<p className={classes.author}>
-								oleh: <a href="#pablo" onClick={e => e.preventDefault()}>{article.author}</a>, 3 hari lalu
+								oleh: <a href='#pablo' onClick={e => e.preventDefault()}>{article.author}</a>, 3 hari lalu
 							</p>
 						</GridItem>
 					</GridContainer>
@@ -84,7 +85,7 @@ class ArticleList extends Component {
 	}
 
 	render() {
-		const { classes, ...rest } = this.props
+		const { classes } = this.props
 
 		return (
 			<div className={classes.blog}>
